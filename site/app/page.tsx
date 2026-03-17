@@ -1,36 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Star, ChevronDown, Clock, BadgeCheck, Shield, Gift } from "lucide-react";
+import { CheckCircle, ArrowRight, Star, ChevronDown, Clock, BadgeCheck, Shield, Gift, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, BarChart2, type LucideIcon } from "lucide-react";
 
-const services = [
+const services: { title: string; icon: LucideIcon; desc: string }[] = [
   {
     title: "Medical Claim Coding",
-    icon: "/products/claim-1.png",
+    icon: ClipboardList,
     desc: "AAPC-compliant coding of diagnoses, procedures, and treatments into standardized ICD, CPT, and HCPCS codes for maximum reimbursement.",
   },
   {
     title: "Charge Entry",
-    icon: "/products/accountant-1.png",
+    icon: FilePlus,
     desc: "Accurate input of patient and billing information into your practice management system so every claim is built correctly before submission.",
   },
   {
     title: "Claim Submission",
-    icon: "/products/statements.png",
+    icon: Send,
     desc: "Timely electronic submission of clean claims to insurance companies, reducing rejections and accelerating payment.",
   },
   {
     title: "Payment Posting",
-    icon: "/products/paid-content.png",
+    icon: CreditCard,
     desc: "Recording of insurance and patient payments with full documentation of allowed amounts, patient responsibility, denials, and adjustments.",
   },
   {
     title: "Denial and Appeals Management",
-    icon: "/products/search.png",
+    icon: RotateCcw,
     desc: "Aggressive review, correction, resubmission, and appeal of every denied or underpaid claim so you recover every dollar earned.",
   },
   {
     title: "End-of-Month Reporting",
-    icon: "/products/business-report.png",
+    icon: BarChart2,
     desc: "Transparent financial reports showing collections, denials, AR trends, and practice performance so you can make informed decisions.",
   },
 ];
@@ -207,7 +207,7 @@ export default function HomePage() {
                 className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow group"
               >
                 <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                  <Image src={s.icon} alt={s.title} width={36} height={36} className="object-contain" />
+                  <s.icon size={28} className="text-[#137868]" />
                 </div>
                 <h3
                   className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
