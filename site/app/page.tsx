@@ -148,8 +148,8 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-[#137868]/80" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-3xl">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <div className="max-w-3xl mx-auto">
             <p
               className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -163,7 +163,7 @@ export default function HomePage() {
               Helping Providers Get Paid, Fully, Ethically, and On Time.
             </h1>
             <p
-              className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl"
+              className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Most billing services send your claims and disappear. We track
@@ -171,7 +171,7 @@ export default function HomePage() {
               the money went. Founded by Michelle Recek, who spent years on the
               payer side before switching to yours.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact-us/"
                 className="px-8 py-4 rounded-full bg-[#137868] text-white font-semibold text-base hover:bg-[#0f5f54] transition-colors text-center"

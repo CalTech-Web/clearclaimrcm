@@ -23,9 +23,9 @@ export default function Navbar() {
           <Image
             src="/logos/Logo.png"
             alt="ClearClaim RCM Logo"
-            width={140}
-            height={48}
-            className="object-contain max-h-12"
+            width={160}
+            height={100}
+            className="object-contain h-12 w-auto"
           />
         </Link>
 
