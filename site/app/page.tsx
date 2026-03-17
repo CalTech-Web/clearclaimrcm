@@ -6,38 +6,38 @@ const services: { title: string; icon: LucideIcon; desc: string }[] = [
   {
     title: "Medical Claim Coding",
     icon: ClipboardList,
-    desc: "AAPC-compliant coding of diagnoses, procedures, and treatments into standardized ICD, CPT, and HCPCS codes for maximum reimbursement.",
+    desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. We assign ICD, CPT, and HCPCS codes to AAPC-certified standards, specialty by specialty.",
   },
   {
     title: "Charge Entry",
     icon: FilePlus,
-    desc: "Accurate input of patient and billing information into your practice management system so every claim is built correctly before submission.",
+    desc: "A clean claim starts before the claim is even built. Patient demographics, insurance details, and service data all have to be entered correctly, or the claim goes out with a flaw baked in. We verify before we submit.",
   },
   {
     title: "Claim Submission",
     icon: Send,
-    desc: "Timely electronic submission of clean claims to insurance companies, reducing rejections and accelerating payment.",
+    desc: "Claims go out electronically to all major payers, with paper submission where required. Before they go, every claim gets scrubbed for errors. Timely filing windows are tracked. Nothing ages out.",
   },
   {
     title: "Payment Posting",
     icon: CreditCard,
-    desc: "Recording of insurance and patient payments with full documentation of allowed amounts, patient responsibility, denials, and adjustments.",
+    desc: "Every payment that comes in gets posted with full detail, allowed amounts, patient responsibility, adjustments, and denials. That level of documentation is how you catch underpayments before they become a pattern.",
   },
   {
     title: "Denial and Appeals Management",
     icon: RotateCcw,
-    desc: "Aggressive review, correction, resubmission, and appeal of every denied or underpaid claim so you recover every dollar earned.",
+    desc: "A denied claim is not a closed claim. We find the reason code, fix the issue, and resubmit or appeal. Every denial is tracked through resolution. Nothing gets written off because it was inconvenient to fight.",
   },
   {
     title: "End-of-Month Reporting",
     icon: BarChart2,
-    desc: "Transparent financial reports showing collections, denials, AR trends, and practice performance so you can make informed decisions.",
+    desc: "At the end of every month, you get a report showing what came in, what was denied, how your AR is aging, and how the practice is performing financially. No black box. You see the full picture.",
   },
 ];
 
 const differentiators = [
   "Founded by a 20-year healthcare veteran with payer-side experience",
-  "AAPC-certified coding for maximum compliance and reimbursement accuracy",
+  "AAPC-certified coding, specialty by specialty, no generic templates",
   "Every claim tracked individually from submission to reimbursement",
   "Transparent reporting so you see exactly where every dollar goes",
   "Free billing audit with no obligation to switch",
@@ -64,38 +64,78 @@ const process = [
   {
     phase: "Step 1",
     title: "Free Billing Audit",
-    desc: "Michelle reviews your current billing setup at no charge and identifies gaps or improvement opportunities.",
+    desc: "Michelle reviews your denial rate, AR aging, and coding accuracy at no cost. Honest feedback either way.",
     img: "/products/22.png",
   },
   {
     phase: "Step 2",
     title: "Practice Setup",
-    desc: "ClearClaim RCM integrates with your practice management system and establishes billing workflows from day one.",
+    desc: "We connect to your practice management system, set up the workflows, and get everything running before your first claim goes out.",
     img: "/products/28.png",
   },
   {
     phase: "Step 3",
     title: "Clean Claim Submission",
-    desc: "Every claim is coded to AAPC standards and submitted electronically for timely, error-free reimbursement.",
+    desc: "Every claim is coded to AAPC standards and scrubbed before it goes out. Timely filing windows are tracked. Nothing ages out.",
     img: "/products/23.png",
   },
   {
     phase: "Step 4",
     title: "Denial Management",
-    desc: "Any denied or underpaid claims are reviewed, corrected, and aggressively appealed to recover full payment.",
+    desc: "Every denied or underpaid claim gets a root cause review, a fix, and a resubmission or formal appeal. Nothing gets written off.",
     img: "/products/24.png",
   },
   {
     phase: "Step 5",
     title: "Reporting and Review",
-    desc: "End-of-month reports give providers full visibility into collections, AR trends, and practice financial performance.",
+    desc: "A full financial report lands in your inbox every month. Collections, denials, AR aging, and practice performance in one place.",
     img: "/products/26.png",
   },
 ];
 
 export default function HomePage() {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Clear Claim RCM",
+    url: "https://clearclaimrcm.com",
+    logo: "https://clearclaimrcm.com/logos/Logo.png",
+    image: "https://clearclaimrcm.com/gallery/02.jpg",
+    description:
+      "Clear Claim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran, helping independent providers and small to mid-sized clinics get paid faster.",
+    telephone: "+1-303-434-1355",
+    email: "michelle@clearclaimRCM.com",
+    foundingDate: "2025",
+    priceRange: "$$",
+    sameAs: ["https://www.linkedin.com/company/clearclaim-rcm"],
+    founder: {
+      "@type": "Person",
+      name: "Michelle Recek",
+      jobTitle: "Founder and Director of Revenue Cycle Operations",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+  };
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Clear Claim RCM",
+    url: "https://clearclaimrcm.com",
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -126,10 +166,10 @@ export default function HomePage() {
               className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              ClearClaim RCM is a U.S.-based full-cycle medical billing company
-              founded by a 20-year healthcare veteran. We help independent
-              providers and small to mid-sized clinics get paid faster, reduce
-              denials, and focus on patient care.
+              Most billing services send your claims and disappear. We track
+              every single one, fight every denial, and show you exactly where
+              the money went. Founded by Michelle Recek, who spent years on the
+              payer side before switching to yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -196,8 +236,8 @@ export default function HomePage() {
               Full-Cycle Revenue Cycle Management
             </h2>
             <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-              From coding to collections, we handle every step of your revenue
-              cycle so you can focus on what matters most: patient care.
+              From the first code entered to the last dollar collected, we own
+              the whole cycle. Nothing gets lost. Nothing sits.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -246,9 +286,10 @@ export default function HomePage() {
                 Your Revenue Cycle Partner, Not Just a Billing Service
               </h2>
               <p className="text-gray-600 text-base leading-relaxed mb-8">
-                With payer-side experience at the VP level and 20 years across
-                healthcare operations, ClearClaim RCM brings an insider advantage
-                that most billing companies simply cannot offer.
+                Michelle spent time as a VP at an insurance company. She knows
+                exactly how payers evaluate claims and what triggers a denial.
+                That is knowledge most billing companies do not have, and it
+                changes how we fight for your reimbursements.
               </p>
               <ul className="space-y-4">
                 {differentiators.map((d) => (
@@ -298,7 +339,7 @@ export default function HomePage() {
               className="text-3xl sm:text-4xl font-bold text-gray-900"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              A Clear, Proven Process
+              Five Steps. No Shortcuts.
             </h2>
           </div>
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -392,11 +433,11 @@ export default function HomePage() {
                 reimbursement for the hard work you put in every day.&rdquo;
               </blockquote>
               <p className="text-gray-600 text-base leading-relaxed mb-6">
-                With over 20 years of experience in healthcare operations,
-                credentialing, and revenue cycle management, Michelle brings a
-                unique payer-side perspective gained from her time as Vice
-                President of an insurance company, giving her an insider
-                understanding of how claims are processed, evaluated, and denied.
+                Michelle spent two decades in healthcare operations. Before
+                founding ClearClaim RCM, she served as VP of an insurance
+                company, which means she knows how payers process claims, what
+                triggers a denial, and how to push back effectively. That
+                background does not come standard with a billing service.
               </p>
               <Link
                 href="/about-us/"
@@ -417,12 +458,12 @@ export default function HomePage() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            Ready to Maximize Your Reimbursements?
+            Get Paid What You&rsquo;ve Already Earned
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-8 max-w-2xl mx-auto">
-            Start with a free, no-obligation billing audit. If your current team
-            is performing well, Michelle will tell you. If there are gaps, she
-            will show you exactly where improvement is possible.
+            Start with a free audit. No pitch, no pressure. If your current
+            team is doing fine, Michelle will tell you so. If there are gaps,
+            you will see exactly where the money is slipping out.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

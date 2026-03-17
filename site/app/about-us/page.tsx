@@ -10,6 +10,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about-us/",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Clear Claim RCM",
+    title: "About Clear Claim RCM | Medical Billing Experts",
+    description:
+      "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
+    url: "https://clearclaimrcm.com/about-us/",
+    images: [
+      {
+        url: "/gallery/02.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Clear Claim RCM - About Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Clear Claim RCM | Medical Billing Experts",
+    description:
+      "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
+    images: ["/gallery/02.jpg"],
+  },
 };
 
 const career = [

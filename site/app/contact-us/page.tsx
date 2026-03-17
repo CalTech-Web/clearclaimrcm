@@ -10,6 +10,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contact-us/",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Clear Claim RCM",
+    title: "Free Billing Audit | Clear Claim RCM",
+    description:
+      "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+    url: "https://clearclaimrcm.com/contact-us/",
+    images: [
+      {
+        url: "/gallery/02.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Clear Claim RCM - Free Billing Audit",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Billing Audit | Clear Claim RCM",
+    description:
+      "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+    images: ["/gallery/02.jpg"],
+  },
 };
 
 const faqs = [
@@ -44,8 +67,25 @@ const faqs = [
 ];
 
 export default function ContactPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Page header */}
       <section className="bg-[#137868] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

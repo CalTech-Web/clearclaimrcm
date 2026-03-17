@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services/",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Clear Claim RCM",
+    title: "Medical Billing Services | Clear Claim RCM",
+    description:
+      "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
+    url: "https://clearclaimrcm.com/services/",
+    images: [
+      {
+        url: "/gallery/02.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Clear Claim RCM Medical Billing Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Medical Billing Services | Clear Claim RCM",
+    description:
+      "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
+    images: ["/gallery/02.jpg"],
+  },
 };
 
 const services: { number: string; title: string; icon: LucideIcon; desc: string; bullets: string[]; cta?: boolean }[] = [
