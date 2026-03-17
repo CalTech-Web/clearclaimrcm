@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Clear Claim RCM | Medical Billing & Revenue Cycle Management",
   description:
-    "ClearClaim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company helping independent providers and small to mid-sized clinics get paid faster, reduce denials, and take back time for patient care.",
+    "Clear Claim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
 };
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import { ArrowRight, Target, Eye, Zap, Users, FileCheck, Heart } from "lucide-re
 import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mission Statement | Clear Claim RCM",
+  title: "Our Mission | Clear Claim RCM Medical Billing",
   description:
     "The mission of Clear Claim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
 };
@@ -171,18 +171,19 @@ export default function MissionPage() {
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Your Practice Deserves a Billing Partner Who Gets Results
+                What Accountability Actually Looks Like
               </h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Too many independent providers leave money behind, not from poor
-                care, but from billing that no one is watching closely. Denials
-                that go unanswered. Claims that age. Codes that miss the mark.
-                ClearClaim RCM exists to close those gaps.
+                Every month you get a report you can read. One point of contact
+                who knows your account. A billing team that tells you about a
+                problem before your accountant does. No AR spike at 90 days
+                with a shrug. No denial write-offs with a vague explanation.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Our commitment is to manage your revenue cycle the way you
-                manage patient care. With attention, accountability, and no
-                tolerance for letting things slip.
+                When a claim comes back denied, we do not sit on it. We pull
+                the reason code, fix the problem, and send it back. When your
+                payer mix shifts or volumes change, we adjust before you have
+                to ask.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-8">
                 The free audit is where we start. Come in, let Michelle review
@@ -216,7 +217,7 @@ export default function MissionPage() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            Join Practices That Trust ClearClaim RCM
+            Find Out Where the Money Is Going
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
             Let us show you what billing that actually works looks like. Start

@@ -4,7 +4,7 @@ import { Phone, Mail, Linkedin, Clock, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Clear Claim RCM",
+  title: "Free Billing Audit | Clear Claim RCM",
   description:
     "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
 };
@@ -12,31 +12,31 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What types of practices does ClearClaim RCM work with?",
-    a: "ClearClaim RCM serves independent healthcare providers, small to mid-sized clinics, group practices, and office managers or practice administrators. The company works across specialties and focuses on practices that want a dedicated billing partner rather than an in-house team.",
+    a: "We work with independent healthcare providers, small to mid-sized clinics, group practices, and office managers or practice administrators. Any practice that wants dedicated billing support without the overhead of an in-house team. We work across specialties, and Michelle has direct experience in gastroenterology and behavioral health, so the learning curve is short.",
   },
   {
     q: "How do I get started?",
-    a: "You can schedule a free consultation via Calendly at calendly.com/michelle-clearclaimrcm, fill out the contact form on this page, or call 303-434-1355 or email michelle@clearclaimRCM.com directly.",
+    a: "Book through Calendly, fill out the form on this page, or call 303-434-1355. You can also email michelle@clearclaimRCM.com directly. Either way, the first step is a free audit with no obligation attached.",
   },
   {
     q: "Do you offer a free billing audit?",
-    a: "Yes. Michelle Recek personally offers a complimentary audit of your current billing services. If your existing team is performing well, she will tell you. If there are gaps or signs of underperformance, she will identify where improvement is possible, with no obligation to switch.",
+    a: "Yes, and Michelle does it herself. She reviews your denial rate, AR aging, and how your collections compare to expected reimbursement. If your current team is performing well, she will say so. If there are gaps, you will see exactly where they are, with no pressure to switch.",
   },
   {
     q: "What coding standards do you follow?",
-    a: "All billing is performed in strict adherence to AAPC (American Academy of Professional Coders) standards, ensuring accuracy, compliance, and the highest possible reimbursement for every claim submitted.",
+    a: "All billing follows AAPC standards, the American Academy of Professional Coders certification. It covers coding accuracy, compliance, and getting the correct reimbursement on every claim we submit. Nothing goes out that hasn't been coded to that standard.",
   },
   {
     q: "Is my patient data secure?",
-    a: "Yes. ClearClaim RCM is fully HIPAA-compliant across all billing processes, and all patient information is handled with the highest standards of security and confidentiality.",
+    a: "Yes. Every part of our process is fully HIPAA-compliant. Patient information is handled with complete security and confidentiality. We do not cut corners on that.",
   },
   {
     q: "What happens when a claim is denied?",
-    a: "ClearClaim RCM reviews every denial, identifies the reason, corrects any issues, and aggressively resubmits or appeals the claim. The team tracks every claim from submission to reimbursement so nothing slips through the cracks.",
+    a: "We pull the EOB, find the reason code, fix the problem, and resubmit or file a formal appeal. Every denial is tracked through to resolution. Nothing gets written off because it was inconvenient to fight.",
   },
   {
     q: "Do you provide reporting?",
-    a: "Yes. End-of-month financial reports show collections, denials, AR trends, and overall practice performance so providers can make informed business decisions and see exactly where every dollar is going.",
+    a: "Yes. Every month you get a report covering collections, denials, AR aging, and overall practice performance. It is the same data we use to manage your account. You see exactly what we see.",
   },
 ];
 
@@ -56,9 +56,9 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
-            Ready to see what ClearClaim RCM can do for your practice? Start
-            with a free, no-obligation billing audit or schedule a consultation
-            with Michelle directly.
+            Most providers know something is off with their billing. They just
+            have not had time to look closely. The free audit is where we start.
+            No pitch. Just an honest look at what you are leaving on the table.
           </p>
         </div>
       </section>
@@ -73,13 +73,13 @@ export default function ContactPage() {
                 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Let&rsquo;s Talk About Your Revenue Cycle
+                Talk to Michelle About Your Revenue Cycle
               </h2>
               <p className="text-gray-600 text-base leading-relaxed mb-10">
-                Whether you want to schedule a free audit, ask about our
-                services, or simply learn more, we are here to help. Reach out
-                through any of the channels below, or fill out the form and we
-                will be in touch promptly.
+                Call, email, or book through Calendly. If you have questions
+                about a specific service or want to know whether ClearClaim RCM
+                is the right fit, fill out the form and we will be in touch
+                quickly.
               </p>
 
               <div className="space-y-6 mb-10">
@@ -153,9 +153,10 @@ export default function ContactPage() {
                   Free Billing Audit
                 </h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-4">
-                  Michelle Recek personally reviews your current billing setup
-                  at no charge. No obligation to switch. Just honest, expert
-                  feedback on your revenue cycle performance.
+                  Michelle reviews your denial rate, AR aging, and coding
+                  accuracy at no cost. If your current setup is running well,
+                  she will tell you that. If there are gaps, you will see
+                  exactly where the money is going.
                 </p>
                 <a
                   href="https://calendly.com/michelle-clearclaimrcm"

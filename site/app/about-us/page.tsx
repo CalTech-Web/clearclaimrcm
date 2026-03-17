@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Eye, Shield, Zap, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Clear Claim RCM",
+  title: "About Clear Claim RCM | Medical Billing Experts",
   description:
     "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
 };
@@ -22,22 +22,22 @@ const values = [
   {
     title: "Transparency",
     icon: Eye,
-    desc: "Providers deserve full visibility into where every dollar in their revenue cycle is going. We provide clear, honest reporting on every claim.",
+    desc: "Most billing reports tell you what happened after it is too late to change anything. Ours show the full picture every month, collections, denials, AR trends, so you can make decisions with real data before problems compound.",
   },
   {
     title: "Integrity",
     icon: Shield,
-    desc: "We follow AAPC-certified standards and HIPAA-compliant processes. Every decision is made with ethics and accuracy at the forefront.",
+    desc: "Every claim we submit follows AAPC-certified standards. HIPAA compliance is not a checkbox here, it is the floor. We do not cut corners because your license is on the line along with ours.",
   },
   {
     title: "Fighter Mentality",
     icon: Zap,
-    desc: "We fight for every dollar you have earned. No denied claim goes unchallenged. No underpayment goes unaddressed.",
+    desc: "When a payer denies a claim, we do not move on. We pull the EOB, find the reason, fix the problem, and send it back. Most practices lose thousands a year to denials that never got challenged.",
   },
   {
     title: "Partnership",
     icon: Users,
-    desc: "We are your revenue cycle partner, not just a billing vendor. Your financial health is our ongoing responsibility.",
+    desc: "You should not need to chase your billing company for updates. We report proactively, flag problems before they compound, and treat your financial health as an ongoing responsibility.",
   },
 ];
 
@@ -57,10 +57,9 @@ export default function AboutPage() {
             About Clear Claim RCM
           </h1>
           <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
-            Founded in 2025 by a 20-year healthcare veteran, ClearClaim RCM
-            exists to give independent providers and small to mid-sized clinics
-            a billing partner they can trust, one that fights for every dollar
-            they earn.
+            ClearClaim RCM launched in 2025, but Michelle Recek&rsquo;s 20 years
+            in healthcare billing, credentialing, and payer operations had been
+            building to it long before that.
           </p>
         </div>
       </section>
@@ -92,19 +91,19 @@ export default function AboutPage() {
                 Founder and Director of Revenue Cycle Operations
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                With over 20 years of experience in healthcare operations,
-                credentialing, and revenue cycle management, Michelle founded
-                ClearClaim RCM to help providers streamline their billing and
-                get paid faster, with full transparency and integrity.
+                Michelle has spent 20 years inside healthcare revenue cycles,
+                from supervising billing teams to running two locations as a
+                Business Office Manager at Columbine Health Plan to serving as
+                VP at an insurance company. That last role changed how she sees
+                billing. She watched how payers evaluate claims, what reasons
+                get used to deny them, and where providers leave money behind.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-6">
-                Her background includes managing endoscopy centers and serving
-                as Vice President of an insurance company, where she developed
-                a deep understanding of payer processes, claim workflows, and
-                contract strategies. That payer-side experience gives ClearClaim
-                RCM a unique advantage: we know exactly how insurers evaluate
-                and deny claims, and we use that knowledge to advocate for our
-                clients at every step.
+                She founded ClearClaim RCM because she had seen enough.
+                Independent practices were losing reimbursements not from bad
+                medicine but from bad billing. Unchallenged denials. Codes that
+                were close but not right. Claims that aged out because nobody
+                followed up. She built this to fix that.
               </p>
               <blockquote className="border-l-4 border-[#137868] pl-5 italic text-gray-700 text-base leading-relaxed mb-8">
                 &ldquo;I offer more than billing services. I help you understand
@@ -192,10 +191,12 @@ export default function AboutPage() {
                 Built for Independent Providers and Growing Practices
               </h2>
               <p className="text-gray-600 text-base leading-relaxed mb-6">
-                ClearClaim RCM was built specifically for practices that need a
-                dedicated billing partner rather than an in-house team. We serve
-                a wide range of specialties and focus on practices that want
-                transparent, high-performance revenue cycle management.
+                Independent practices often cannot justify a full in-house
+                billing team, and they should not have to. ClearClaim RCM was
+                built for exactly that gap. Michelle brings direct experience in
+                gastroenterology, behavioral health, and hospital-based revenue
+                cycles, so the learning curve is short regardless of your
+                specialty.
               </p>
               <ul className="space-y-3">
                 {[
@@ -236,8 +237,8 @@ export default function AboutPage() {
             Work With a Billing Partner Who Fights for You
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Schedule a free consultation or request your no-obligation billing
-            audit today.
+            Schedule a free consultation or request your billing audit. No
+            obligation, and no pitch if your current setup is working.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

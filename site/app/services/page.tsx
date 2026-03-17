@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, FileText, TrendingUp, BarChart2, ShieldCheck, SearchCheck, type LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | Clear Claim RCM",
+  title: "Medical Billing Services | Clear Claim RCM",
   description:
-    "Full-cycle medical billing and revenue cycle management services: coding, claim submission, denial management, payment posting, patient billing, AR follow-up, reporting, and compliance auditing.",
+    "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
 };
 
 const services: { number: string; title: string; icon: LucideIcon; desc: string; bullets: string[]; cta?: boolean }[] = [
