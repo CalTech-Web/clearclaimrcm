@@ -222,7 +222,11 @@ export default function AboutPage() {
                 built for exactly that gap. Michelle brings direct experience in
                 gastroenterology, behavioral health, and hospital-based revenue
                 cycles, so the learning curve is short regardless of your
-                specialty.
+                specialty. Our{" "}
+                <Link href="/services/" className="text-[#137868] hover:underline font-medium">
+                  full-cycle medical billing and revenue cycle management services
+                </Link>{" "}
+                cover every step from coding to collections.
               </p>
               <ul className="space-y-3">
                 {[
@@ -243,7 +247,7 @@ export default function AboutPage() {
             <div>
               <Image
                 src="/products/29.png"
-                alt="Healthcare team"
+                alt="Independent healthcare providers and clinical staff served by Clear Claim RCM"
                 width={540}
                 height={480}
                 className="rounded-2xl object-cover w-full"
@@ -274,14 +278,12 @@ export default function AboutPage() {
               Get Started
               <ArrowRight size={18} />
             </Link>
-            <a
-              href="https://calendly.com/michelle-clearclaimrcm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors"
+            <Link
+              href="/services/"
+              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors text-center"
             >
-              Schedule a Free Consultation
-            </a>
+              View Our Services
+            </Link>
           </div>
         </div>
       </section>

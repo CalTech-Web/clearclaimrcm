@@ -120,9 +120,12 @@ export default function ContactPage() {
               </h2>
               <p className="text-gray-600 text-base leading-relaxed mb-10">
                 Call, email, or book through Calendly. If you have questions
-                about a specific service or want to know whether ClearClaim RCM
-                is the right fit, fill out the form and we will be in touch
-                quickly.
+                about a{" "}
+                <Link href="/services/" className="text-[#137868] hover:underline font-medium">
+                  specific billing or revenue cycle service
+                </Link>{" "}
+                or want to know whether ClearClaim RCM is the right fit, fill
+                out the form and we will be in touch quickly.
               </p>
 
               <div className="space-y-6 mb-10">

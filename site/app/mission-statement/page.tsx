@@ -125,7 +125,7 @@ export default function MissionPage() {
         <div className="relative h-72 w-full overflow-hidden">
           <Image
             src="/products/28.png"
-            alt="Healthcare professionals collaborating"
+            alt="Medical billing professionals collaborating on revenue cycle management solutions"
             fill
             className="object-cover"
           />
@@ -183,7 +183,7 @@ export default function MissionPage() {
             <div>
               <Image
                 src="/products/25.png"
-                alt="Payment received confirmation"
+                alt="Medical claim payment received confirming successful revenue cycle management"
                 width={540}
                 height={480}
                 className="rounded-2xl object-cover w-full"
@@ -212,9 +212,12 @@ export default function MissionPage() {
                 to ask.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-8">
-                The free audit is where we start. Come in, let Michelle review
-                what you have, and see what we find. No obligation. If your
-                current setup is working, she will say so.
+                The free audit is where we start. Come in, let{" "}
+                <Link href="/about-us/" className="text-[#137868] hover:underline font-medium">
+                  Michelle Recek
+                </Link>{" "}
+                review what you have, and see what we find. No obligation. If
+                your current setup is working, she will say so.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link

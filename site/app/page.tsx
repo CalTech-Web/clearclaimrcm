@@ -141,7 +141,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/gallery/02.jpg"
-            alt="Medical billing professionals"
+            alt="Revenue cycle management professionals helping independent healthcare providers get paid"
             fill
             className="object-cover"
             priority
@@ -314,7 +314,7 @@ export default function HomePage() {
             <div className="relative">
               <Image
                 src="/products/21.png"
-                alt="Healthcare professional"
+                alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
                 width={540}
                 height={600}
                 className="rounded-2xl object-cover w-full"

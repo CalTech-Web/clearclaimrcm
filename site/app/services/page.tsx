@@ -299,8 +299,11 @@ export default function ServicesPage() {
             Start With a Free Audit
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Michelle reviews your denial rate, AR aging, and coding accuracy at
-            no cost. Book a consultation or reach out directly.
+            <Link href="/about-us/" className="text-white font-semibold hover:underline">
+              Michelle Recek
+            </Link>{" "}
+            reviews your denial rate, AR aging, and coding accuracy at no cost.
+            Book a consultation or reach out directly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
