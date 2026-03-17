@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, FileText, TrendingUp, BarChart2, ShieldCheck, SearchCheck, type LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Medical Billing Services | Clear Claim RCM",
+  title: "Medical Billing Services | ClearClaim RCM",
   description:
     "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
   alternates: {
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Clear Claim RCM",
-    title: "Medical Billing Services | Clear Claim RCM",
+    siteName: "ClearClaim RCM",
+    title: "Medical Billing Services | ClearClaim RCM",
     description:
       "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
     url: "https://clearclaimrcm.com/services/",
@@ -21,24 +22,25 @@ export const metadata: Metadata = {
         url: "/gallery/02.jpg",
         width: 1200,
         height: 630,
-        alt: "Clear Claim RCM Medical Billing Services",
+        alt: "ClearClaim RCM Medical Billing Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medical Billing Services | Clear Claim RCM",
+    title: "Medical Billing Services | ClearClaim RCM",
     description:
       "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
     images: ["/gallery/02.jpg"],
   },
 };
 
-const services: { number: string; title: string; icon: LucideIcon; desc: string; bullets: string[]; cta?: boolean }[] = [
+const services: { number: string; title: string; icon: LucideIcon; img: string; desc: string; bullets: string[]; cta?: boolean }[] = [
   {
     number: "01",
     title: "Medical Claim Coding",
     icon: ClipboardList,
+    img: "/products/claim-1.png",
     desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. Our AAPC-certified coders assign ICD, CPT, and HCPCS codes to the standard, specialty by specialty.",
     bullets: [
       "ICD, CPT, and HCPCS code assignment",
@@ -51,6 +53,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "02",
     title: "Charge Entry",
     icon: FilePlus,
+    img: "/products/22.png",
     desc: "A clean claim starts before the claim is even built. Patient demographics, insurance details, and service data all have to be entered correctly, or the claim goes out with a flaw baked in. We verify before we submit.",
     bullets: [
       "Complete patient and insurance data entry",
@@ -63,6 +66,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "03",
     title: "Claim Submission",
     icon: Send,
+    img: "/products/23.png",
     desc: "Claims go out electronically to all major payers, with paper submission where required. Before they go, every claim gets scrubbed for errors. Timely filing windows are tracked. Nothing ages out.",
     bullets: [
       "Electronic and paper claim submission",
@@ -75,6 +79,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "04",
     title: "Payment Posting",
     icon: CreditCard,
+    img: "/products/paid-content.png",
     desc: "Every payment that comes in gets posted with full detail, allowed amounts, patient responsibility, adjustments, and denials. That level of documentation is how you catch underpayments before they become a pattern.",
     bullets: [
       "Insurance EOB and ERA posting",
@@ -87,6 +92,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "05",
     title: "Denial and Appeals Management",
     icon: RotateCcw,
+    img: "/products/24.png",
     desc: "Every denial gets a root cause review. We find the reason code, fix the problem, and send it back, either as a corrected claim or a formal appeal. We track each one through to resolution. Nothing gets written off because it was inconvenient to fight.",
     bullets: [
       "Root cause analysis for every denial",
@@ -99,6 +105,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "06",
     title: "Patient Billing",
     icon: FileText,
+    img: "/products/statements.png",
     desc: "After insurance pays, patients get a clear statement for whatever is left. We also field billing questions so your front desk does not have to. Clear communication reduces disputes and gets balances paid faster.",
     bullets: [
       "Professional patient statements",
@@ -111,6 +118,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "07",
     title: "Accounts Receivable (AR) Follow-Up",
     icon: TrendingUp,
+    img: "/products/business-report.png",
     desc: "Aging claims do not fix themselves. We work insurance AR and patient balances systematically, following up before things go stale. Practices that do not track this lose thousands a year to claims that simply expired.",
     bullets: [
       "Insurance AR aging management",
@@ -123,6 +131,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "08",
     title: "End-of-Month Reporting and Analytics",
     icon: BarChart2,
+    img: "/products/26.png",
     desc: "At the end of every month, you get a report showing what came in, what was denied, how your AR is aging, and how the practice is performing financially. No black box. You see the full picture.",
     bullets: [
       "Monthly collections reports",
@@ -135,6 +144,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "09",
     title: "Compliance Auditing",
     icon: ShieldCheck,
+    img: "/products/28.png",
     desc: "A payer audit is not something you want to be caught unprepared for. We review your claims, coding, and documentation against HIPAA requirements and AAPC standards on an ongoing basis. Catching compliance gaps early prevents the kind of problems that cost real money.",
     bullets: [
       "HIPAA compliance review",
@@ -147,6 +157,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "10",
     title: "Free Billing Audit",
     icon: SearchCheck,
+    img: "/products/search.png",
     desc: "Michelle reviews your current billing setup at no charge. She will look at your denial rate, your AR aging, your collections against expected reimbursement, and your coding accuracy. If your team is solid, she will tell you. If there are gaps, she will show you where the money is going.",
     bullets: [
       "Complimentary, no-obligation review",
@@ -162,13 +173,22 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-[#137868] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/02.jpg"
+            alt="Medical billing professionals at ClearClaim RCM"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
             What We Offer
           </p>
           <h1
-            className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
+            className="text-4xl sm:text-5xl font-bold text-white max-w-3xl leading-tight"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Full-Cycle Revenue Cycle Management Services
@@ -187,9 +207,7 @@ export default function ServicesPage() {
           {services.map((service, idx) => (
             <article
               key={service.number}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="flex items-center gap-3 mb-4">
@@ -223,7 +241,7 @@ export default function ServicesPage() {
                 {service.cta && (
                   <Link
                     href="/contact-us/"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] transition-colors"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#80010A] text-white font-semibold text-base hover:bg-[#600108] transition-colors shadow-md"
                   >
                     Request Your Free Audit
                     <ArrowRight size={18} />
@@ -231,9 +249,13 @@ export default function ServicesPage() {
                 )}
               </div>
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="bg-gradient-to-br from-[#137868]/10 to-[#137868]/20 rounded-2xl p-10 flex items-center justify-center min-h-64">
-                  <service.icon size={120} className="text-[#137868]/30" />
-                </div>
+                <Image
+                  src={service.img}
+                  alt={service.title}
+                  width={540}
+                  height={400}
+                  className="rounded-2xl object-cover w-full h-auto"
+                />
               </div>
             </article>
           ))}

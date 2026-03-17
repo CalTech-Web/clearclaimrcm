@@ -14,14 +14,14 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-800">
           {/* Brand */}
           <div>
             <Image
               src="/logos/Logo.png"
-              alt="Clear Claim RCM Logo"
-              width={160}
-              height={60}
+              alt="ClearClaim RCM Logo"
+              width={200}
+              height={72}
               className="object-contain mb-4 brightness-0 invert"
             />
             <p className="text-sm leading-relaxed text-gray-400 mt-4">
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:pl-12 pt-8 md:pt-0">
             <h3
               className="text-white font-semibold text-base mb-5"
               style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="md:pl-12 pt-8 md:pt-0">
             <h3
               className="text-white font-semibold text-base mb-5"
               style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-          <p>© 2025 Clear Claim RCM. All Rights Reserved.</p>
+          <p>© 2026 ClearClaim RCM. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

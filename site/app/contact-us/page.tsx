@@ -1,36 +1,37 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, Linkedin, Clock, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Free Billing Audit | Clear Claim RCM",
+  title: "Contact Us | ClearClaim RCM",
   description:
-    "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+    "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
   alternates: {
     canonical: "/contact-us/",
   },
   openGraph: {
     type: "website",
-    siteName: "Clear Claim RCM",
-    title: "Free Billing Audit | Clear Claim RCM",
+    siteName: "ClearClaim RCM",
+    title: "Contact Us | ClearClaim RCM",
     description:
-      "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+      "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
     url: "https://clearclaimrcm.com/contact-us/",
     images: [
       {
         url: "/gallery/02.jpg",
         width: 1200,
         height: 630,
-        alt: "Clear Claim RCM - Free Billing Audit",
+        alt: "ClearClaim RCM - Contact Us",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Billing Audit | Clear Claim RCM",
+    title: "Contact Us | ClearClaim RCM",
     description:
-      "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+      "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
     images: ["/gallery/02.jpg"],
   },
 };
@@ -87,9 +88,18 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Page header */}
-      <section className="bg-[#137868] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/02.jpg"
+            alt="Medical billing professionals at ClearClaim RCM"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[#F15200] font-bold text-sm uppercase tracking-widest mb-4">
             Get In Touch
           </p>
           <h1
@@ -109,96 +119,18 @@ export default function ContactPage() {
       {/* Contact section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Contact info */}
-            <div>
-              <h2
-                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Talk to Michelle About Your Revenue Cycle
-              </h2>
-              <p className="text-gray-600 text-base leading-relaxed mb-10">
-                Call, email, or book through Calendly. If you have questions
-                about a{" "}
-                <Link href="/services/" className="text-[#137868] hover:underline font-medium">
-                  specific billing or revenue cycle service
-                </Link>{" "}
-                or want to know whether ClearClaim RCM is the right fit, fill
-                out the form and we will be in touch quickly.
-              </p>
-
-              <div className="space-y-6 mb-10">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                    <Phone size={18} className="text-[#137868]" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">Phone</p>
-                    <a
-                      href="tel:3034341355"
-                      className="text-[#137868] hover:underline text-base font-medium"
-                    >
-                      303-434-1355
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                    <Mail size={18} className="text-[#137868]" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">Email</p>
-                    <a
-                      href="mailto:michelle@clearclaimRCM.com"
-                      className="text-[#137868] hover:underline text-base font-medium"
-                    >
-                      michelle@clearclaimRCM.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                    <Linkedin size={18} className="text-[#137868]" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">LinkedIn</p>
-                    <a
-                      href="https://linkedin.com/company/clearclaim-rcm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#137868] hover:underline text-base font-medium"
-                    >
-                      linkedin.com/company/clearclaim-rcm
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                    <Clock size={18} className="text-[#137868]" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">Schedule Online</p>
-                    <a
-                      href="https://calendly.com/michelle-clearclaimrcm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#137868] hover:underline text-base font-medium"
-                    >
-                      calendly.com/michelle-clearclaimrcm
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#137868] rounded-2xl p-8 text-white">
+            <div className="flex flex-col gap-8">
+              {/* Free Billing Audit card - prioritized at top on mobile */}
+              <div className="bg-[#137868] rounded-2xl p-8 text-white order-first lg:order-last">
                 <h3
-                  className="text-lg font-bold mb-2"
+                  className="text-xl font-bold mb-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Free Billing Audit
                 </h3>
-                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                <p className="text-white/90 text-sm leading-relaxed mb-4">
                   Michelle reviews your denial rate, AR aging, and coding
                   accuracy at no cost. If your current setup is running well,
                   she will tell you that. If there are gaps, you will see
@@ -213,6 +145,87 @@ export default function ContactPage() {
                   Book via Calendly
                   <ArrowRight size={16} />
                 </a>
+              </div>
+
+              <div>
+                <h2
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  Talk to Michelle About Your Revenue Cycle
+                </h2>
+                <p className="text-gray-600 text-base leading-relaxed mb-8">
+                  Call, email, or book through Calendly. If you have questions
+                  about a{" "}
+                  <Link href="/services/" className="text-[#137868] hover:underline font-medium">
+                    specific billing or revenue cycle service
+                  </Link>{" "}
+                  or want to know whether ClearClaim RCM is the right fit, fill
+                  out the form and we will be in touch quickly.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
+                      <Phone size={18} className="text-[#137868]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Phone</p>
+                      <a
+                        href="tel:3034341355"
+                        className="text-[#137868] hover:underline text-base font-medium"
+                      >
+                        303-434-1355
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
+                      <Mail size={18} className="text-[#137868]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Email</p>
+                      <a
+                        href="mailto:michelle@clearclaimRCM.com"
+                        className="text-[#137868] hover:underline text-base font-medium"
+                      >
+                        michelle@clearclaimRCM.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
+                      <Linkedin size={18} className="text-[#137868]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">LinkedIn</p>
+                      <a
+                        href="https://linkedin.com/company/clearclaim-rcm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#137868] hover:underline text-base font-medium"
+                      >
+                        linkedin.com/company/clearclaim-rcm
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
+                      <Clock size={18} className="text-[#137868]" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Schedule Online</p>
+                      <a
+                        href="https://calendly.com/michelle-clearclaimrcm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#137868] hover:underline text-base font-medium"
+                      >
+                        calendly.com/michelle-clearclaimrcm
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

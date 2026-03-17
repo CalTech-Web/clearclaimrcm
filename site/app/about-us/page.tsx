@@ -4,33 +4,33 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Eye, Shield, Zap, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Clear Claim RCM | Medical Billing Experts",
+  title: "About ClearClaim RCM | Medical Billing Experts",
   description:
-    "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
+    "Learn about ClearClaim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
   alternates: {
     canonical: "/about-us/",
   },
   openGraph: {
     type: "website",
-    siteName: "Clear Claim RCM",
-    title: "About Clear Claim RCM | Medical Billing Experts",
+    siteName: "ClearClaim RCM",
+    title: "About ClearClaim RCM | Medical Billing Experts",
     description:
-      "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
+      "Learn about ClearClaim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
     url: "https://clearclaimrcm.com/about-us/",
     images: [
       {
         url: "/gallery/02.jpg",
         width: 1200,
         height: 630,
-        alt: "Clear Claim RCM - About Us",
+        alt: "ClearClaim RCM - About Us",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Clear Claim RCM | Medical Billing Experts",
+    title: "About ClearClaim RCM | Medical Billing Experts",
     description:
-      "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
+      "Learn about ClearClaim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
     images: ["/gallery/02.jpg"],
   },
 };
@@ -71,16 +71,25 @@ export default function AboutPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-[#137868] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/02.jpg"
+            alt="Medical billing professionals at ClearClaim RCM"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4">
             Our Story
           </p>
           <h1
             className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            About Clear Claim RCM
+            About ClearClaim RCM
           </h1>
           <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
             ClearClaim RCM launched in 2025, but Michelle Recek&rsquo;s 20 years
@@ -97,10 +106,10 @@ export default function AboutPage() {
             <div>
               <Image
                 src="/team/michelle-recek.png"
-                alt="Michelle Recek, Founder of Clear Claim RCM"
+                alt="Michelle Recek, Founder of ClearClaim RCM"
                 width={500}
                 height={560}
-                className="rounded-2xl object-cover w-full"
+                className="rounded-2xl object-cover w-full aspect-[4/5]"
               />
             </div>
             <div>
@@ -144,16 +153,16 @@ export default function AboutPage() {
               >
                 Career Highlights
               </h3>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-4 mb-10">
                 {career.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle size={18} className="text-[#137868] shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                    <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 pt-2">
                 <span className="px-4 py-2 bg-[#137868]/10 text-[#137868] rounded-full text-sm font-semibold">
                   AAPC Certified
                 </span>
@@ -244,13 +253,13 @@ export default function AboutPage() {
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="relative w-full">
               <Image
                 src="/products/29.png"
-                alt="Independent healthcare providers and clinical staff served by Clear Claim RCM"
+                alt="Independent healthcare providers and clinical staff served by ClearClaim RCM"
                 width={540}
                 height={480}
-                className="rounded-2xl object-cover w-full"
+                className="rounded-2xl object-cover w-full h-auto"
               />
             </div>
           </div>
@@ -280,7 +289,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/services/"
-              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors text-center"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors"
             >
               View Our Services
             </Link>

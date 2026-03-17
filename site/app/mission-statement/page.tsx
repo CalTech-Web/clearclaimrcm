@@ -5,33 +5,33 @@ import { ArrowRight, Target, Eye, Zap, Users, FileCheck, Heart } from "lucide-re
 import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Mission | Clear Claim RCM Medical Billing",
+  title: "Our Mission | ClearClaim RCM Medical Billing",
   description:
-    "The mission of Clear Claim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
+    "The mission of ClearClaim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
   alternates: {
     canonical: "/mission-statement/",
   },
   openGraph: {
     type: "website",
-    siteName: "Clear Claim RCM",
-    title: "Our Mission | Clear Claim RCM Medical Billing",
+    siteName: "ClearClaim RCM",
+    title: "Our Mission | ClearClaim RCM Medical Billing",
     description:
-      "The mission of Clear Claim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
+      "The mission of ClearClaim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
     url: "https://clearclaimrcm.com/mission-statement/",
     images: [
       {
         url: "/gallery/02.jpg",
         width: 1200,
         height: 630,
-        alt: "Clear Claim RCM Mission Statement",
+        alt: "ClearClaim RCM Mission Statement",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Mission | Clear Claim RCM Medical Billing",
+    title: "Our Mission | ClearClaim RCM Medical Billing",
     description:
-      "The mission of Clear Claim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
+      "The mission of ClearClaim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
     images: ["/gallery/02.jpg"],
   },
 };
@@ -73,9 +73,18 @@ export default function MissionPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-[#137868] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/02.jpg"
+            alt="Medical billing professionals at ClearClaim RCM"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4">
             Our Purpose
           </p>
           <h1
@@ -102,9 +111,7 @@ export default function MissionPage() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            Helping Providers Get Paid,
-            <br />
-            <span className="text-[#137868]">Fully, Ethically, and On Time.</span>
+            Helping Providers Get Paid, Fully, Ethically, and On Time.
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
             Most independent providers are not losing money because of bad
@@ -159,9 +166,9 @@ export default function MissionPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {pillars.map((p) => (
-              <article key={p.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                  <p.icon size={28} className="text-[#137868]" />
+              <article key={p.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <div className="w-12 h-12 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
+                  <p.icon size={22} className="text-[#137868]" />
                 </div>
                 <h3
                   className="text-lg font-semibold text-gray-900 mb-3"
@@ -180,13 +187,13 @@ export default function MissionPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="relative w-full">
               <Image
                 src="/products/25.png"
                 alt="Medical claim payment received confirming successful revenue cycle management"
                 width={540}
                 height={480}
-                className="rounded-2xl object-cover w-full"
+                className="rounded-2xl object-cover w-full h-auto"
               />
             </div>
             <div>
@@ -194,7 +201,7 @@ export default function MissionPage() {
                 Our Commitment to You
               </p>
               <h2
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
+                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 What Accountability Actually Looks Like
@@ -252,13 +259,21 @@ export default function MissionPage() {
             Let us show you what billing that actually works looks like. Start
             with a free audit. No obligation.
           </p>
-          <Link
-            href="/contact-us/"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold text-base hover:bg-gray-100 transition-colors"
-          >
-            Get Started
-            <ArrowRight size={18} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact-us/"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold text-base hover:bg-gray-100 transition-colors"
+            >
+              Get Started
+              <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/services/"
+              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#137868] transition-colors text-center"
+            >
+              View Our Services
+            </Link>
+          </div>
         </div>
       </section>
     </>

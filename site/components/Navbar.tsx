@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us/" },
-  { label: "Mission Statement", href: "/mission-statement/" },
+  { label: "Mission", href: "/mission-statement/" },
   { label: "Services", href: "/services/" },
   { label: "Contact Us", href: "/contact-us/" },
 ];
@@ -22,10 +22,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logos/Logo.png"
-            alt="Clear Claim RCM Logo"
-            width={160}
-            height={60}
-            className="object-contain"
+            alt="ClearClaim RCM Logo"
+            width={140}
+            height={48}
+            className="object-contain max-h-12"
           />
         </Link>
 

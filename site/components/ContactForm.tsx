@@ -40,7 +40,8 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <p className="text-xs text-gray-500 mb-1">Fields marked with <span className="text-[#80010A] font-semibold">*</span> are required.</p>
+      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1.5">
             First Name <span className="text-[#80010A]">*</span>

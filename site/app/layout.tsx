@@ -20,33 +20,33 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://clearclaimrcm.com"),
-  title: "Clear Claim RCM | Medical Billing & Revenue Cycle Management",
+  title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
   description:
-    "Clear Claim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+    "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    siteName: "Clear Claim RCM",
-    title: "Clear Claim RCM | Medical Billing & Revenue Cycle Management",
+    siteName: "ClearClaim RCM",
+    title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
     description:
-      "Clear Claim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+      "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
     url: "https://clearclaimrcm.com",
     images: [
       {
         url: "/gallery/02.jpg",
         width: 1200,
         height: 630,
-        alt: "Clear Claim RCM - Medical Billing Professionals",
+        alt: "ClearClaim RCM - Medical Billing Professionals",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clear Claim RCM | Medical Billing & Revenue Cycle Management",
+    title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
     description:
-      "Clear Claim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+      "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
     images: ["/gallery/02.jpg"],
   },
 };
@@ -54,11 +54,11 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Clear Claim RCM",
+  name: "ClearClaim RCM",
   url: "https://clearclaimrcm.com",
   logo: "https://clearclaimrcm.com/logos/Logo.png",
   description:
-    "Clear Claim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran.",
+    "ClearClaim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran.",
   telephone: "+1-303-434-1355",
   email: "michelle@clearclaimRCM.com",
   foundingDate: "2025",

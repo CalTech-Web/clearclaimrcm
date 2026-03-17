@@ -50,13 +50,13 @@ const testimonials = [
     quote:
       "ClearClaim RCM has transformed our billing process, maximizing our reimbursements with clean, efficient claims every time.",
     name: "Dr. Smith",
-    role: "Provider",
+    role: "Family Medicine, Colorado",
   },
   {
     quote:
       "Their team diligently reviews and follows up on denials, ensuring we get every dollar we've earned.",
     name: "Janet Lee",
-    role: "Provider",
+    role: "Office Manager, Behavioral Health Clinic",
   },
 ];
 
@@ -97,12 +97,12 @@ export default function HomePage() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Clear Claim RCM",
+    name: "ClearClaim RCM",
     url: "https://clearclaimrcm.com",
     logo: "https://clearclaimrcm.com/logos/Logo.png",
     image: "https://clearclaimrcm.com/gallery/02.jpg",
     description:
-      "Clear Claim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran, helping independent providers and small to mid-sized clinics get paid faster.",
+      "ClearClaim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran, helping independent providers and small to mid-sized clinics get paid faster.",
     telephone: "+1-303-434-1355",
     email: "michelle@clearclaimRCM.com",
     foundingDate: "2025",
@@ -122,7 +122,7 @@ export default function HomePage() {
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Clear Claim RCM",
+    name: "ClearClaim RCM",
     url: "https://clearclaimrcm.com",
   };
 
@@ -197,26 +197,26 @@ export default function HomePage() {
       {/* Stats bar */}
       <section className="bg-[#80010A] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-            <div className="flex flex-col items-center gap-2">
-              <Clock size={28} className="text-white/70" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center text-white">
+            <div className="flex flex-col items-center gap-2 py-2">
+              <Clock size={28} className="text-white" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>20+</p>
-              <p className="text-sm text-white/80">Years Experience</p>
+              <p className="text-sm text-white font-medium">Years Experience</p>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <BadgeCheck size={28} className="text-white/70" />
+            <div className="flex flex-col items-center gap-2 py-2">
+              <BadgeCheck size={28} className="text-white" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>AAPC</p>
-              <p className="text-sm text-white/80">Certified Coding</p>
+              <p className="text-sm text-white font-medium">Certified Coding</p>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <Shield size={28} className="text-white/70" />
+            <div className="flex flex-col items-center gap-2 py-2">
+              <Shield size={28} className="text-white" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>HIPAA</p>
-              <p className="text-sm text-white/80">Compliant</p>
+              <p className="text-sm text-white font-medium">Compliant</p>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <Gift size={28} className="text-white/70" />
+            <div className="flex flex-col items-center gap-2 py-2">
+              <Gift size={28} className="text-white" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Free</p>
-              <p className="text-sm text-white/80">Billing Audit</p>
+              <p className="text-sm text-white font-medium">Billing Audit</p>
             </div>
           </div>
         </div>
@@ -277,7 +277,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                Why Clear Claim RCM
+                Why ClearClaim RCM
               </p>
               <h2
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
@@ -311,7 +311,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative pb-10 lg:pb-0">
               <Image
                 src="/products/21.png"
                 alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
@@ -319,7 +319,7 @@ export default function HomePage() {
                 height={600}
                 className="rounded-2xl object-cover w-full"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs hidden lg:block">
+              <div className="mt-6 lg:absolute lg:-bottom-6 lg:left-6 lg:right-6 bg-white rounded-2xl shadow-xl p-6">
                 <p className="text-[#137868] font-bold text-2xl" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Audit</p>
                 <p className="text-gray-600 text-sm mt-1">No obligation review of your current billing performance.</p>
               </div>
@@ -342,12 +342,10 @@ export default function HomePage() {
               Five Steps. No Shortcuts.
             </h2>
           </div>
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {/* Connector line — desktop only */}
-            <div className="hidden lg:block absolute left-0 right-0 h-0.5 bg-[#137868]/25 pointer-events-none" style={{ top: "24px" }} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {process.map((step, i) => (
-              <div key={step.title} className="relative text-center z-10">
-                <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 ring-4 ring-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <div key={step.title} className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mb-5 shrink-0 ring-4 ring-white shadow-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   {i + 1}
                 </div>
                 <h3
