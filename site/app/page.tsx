@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Star, ChevronDown } from "lucide-react";
+import { CheckCircle, ArrowRight, Star, ChevronDown, Clock, BadgeCheck, Shield, Gift } from "lucide-react";
 
 const services = [
   {
@@ -158,21 +158,25 @@ export default function HomePage() {
       <section className="bg-[#80010A] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-            <div>
+            <div className="flex flex-col items-center gap-2">
+              <Clock size={28} className="text-white/70" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>20+</p>
-              <p className="text-sm mt-1 text-white/80">Years Experience</p>
+              <p className="text-sm text-white/80">Years Experience</p>
             </div>
-            <div>
+            <div className="flex flex-col items-center gap-2">
+              <BadgeCheck size={28} className="text-white/70" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>AAPC</p>
-              <p className="text-sm mt-1 text-white/80">Certified Coding</p>
+              <p className="text-sm text-white/80">Certified Coding</p>
             </div>
-            <div>
+            <div className="flex flex-col items-center gap-2">
+              <Shield size={28} className="text-white/70" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>HIPAA</p>
-              <p className="text-sm mt-1 text-white/80">Compliant</p>
+              <p className="text-sm text-white/80">Compliant</p>
             </div>
-            <div>
+            <div className="flex flex-col items-center gap-2">
+              <Gift size={28} className="text-white/70" />
               <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Free</p>
-              <p className="text-sm mt-1 text-white/80">Billing Audit</p>
+              <p className="text-sm text-white/80">Billing Audit</p>
             </div>
           </div>
         </div>
