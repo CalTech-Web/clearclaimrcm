@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Eye, Shield, Zap, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Clear Claim RCM",
@@ -21,18 +21,22 @@ const career = [
 const values = [
   {
     title: "Transparency",
+    icon: Eye,
     desc: "Providers deserve full visibility into where every dollar in their revenue cycle is going. We provide clear, honest reporting on every claim.",
   },
   {
     title: "Integrity",
+    icon: Shield,
     desc: "We follow AAPC-certified standards and HIPAA-compliant processes. Every decision is made with ethics and accuracy at the forefront.",
   },
   {
     title: "Fighter Mentality",
+    icon: Zap,
     desc: "We fight for every dollar you have earned. No denied claim goes unchallenged. No underpayment goes unaddressed.",
   },
   {
     title: "Partnership",
+    icon: Users,
     desc: "We are your revenue cycle partner, not just a billing vendor. Your financial health is our ongoing responsibility.",
   },
 ];
@@ -157,6 +161,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {values.map((v) => (
               <div key={v.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
+                  <v.icon size={24} className="text-[#137868]" />
+                </div>
                 <h3
                   className="text-xl font-semibold text-[#137868] mb-3"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
