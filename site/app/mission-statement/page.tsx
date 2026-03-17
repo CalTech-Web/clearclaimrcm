@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Target, Eye, Zap, Users, FileCheck, Heart } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Mission Statement | Clear Claim RCM",
@@ -9,34 +10,34 @@ export const metadata: Metadata = {
     "The mission of Clear Claim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
 };
 
-const pillars = [
+const pillars: { icon: LucideIcon; title: string; desc: string }[] = [
   {
-    icon: "/products/claim-1.png",
+    icon: Target,
     title: "Specialists, Not Generalists",
     desc: "ClearClaim RCM exists solely for medical billing and revenue cycle management. We are not a generalist firm that handles billing on the side. Every process, every team member, and every tool is focused on one thing: maximizing your reimbursements.",
   },
   {
-    icon: "/products/business-report.png",
+    icon: Eye,
     title: "Transparency First",
     desc: "Providers deserve to know exactly where every dollar in their revenue cycle is going. We provide clear monthly reports, open communication, and honest assessments, so there are never any surprises.",
   },
   {
-    icon: "/products/search.png",
+    icon: Zap,
     title: "Fighter Mentality",
     desc: "We fight for every dollar you have earned. No denial goes unchallenged. No underpayment goes unaddressed. Every claim is treated with individual attention from submission through reimbursement.",
   },
   {
-    icon: "/products/paid-content.png",
+    icon: Users,
     title: "Partnership, Not Vendor",
     desc: "We are your revenue cycle partner, not just another vendor in your stack. Your financial health is our ongoing responsibility, and we are with you at every stage of your practice's growth.",
   },
   {
-    icon: "/products/accountant-1.png",
+    icon: FileCheck,
     title: "Clean Claims as the Foundation",
     desc: "AAPC-compliant coding and error-free first submissions are the bedrock of everything we do. Fewer rejections mean faster payments and a healthier cash flow for your practice.",
   },
   {
-    icon: "/products/statements.png",
+    icon: Heart,
     title: "Provider-Centric Outcomes",
     desc: "Everything we do is oriented around one goal: freeing you to focus on patient care, not paperwork. The less time you spend on billing, the more time you have for what matters most.",
   },
@@ -131,7 +132,7 @@ export default function MissionPage() {
             {pillars.map((p) => (
               <div key={p.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                  <Image src={p.icon} alt={p.title} width={36} height={36} className="object-contain" />
+                  <p.icon size={28} className="text-[#137868]" />
                 </div>
                 <h3
                   className="text-lg font-semibold text-gray-900 mb-3"
