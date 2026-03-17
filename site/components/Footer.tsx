@@ -93,8 +93,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500 space-y-2">
           <p>© 2026 ClearClaim RCM. All Rights Reserved.</p>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://caltechweb.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
+              Caltechweb
+            </a>
+          </p>
         </div>
       </div>
     </footer>
