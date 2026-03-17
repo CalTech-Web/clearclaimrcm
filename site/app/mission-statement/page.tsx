@@ -14,32 +14,32 @@ const pillars: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Target,
     title: "Specialists, Not Generalists",
-    desc: "ClearClaim RCM exists solely for medical billing and revenue cycle management. We are not a generalist firm that handles billing on the side. Every process, every team member, and every tool is focused on one thing: maximizing your reimbursements.",
+    desc: "We do not do payroll. We do not do bookkeeping. We do medical billing and revenue cycle management, full stop. Every person on our team, every process we run, every dollar of attention we give goes toward one thing.",
   },
   {
     icon: Eye,
     title: "Transparency First",
-    desc: "Providers deserve to know exactly where every dollar in their revenue cycle is going. We provide clear monthly reports, open communication, and honest assessments, so there are never any surprises.",
+    desc: "You get a monthly report showing exactly what was submitted, what was paid, what was denied, and what is still outstanding. No vague summaries. If there is a problem with your AR, you will see it before it becomes a cash flow problem.",
   },
   {
     icon: Zap,
     title: "Fighter Mentality",
-    desc: "We fight for every dollar you have earned. No denial goes unchallenged. No underpayment goes unaddressed. Every claim is treated with individual attention from submission through reimbursement.",
+    desc: "A denied claim is not a closed claim. We pull the reason code, fix the issue, and resubmit or appeal. We track every denial through resolution. Nothing gets written off without a fight.",
   },
   {
     icon: Users,
     title: "Partnership, Not Vendor",
-    desc: "We are your revenue cycle partner, not just another vendor in your stack. Your financial health is our ongoing responsibility, and we are with you at every stage of your practice's growth.",
+    desc: "We are not a ticket queue. When something changes with your payer mix or your volumes shift, we adjust. Your financial health is something we monitor ongoing, not something we revisit when you call.",
   },
   {
     icon: FileCheck,
     title: "Clean Claims as the Foundation",
-    desc: "AAPC-compliant coding and error-free first submissions are the bedrock of everything we do. Fewer rejections mean faster payments and a healthier cash flow for your practice.",
+    desc: "The fastest way to get paid is to submit a clean claim the first time. AAPC-compliant coding and pre-submission scrubbing mean fewer rejections, fewer resubmissions, and faster cash in your account.",
   },
   {
     icon: Heart,
     title: "Provider-Centric Outcomes",
-    desc: "Everything we do is oriented around one goal: freeing you to focus on patient care, not paperwork. The less time you spend on billing, the more time you have for what matters most.",
+    desc: "Every process we run is designed so you spend less time on billing. That is the measure. Not just claims submitted, but time you get back for patient care.",
   },
 ];
 
@@ -58,6 +58,11 @@ export default function MissionPage() {
           >
             Mission Statement
           </h1>
+          <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
+            Providers lose money in ways they rarely see. Denials left
+            unchallenged. Claims that age out. Codes that miss by one digit.
+            This is what we exist to stop.
+          </p>
         </div>
       </section>
 
@@ -76,17 +81,15 @@ export default function MissionPage() {
             <span className="text-[#137868]">Fully, Ethically, and On Time.</span>
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-            At ClearClaim RCM, our mission is to be the revenue cycle partner
-            that independent providers and small to mid-sized clinics deserve.
-            We combine payer-side expertise, AAPC-certified coding standards,
-            and an unwavering commitment to transparency to ensure that every
-            dollar you earn finds its way into your account.
+            Most independent providers are not losing money because of bad
+            medicine. They are losing it because a denial sat unanswered, a
+            code was slightly off, or a claim aged out before anyone noticed.
+            ClearClaim RCM was built to close those gaps.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
-            We believe that when billing is done right, providers can focus on
-            patients. When denials are fought aggressively, practices grow. And
-            when revenue cycle management is built on trust and integrity, the
-            entire healthcare ecosystem is stronger.
+            When billing is done right, providers stop thinking about billing.
+            That is the goal. Get paid fully, get paid on time, and have the
+            reports to prove it.
           </p>
         </div>
       </section>
@@ -171,21 +174,20 @@ export default function MissionPage() {
                 Your Practice Deserves a Billing Partner Who Gets Results
               </h2>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                ClearClaim RCM was founded because too many independent providers
-                were leaving money on the table, not because of poor patient care,
-                but because of inefficient billing, unchallenged denials, and a
-                lack of visibility into their revenue cycle.
+                Too many independent providers leave money behind, not from poor
+                care, but from billing that no one is watching closely. Denials
+                that go unanswered. Claims that age. Codes that miss the mark.
+                ClearClaim RCM exists to close those gaps.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-4">
-                Our commitment is simple: we will manage your revenue cycle with
-                the same level of attention and dedication that you bring to your
-                patients every day. Every claim matters. Every dollar matters.
-                Every provider we serve matters.
+                Our commitment is to manage your revenue cycle the way you
+                manage patient care. With attention, accountability, and no
+                tolerance for letting things slip.
               </p>
               <p className="text-gray-700 text-base leading-relaxed mb-8">
-                We start with a free, no-obligation billing audit so you can see
-                exactly what we offer before making any commitment. That is the
-                transparency we stand for.
+                The free audit is where we start. Come in, let Michelle review
+                what you have, and see what we find. No obligation. If your
+                current setup is working, she will say so.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -217,14 +219,14 @@ export default function MissionPage() {
             Join Practices That Trust ClearClaim RCM
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Let us show you what transparent, ethical, and results-driven
-            revenue cycle management looks like.
+            Let us show you what billing that actually works looks like. Start
+            with a free audit. No obligation.
           </p>
           <Link
             href="/contact-us/"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold text-base hover:bg-gray-100 transition-colors"
           >
-            Get Started Today
+            Get Started
             <ArrowRight size={18} />
           </Link>
         </div>

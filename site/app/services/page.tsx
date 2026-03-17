@@ -13,7 +13,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "01",
     title: "Medical Claim Coding",
     icon: ClipboardList,
-    desc: "We translate diagnoses, procedures, and treatments into standardized ICD, CPT, and HCPCS codes following AAPC-compliant coding standards. Accurate coding at the source means fewer denials, faster payments, and maximum reimbursement for every encounter.",
+    desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. Our AAPC-certified coders assign ICD, CPT, and HCPCS codes to the standard, specialty by specialty.",
     bullets: [
       "ICD, CPT, and HCPCS code assignment",
       "AAPC-certified coding standards",
@@ -25,7 +25,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "02",
     title: "Charge Entry",
     icon: FilePlus,
-    desc: "Every patient visit is carefully entered into your practice management system with complete patient demographics, insurance information, and service details. Clean charge entry is the foundation of a clean claim, and we get it right from the start.",
+    desc: "A clean claim starts before the claim is even built. Patient demographics, insurance details, and service data all have to be entered correctly, or the claim goes out with a flaw baked in. We verify before we submit.",
     bullets: [
       "Complete patient and insurance data entry",
       "Verification before claim submission",
@@ -37,7 +37,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "03",
     title: "Claim Submission",
     icon: Send,
-    desc: "We send completed claims to insurance companies electronically or via paper, depending on payer requirements. Our focus is on timely, error-free submissions that move through payer systems quickly and get your practice paid faster.",
+    desc: "Claims go out electronically to all major payers, with paper submission where required. Before they go, every claim gets scrubbed for errors. Timely filing windows are tracked. Nothing ages out.",
     bullets: [
       "Electronic and paper claim submission",
       "Timely filing compliance tracking",
@@ -49,7 +49,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "04",
     title: "Payment Posting",
     icon: CreditCard,
-    desc: "Every insurance and patient payment is recorded accurately in your system, with full documentation of allowed amounts, patient responsibility, adjustments, and denials. Accurate payment posting is critical for identifying underpayments and tracking financial performance.",
+    desc: "Every payment that comes in gets posted with full detail, allowed amounts, patient responsibility, adjustments, and denials. That level of documentation is how you catch underpayments before they become a pattern.",
     bullets: [
       "Insurance EOB and ERA posting",
       "Patient payment recording",
@@ -61,7 +61,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "05",
     title: "Denial and Appeals Management",
     icon: RotateCcw,
-    desc: "When claims are denied, we do not let them sit. We identify the denial reason, correct any issues, and aggressively resubmit or appeal every claim. Our team tracks every denied claim through resolution so your practice recovers the full amount earned.",
+    desc: "Every denial gets a root cause review. We find the reason code, fix the problem, and send it back, either as a corrected claim or a formal appeal. We track each one through to resolution. Nothing gets written off because it was inconvenient to fight.",
     bullets: [
       "Root cause analysis for every denial",
       "Claim correction and resubmission",
@@ -73,7 +73,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "06",
     title: "Patient Billing",
     icon: FileText,
-    desc: "After insurance payment is applied, we send clear and professional statements to patients for outstanding balances. We also handle billing inquiries, making it easy for your patients to understand their responsibility and resolve balances.",
+    desc: "After insurance pays, patients get a clear statement for whatever is left. We also field billing questions so your front desk does not have to. Clear communication reduces disputes and gets balances paid faster.",
     bullets: [
       "Professional patient statements",
       "Balance after insurance billing",
@@ -85,7 +85,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "07",
     title: "Accounts Receivable (AR) Follow-Up",
     icon: TrendingUp,
-    desc: "Unpaid claims and patient balances are tracked and followed up on systematically. We reduce your outstanding AR and improve cash flow by ensuring nothing slips through the cracks, whether it is an aging insurance claim or an overdue patient balance.",
+    desc: "Aging claims do not fix themselves. We work insurance AR and patient balances systematically, following up before things go stale. Practices that do not track this lose thousands a year to claims that simply expired.",
     bullets: [
       "Insurance AR aging management",
       "Patient balance follow-up",
@@ -97,7 +97,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "08",
     title: "End-of-Month Reporting and Analytics",
     icon: BarChart2,
-    desc: "Every month, we deliver detailed financial reports that show collections, denials, AR trends, and practice performance. These reports give you full visibility into your revenue cycle so you can make informed business decisions with confidence.",
+    desc: "At the end of every month, you get a report showing what came in, what was denied, how your AR is aging, and how the practice is performing financially. No black box. You see the full picture.",
     bullets: [
       "Monthly collections reports",
       "Denial trend analysis",
@@ -109,7 +109,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "09",
     title: "Compliance Auditing",
     icon: ShieldCheck,
-    desc: "We review your processes, claims, and documentation for adherence to HIPAA, payer requirements, and AAPC coding regulations. Proactive compliance auditing prevents legal exposure, reduces payer audits, and maintains high billing standards across your practice.",
+    desc: "A payer audit is not something you want to be caught unprepared for. We review your claims, coding, and documentation against HIPAA requirements and AAPC standards on an ongoing basis. Catching compliance gaps early prevents the kind of problems that cost real money.",
     bullets: [
       "HIPAA compliance review",
       "Payer regulation adherence",
@@ -121,7 +121,7 @@ const services: { number: string; title: string; icon: LucideIcon; desc: string;
     number: "10",
     title: "Free Billing Audit",
     icon: SearchCheck,
-    desc: "Not sure if your current billing team is performing at the highest level? Michelle Recek personally offers a complimentary review of your existing billing services. If things are going well, she will tell you. If there are gaps, she will show you exactly where improvement is possible, with no obligation to switch.",
+    desc: "Michelle reviews your current billing setup at no charge. She will look at your denial rate, your AR aging, your collections against expected reimbursement, and your coding accuracy. If your team is solid, she will tell you. If there are gaps, she will show you where the money is going.",
     bullets: [
       "Complimentary, no-obligation review",
       "Performed personally by Michelle Recek",
@@ -148,9 +148,9 @@ export default function ServicesPage() {
             Full-Cycle Revenue Cycle Management Services
           </h1>
           <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
-            From coding to collections, ClearClaim RCM handles every step of
-            your revenue cycle with AAPC-certified accuracy and HIPAA-compliant
-            processes. Specialists, not generalists.
+            Ten services that cover every point in the revenue cycle, from the
+            first code entered to the last dollar collected. All AAPC-certified.
+            All HIPAA-compliant. No generalists.
           </p>
         </div>
       </section>
@@ -233,17 +233,17 @@ export default function ServicesPage() {
               {
                 step: "1",
                 title: "Free Billing Audit",
-                desc: "Michelle reviews your current billing setup at no cost. No obligation. Just honest, expert feedback.",
+                desc: "Michelle reviews your denial rate, AR aging, and coding accuracy at no cost. No pitch. Honest feedback, whether or not you decide to work with us.",
               },
               {
                 step: "2",
                 title: "Practice Onboarding",
-                desc: "We integrate with your practice management system and establish billing workflows designed for your practice.",
+                desc: "We connect to your practice management system, establish the workflows, and get everything running before your first claim goes out.",
               },
               {
                 step: "3",
                 title: "Ongoing Revenue Cycle Management",
-                desc: "Clean claims go out. Denials get fought. Reports come in. You focus on patients. We handle the rest.",
+                desc: "Claims go out clean. Denials get challenged. Reports land in your inbox every month. You stay focused on patients.",
               },
             ].map((s) => (
               <div key={s.step} className="bg-white rounded-2xl p-8 text-center shadow-sm">
@@ -270,18 +270,18 @@ export default function ServicesPage() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            Ready to Get Started?
+            Start With a Free Audit
           </h2>
           <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Contact us today to schedule your free, no-obligation billing audit
-            or book a consultation with Michelle directly.
+            Michelle reviews your denial rate, AR aging, and coding accuracy at
+            no cost. Book a consultation or reach out directly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact-us/"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 transition-colors"
             >
-              Contact Us
+              Request a Free Audit
               <ArrowRight size={18} />
             </Link>
             <a
