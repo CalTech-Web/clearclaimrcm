@@ -242,7 +242,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s) => (
-              <div
+              <article
                 key={s.title}
                 className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow group"
               >
@@ -256,7 +256,7 @@ export default function HomePage() {
                   {s.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
           <div className="text-center mt-12">
@@ -379,20 +379,20 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-white/10 backdrop-blur rounded-2xl p-8">
-                <div className="flex gap-1 mb-4">
+              <article key={t.name} className="bg-white/10 backdrop-blur rounded-2xl p-8">
+                <div className="flex gap-1 mb-4" aria-label="5 out of 5 stars">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={18} className="fill-[#F15200] text-[#F15200]" />
                   ))}
                 </div>
-                <p className="text-white text-base leading-relaxed mb-6 italic">
+                <blockquote className="text-white text-base leading-relaxed mb-6 italic">
                   &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
+                </blockquote>
+                <footer>
                   <p className="text-white font-semibold" style={{ fontFamily: "'Poppins', sans-serif" }}>{t.name}</p>
                   <p className="text-white/70 text-sm">{t.role}</p>
-                </div>
-              </div>
+                </footer>
+              </article>
             ))}
           </div>
         </div>

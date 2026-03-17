@@ -245,7 +245,7 @@ export default function ContactPage() {
           </div>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-2xl p-8 shadow-sm">
+              <article key={faq.q} className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3
                   className="text-base font-semibold text-gray-900 mb-3"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -253,7 +253,7 @@ export default function ContactPage() {
                   {faq.q}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>

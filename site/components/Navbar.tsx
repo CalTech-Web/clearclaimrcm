@@ -30,17 +30,20 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold text-gray-700 hover:text-[#137868] transition-colors"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <ul className="flex items-center gap-8 list-none m-0 p-0">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm font-semibold text-gray-700 hover:text-[#137868] transition-colors"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <Link
             href="/contact-us/"
             className="ml-2 px-5 py-2.5 rounded-full bg-[#137868] text-white text-sm font-semibold hover:bg-[#0f5f54] transition-colors"
@@ -62,17 +65,20 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block py-3 text-gray-700 font-semibold hover:text-[#137868] border-b border-gray-50 last:border-0"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="md:hidden bg-white border-t border-gray-100 px-4 pb-4" aria-label="Mobile navigation">
+          <ul className="list-none m-0 p-0">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="block py-3 text-gray-700 font-semibold hover:text-[#137868] border-b border-gray-50 last:border-0"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <Link
             href="/contact-us/"
             className="mt-3 block text-center px-5 py-2.5 rounded-full bg-[#137868] text-white text-sm font-semibold hover:bg-[#0f5f54] transition-colors"
@@ -80,7 +86,7 @@ export default function Navbar() {
           >
             Get Started
           </Link>
-        </div>
+        </nav>
       )}
     </header>
   );

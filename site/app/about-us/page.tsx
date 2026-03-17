@@ -185,7 +185,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {values.map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <article key={v.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
                   <v.icon size={24} className="text-[#137868]" />
                 </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                   {v.title}
                 </h3>
                 <p className="text-gray-600 text-base leading-relaxed">{v.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>

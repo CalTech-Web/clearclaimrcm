@@ -159,7 +159,7 @@ export default function MissionPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {pillars.map((p) => (
-              <div key={p.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <article key={p.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
                   <p.icon size={28} className="text-[#137868]" />
                 </div>
@@ -170,7 +170,7 @@ export default function MissionPage() {
                   {p.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{p.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>

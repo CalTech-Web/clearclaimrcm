@@ -185,7 +185,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {services.map((service, idx) => (
-            <div
+            <article
               key={service.number}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                 idx % 2 === 1 ? "lg:flex-row-reverse" : ""
@@ -235,7 +235,7 @@ export default function ServicesPage() {
                   <service.icon size={120} className="text-[#137868]/30" />
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
