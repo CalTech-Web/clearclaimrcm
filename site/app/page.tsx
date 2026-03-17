@@ -297,10 +297,12 @@ export default function HomePage() {
               A Clear, Proven Process
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {/* Connector line — desktop only */}
+            <div className="hidden lg:block absolute left-0 right-0 h-0.5 bg-[#137868]/25 pointer-events-none" style={{ top: "24px" }} />
             {process.map((step, i) => (
-              <div key={step.title} className="relative text-center">
-                <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mx-auto mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <div key={step.title} className="relative text-center z-10">
+                <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mx-auto mb-4 ring-4 ring-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   {i + 1}
                 </div>
                 <h3
