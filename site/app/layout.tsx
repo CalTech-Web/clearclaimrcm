@@ -4,9 +4,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://clearclaimrcm.com"),
   title: "Clear Claim RCM | Medical Billing & Revenue Cycle Management",
   description:
     "Clear Claim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

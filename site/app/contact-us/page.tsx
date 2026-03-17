@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Free Billing Audit | Clear Claim RCM",
   description:
     "Contact Clear Claim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+  alternates: {
+    canonical: "/contact-us/",
+  },
 };
 
 const faqs = [

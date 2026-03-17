@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "About Clear Claim RCM | Medical Billing Experts",
   description:
     "Learn about Clear Claim RCM, founded by 20-year healthcare veteran Michelle Recek. AAPC-certified medical billing and revenue cycle management.",
+  alternates: {
+    canonical: "/about-us/",
+  },
 };
 
 const career = [

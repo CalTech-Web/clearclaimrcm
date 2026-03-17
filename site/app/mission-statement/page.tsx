@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Our Mission | Clear Claim RCM Medical Billing",
   description:
     "The mission of Clear Claim RCM: Helping providers get paid, fully, ethically, and on time, through transparent and integrity-driven revenue cycle management.",
+  alternates: {
+    canonical: "/mission-statement/",
+  },
 };
 
 const pillars: { icon: LucideIcon; title: string; desc: string }[] = [

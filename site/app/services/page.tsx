@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Medical Billing Services | Clear Claim RCM",
   description:
     "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
+  alternates: {
+    canonical: "/services/",
+  },
 };
 
 const services: { number: string; title: string; icon: LucideIcon; desc: string; bullets: string[]; cta?: boolean }[] = [
