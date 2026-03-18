@@ -174,7 +174,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] py-24 sm:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] pt-36 sm:pt-40 pb-24 sm:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/gallery/02.jpg"
@@ -184,7 +184,7 @@ export default function ServicesPage() {
             priority
           />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.1}>
             <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
               What We Offer
@@ -192,14 +192,14 @@ export default function ServicesPage() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <h1
-              className="text-4xl sm:text-5xl font-bold text-white max-w-3xl leading-tight"
+              className="text-4xl sm:text-5xl font-bold text-white max-w-3xl mx-auto leading-tight"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Full-Cycle Revenue Cycle Management Services
             </h1>
           </FadeIn>
           <FadeIn delay={0.5}>
-            <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
+            <p className="mt-5 text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
               Ten services that cover every point in the revenue cycle, from the
               first code entered to the last dollar collected. All AAPC-certified.
               All HIPAA-compliant. No generalists.
@@ -209,36 +209,38 @@ export default function ServicesPage() {
       </section>
 
       {/* Services list */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="relative py-24 bg-white overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#137868_1px,transparent_1px),linear-gradient(to_bottom,#137868_1px,transparent_1px)] bg-[size:80px_80px] opacity-[0.015] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative">
           {services.map((service, idx) => (
             <FadeIn key={service.number}>
-              <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <SlideIn direction={idx % 2 === 1 ? "right" : "left"} className={idx % 2 === 1 ? "lg:order-2" : ""}>
+              <article className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                <SlideIn direction={idx % 2 === 1 ? "right" : "left"}>
                   <div>
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-4 mb-5">
                       <span
-                        className="text-4xl font-bold text-[#137868]/20"
+                        className="text-5xl font-bold text-[#137868]/15"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
                         {service.number}
                       </span>
-                      <div className="w-10 h-10 flex items-center justify-center bg-[#137868]/10 rounded-xl">
+                      <div className="w-12 h-12 flex items-center justify-center bg-[#137868]/10 rounded-xl">
                         <service.icon size={22} className="text-[#137868]" />
                       </div>
                     </div>
                     <h2
-                      className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                      className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {service.title}
                     </h2>
+                    <div className="w-12 h-1 bg-[#137868] rounded-full mb-5" />
                     <p className="text-gray-600 text-base leading-relaxed mb-6">
                       {service.desc}
                     </p>
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-3 mb-6">
                       {service.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-3">
+                        <li key={b} className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-2.5 border border-gray-100">
                           <CheckCircle size={17} className="text-[#137868] shrink-0 mt-0.5" />
                           <span className="text-gray-700 text-sm">{b}</span>
                         </li>
@@ -247,7 +249,7 @@ export default function ServicesPage() {
                     {service.cta && (
                       <Link
                         href="/contact-us/"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#80010A] text-white font-semibold text-base hover:bg-[#600108] transition-colors shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#80010A] text-white font-semibold text-base hover:bg-[#600108] hover:scale-105 hover:shadow-lg transition-all duration-300"
                       >
                         Request Your Free Audit
                         <ArrowRight size={18} />
@@ -255,25 +257,32 @@ export default function ServicesPage() {
                     )}
                   </div>
                 </SlideIn>
-                <SlideIn direction={idx % 2 === 1 ? "left" : "right"} className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                  <Image
-                    src={service.img}
-                    alt={service.title}
-                    width={540}
-                    height={400}
-                    className="rounded-2xl object-cover w-full h-auto"
-                  />
+                <SlideIn direction={idx % 2 === 1 ? "left" : "right"}>
+                  <div className="relative">
+                    <div className="absolute -inset-3 bg-gradient-to-br from-[#137868]/8 to-[#F15200]/8 rounded-3xl blur-xl pointer-events-none" />
+                    <Image
+                      src={service.img}
+                      alt={service.title}
+                      width={540}
+                      height={400}
+                      className="relative rounded-2xl object-cover w-full h-auto shadow-md"
+                    />
+                  </div>
                 </SlideIn>
               </article>
+              {idx < services.length - 1 && (
+                <div className="mt-20 border-t border-gray-100" />
+              )}
             </FadeIn>
           ))}
         </div>
       </section>
 
       {/* Process */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+      <section className="relative py-24 bg-gray-50 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#137868]/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
             <FadeIn delay={0.1}>
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
                 How It Works
@@ -286,9 +295,11 @@ export default function ServicesPage() {
               >
                 Getting Started is Simple
               </h2>
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
             </FadeIn>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="hidden md:block absolute top-8 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-[#137868]/20 via-[#137868]/40 to-[#137868]/20 pointer-events-none" />
             {[
               {
                 step: "1",
@@ -307,12 +318,12 @@ export default function ServicesPage() {
               },
             ].map((s, index) => (
               <ScaleIn key={s.step} delay={index * 0.15}>
-                <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-xl mx-auto mb-5" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <div className="relative bg-white rounded-2xl p-8 pt-12 text-center border border-gray-100 hover:border-[#137868]/20 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-xl ring-4 ring-gray-50 shadow-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
                     {s.step}
                   </div>
                   <h3
-                    className="text-lg font-semibold text-gray-900 mb-3"
+                    className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     {s.title}
@@ -326,16 +337,19 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#80010A] to-[#6a0108]">
+      <section className="relative py-20 bg-gradient-to-br from-[#80010A] via-[#6a0108] to-[#80010A] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_50%)] pointer-events-none" />
         <FadeIn>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl font-bold text-white mb-2"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Start With a Free Audit
             </h2>
-            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+            <div className="w-16 h-1 bg-white/40 mx-auto rounded-full mb-6" />
+            <p className="text-white/85 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
               <Link href="/about-us/" className="text-white font-semibold hover:underline">
                 Michelle Recek
               </Link>{" "}
@@ -345,7 +359,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 transition-colors hover:scale-105 hover:shadow-lg transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Request a Free Audit
                 <ArrowRight size={18} />
@@ -354,7 +368,7 @@ export default function ServicesPage() {
                 href="https://calendly.com/michelle-clearclaimrcm"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors hover:scale-105 hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300"
               >
                 Schedule a Free Consultation
               </a>

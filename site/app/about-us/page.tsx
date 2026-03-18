@@ -72,7 +72,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] py-24 sm:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] pt-36 sm:pt-40 pb-24 sm:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/gallery/02.jpg"
@@ -82,7 +82,7 @@ export default function AboutPage() {
             priority
           />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.1}>
             <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4">
               Our Story
@@ -90,35 +90,63 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <h1
-              className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
+              className="text-4xl sm:text-5xl font-bold text-white max-w-2xl mx-auto leading-tight"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               About ClearClaim RCM
             </h1>
           </FadeIn>
           <FadeIn delay={0.5}>
-            <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
+            <p className="mt-5 text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
               ClearClaim RCM launched in 2025, but Michelle Recek&rsquo;s 20 years
               in healthcare billing, credentialing, and payer operations had been
               building to it long before that.
             </p>
           </FadeIn>
+          <FadeIn delay={0.7}>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {[
+                { label: "Medical Claim Coding", color: "bg-teal-100 text-teal-700" },
+                { label: "Charge Entry", color: "bg-blue-100 text-blue-700" },
+                { label: "Claim Submission", color: "bg-violet-100 text-violet-700" },
+                { label: "Payment Posting", color: "bg-amber-100 text-amber-700" },
+                { label: "Denial & Appeals", color: "bg-rose-100 text-rose-700" },
+                { label: "Monthly Reporting", color: "bg-emerald-100 text-emerald-700" },
+              ].map((svc) => (
+                <Link
+                  key={svc.label}
+                  href="/services/"
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition-transform duration-200 ${svc.color}`}
+                >
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-current opacity-50" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-current" />
+                  </span>
+                  {svc.label}
+                </Link>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Founder bio */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-white overflow-hidden">
+        <div className="absolute -right-32 top-1/3 w-[500px] h-[500px] bg-[#137868]/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <SlideIn direction="left">
-              <div>
+              <div className="relative sticky top-28">
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#137868]/10 to-[#F15200]/10 rounded-3xl blur-xl pointer-events-none" />
                 <Image
                   src="/team/michelle-recek.png"
                   alt="Michelle Recek, Founder of ClearClaim RCM"
                   width={500}
                   height={560}
-                  className="rounded-2xl object-cover w-full aspect-[4/5]"
+                  className="relative rounded-2xl object-cover w-full aspect-[4/5] shadow-lg"
                 />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#137868]/10 rounded-2xl -z-10" />
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#F15200]/10 rounded-2xl -z-10" />
               </div>
             </SlideIn>
             <SlideIn direction="right">
@@ -132,6 +160,7 @@ export default function AboutPage() {
                 >
                   Michelle Recek
                 </h2>
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-4" />
                 <p className="text-[#137868] font-semibold text-base mb-6">
                   Founder and Director of Revenue Cycle Operations
                 </p>
@@ -150,12 +179,14 @@ export default function AboutPage() {
                   were close but not right. Claims that aged out because nobody
                   followed up. She built this to fix that.
                 </p>
-                <blockquote className="border-l-4 border-[#137868] pl-5 italic text-gray-700 text-base leading-relaxed mb-8">
-                  &ldquo;I offer more than billing services. I help you understand
-                  your revenue cycle. I&rsquo;ll show you where every dollar is
-                  going and make sure you&rsquo;re getting the maximum
-                  reimbursement for the hard work you put in every day.&rdquo;
-                </blockquote>
+                <FadeIn delay={0.3}>
+                  <blockquote className="bg-gray-50 border-l-4 border-[#137868] pl-5 pr-5 py-4 rounded-r-xl shadow-sm italic text-gray-700 text-base leading-relaxed mb-8">
+                    &ldquo;I offer more than billing services. I help you understand
+                    your revenue cycle. I&rsquo;ll show you where every dollar is
+                    going and make sure you&rsquo;re getting the maximum
+                    reimbursement for the hard work you put in every day.&rdquo;
+                  </blockquote>
+                </FadeIn>
 
                 <h3
                   className="text-lg font-semibold text-gray-900 mb-4"
@@ -163,10 +194,10 @@ export default function AboutPage() {
                 >
                   Career Highlights
                 </h3>
-                <ul className="space-y-4 mb-10">
+                <ul className="space-y-3 mb-10">
                   {career.map((item, index) => (
                     <FadeIn key={item} delay={index * 0.08}>
-                      <li className="flex items-start gap-3">
+                      <li className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-3 border border-gray-100">
                         <CheckCircle size={18} className="text-[#137868] shrink-0 mt-0.5" />
                         <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
                       </li>
@@ -192,10 +223,11 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-gray-50 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#137868]/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-16">
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
                 Our Core Values
               </p>
@@ -205,14 +237,16 @@ export default function AboutPage() {
               >
                 What Drives Everything We Do
               </h2>
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
             </div>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {values.map((v) => (
               <StaggerItem key={v.title}>
-                <article className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                  <div className="w-12 h-12 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                    <v.icon size={24} className="text-[#137868]" />
+                <article className="relative h-full bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#137868]/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#137868] to-[#1a9e88] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl group-hover:bg-[#137868] transition-all duration-300">
+                    <v.icon size={26} className="text-[#137868] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <h3
                     className="text-xl font-semibold text-[#137868] mb-3"
@@ -220,7 +254,7 @@ export default function AboutPage() {
                   >
                     {v.title}
                   </h3>
-                  <p className="text-gray-600 text-base leading-relaxed">{v.desc}</p>
+                  <p className="text-gray-600 text-base leading-relaxed flex-1">{v.desc}</p>
                 </article>
               </StaggerItem>
             ))}
@@ -229,8 +263,9 @@ export default function AboutPage() {
       </section>
 
       {/* Industries served */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-white overflow-hidden">
+        <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#137868]/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <SlideIn direction="left">
               <div>
@@ -238,12 +273,13 @@ export default function AboutPage() {
                   Who We Serve
                 </p>
                 <h2
-                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Built for Independent Providers and Growing Practices
                 </h2>
-                <p className="text-gray-600 text-base leading-relaxed mb-6">
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-6" />
+                <p className="text-gray-600 text-base leading-relaxed mb-8">
                   Independent practices often cannot justify a full in-house
                   billing team, and they should not have to. ClearClaim RCM was
                   built for exactly that gap. Michelle brings direct experience in
@@ -265,8 +301,8 @@ export default function AboutPage() {
                     "Behavioral Health and Recovery Centers",
                   ].map((item, index) => (
                     <FadeIn key={item} delay={index * 0.08}>
-                      <li className="flex items-center gap-3">
-                        <CheckCircle size={18} className="text-[#137868] shrink-0" />
+                      <li className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-3 border border-gray-100">
+                        <CheckCircle size={18} className="text-[#137868] shrink-0 mt-0.5" />
                         <span className="text-gray-700 text-sm">{item}</span>
                       </li>
                     </FadeIn>
@@ -276,12 +312,13 @@ export default function AboutPage() {
             </SlideIn>
             <SlideIn direction="right">
               <div className="relative w-full">
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#137868]/10 to-[#F15200]/10 rounded-3xl blur-xl pointer-events-none" />
                 <Image
                   src="/products/29.png"
                   alt="Independent healthcare providers and clinical staff served by ClearClaim RCM"
                   width={540}
                   height={480}
-                  className="rounded-2xl object-cover w-full h-auto"
+                  className="relative rounded-2xl object-cover w-full h-auto shadow-lg"
                 />
               </div>
             </SlideIn>
@@ -290,30 +327,33 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#80010A] to-[#6a0108]">
+      <section className="relative py-20 bg-gradient-to-br from-[#80010A] via-[#6a0108] to-[#80010A] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_50%)] pointer-events-none" />
         <FadeIn>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl font-bold text-white mb-2"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Work With a Billing Partner Who Fights for You
             </h2>
-            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+            <div className="w-16 h-1 bg-white/40 mx-auto rounded-full mb-6" />
+            <p className="text-white/85 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
               Schedule a free consultation or request your billing audit. No
               obligation, and no pitch if your current setup is working.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Get Started
                 <ArrowRight size={18} />
               </Link>
               <Link
                 href="/services/"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300"
               >
                 View Our Services
               </Link>

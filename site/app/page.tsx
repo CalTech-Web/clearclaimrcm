@@ -221,16 +221,17 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 animate-bounce z-10">
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-white/60 animate-bounce z-10">
           <ChevronDown size={28} />
         </div>
       </section>
 
       {/* Services overview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#137868]/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-16">
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
                 What We Do
               </p>
@@ -240,7 +241,8 @@ export default function HomePage() {
               >
                 Full-Cycle Revenue Cycle Management
               </h2>
-              <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
+              <p className="mt-5 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
                 From the first code entered to the last dollar collected, we own
                 the whole cycle. Nothing gets lost. Nothing sits.
               </p>
@@ -249,9 +251,10 @@ export default function HomePage() {
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s) => (
               <StaggerItem key={s.title}>
-                <article className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
-                  <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl group-hover:bg-[#137868]/20 transition-colors duration-300">
-                    <s.icon size={28} className="text-[#137868]" />
+                <article className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#137868]/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#137868] to-[#1a9e88] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl group-hover:bg-[#137868] group-hover:text-white transition-all duration-300">
+                    <s.icon size={28} className="text-[#137868] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <h3
                     className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
@@ -265,7 +268,7 @@ export default function HomePage() {
             ))}
           </StaggerChildren>
           <FadeIn delay={0.3}>
-            <div className="text-center mt-12">
+            <div className="text-center mt-14">
               <Link
                 href="/services/"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
@@ -279,8 +282,9 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-gray-50 overflow-hidden">
+        <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#137868]/[0.04] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <SlideIn direction="left">
               <div>
@@ -288,11 +292,12 @@ export default function HomePage() {
                   Why ClearClaim RCM
                 </p>
                 <h2
-                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Your Revenue Cycle Partner, Not Just a Billing Service
                 </h2>
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-6" />
                 <p className="text-gray-600 text-base leading-relaxed mb-8">
                   Michelle spent time as a VP at an insurance company. She knows
                   exactly how payers evaluate claims and what triggers a denial.
@@ -302,7 +307,7 @@ export default function HomePage() {
                 <ul className="space-y-4">
                   {differentiators.map((d, i) => (
                     <FadeIn key={d} delay={i * 0.08}>
-                      <li className="flex items-start gap-3">
+                      <li className="flex items-start gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
                         <CheckCircle
                           size={20}
                           className="text-[#137868] shrink-0 mt-0.5"
@@ -313,7 +318,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <FadeIn delay={0.6}>
-                  <div className="mt-8 flex gap-4">
+                  <div className="mt-10 flex gap-4">
                     <Link
                       href="/about-us/"
                       className="px-6 py-3 rounded-full border-2 border-[#137868] text-[#137868] font-semibold text-sm hover:bg-[#137868] hover:text-white hover:scale-105 transition-all duration-300"
@@ -326,16 +331,24 @@ export default function HomePage() {
             </SlideIn>
             <SlideIn direction="right">
               <div className="relative pb-10 lg:pb-0">
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#137868]/10 to-[#F15200]/10 rounded-3xl blur-xl pointer-events-none" />
                 <Image
                   src="/products/21.png"
                   alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
                   width={540}
                   height={600}
-                  className="rounded-2xl object-cover w-full"
+                  className="relative rounded-2xl object-cover w-full shadow-lg"
                 />
-                <div className="mt-6 lg:absolute lg:-bottom-6 lg:left-6 lg:right-6 bg-white rounded-2xl shadow-xl p-6 animate-[float_3s_ease-in-out_infinite]">
-                  <p className="text-[#137868] font-bold text-2xl" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Audit</p>
-                  <p className="text-gray-600 text-sm mt-1">No obligation review of your current billing performance.</p>
+                <div className="mt-6 lg:absolute lg:-bottom-6 lg:left-6 lg:right-6 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 animate-[float_3s_ease-in-out_infinite]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
+                      <Gift size={20} className="text-[#137868]" />
+                    </div>
+                    <div>
+                      <p className="text-[#137868] font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Audit</p>
+                      <p className="text-gray-600 text-sm">No obligation review of your current billing performance.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </SlideIn>
@@ -344,10 +357,11 @@ export default function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-white overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#137868_1px,transparent_1px),linear-gradient(to_bottom,#137868_1px,transparent_1px)] bg-[size:80px_80px] opacity-[0.02] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-16">
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
                 How It Works
               </p>
@@ -357,17 +371,19 @@ export default function HomePage() {
               >
                 Five Steps. No Shortcuts.
               </h2>
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <div className="hidden xl:block absolute top-6 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#137868]/20 via-[#137868]/40 to-[#137868]/20 pointer-events-none" />
             {processSteps.map((step, i) => (
               <FadeIn key={step.title} delay={i * 0.15}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mb-5 shrink-0 ring-4 ring-white shadow-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <div className="relative flex flex-col items-center text-center bg-gray-50 rounded-2xl p-6 pt-10 border border-gray-100 hover:shadow-lg hover:border-[#137868]/20 transition-all duration-300">
+                  <div className="absolute -top-5 w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg shrink-0 ring-4 ring-white shadow-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
                     {i + 1}
                   </div>
                   <h3
-                    className="font-semibold text-gray-900 text-base mb-2"
+                    className="font-semibold text-gray-900 text-base mb-2 mt-1"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     {step.title}
@@ -420,19 +436,23 @@ export default function HomePage() {
       </section>
 
       {/* Founder snippet */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-gray-50 overflow-hidden">
+        <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#137868]/[0.04] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <SlideIn direction="left">
               <div className="flex justify-center">
                 <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-[#137868]/10 to-[#F15200]/10 rounded-3xl blur-xl pointer-events-none" />
                   <Image
                     src="/team/michelle-recek.png"
                     alt="Michelle Recek, Founder"
                     width={380}
                     height={420}
-                    className="rounded-2xl object-cover"
+                    className="relative rounded-2xl object-cover shadow-lg"
                   />
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#137868]/10 rounded-2xl -z-10" />
+                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#F15200]/10 rounded-2xl -z-10" />
                 </div>
               </div>
             </SlideIn>
@@ -442,23 +462,24 @@ export default function HomePage() {
                   Meet Our Founder
                 </p>
                 <h2
-                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Michelle Recek
                 </h2>
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-4" />
                 <p className="text-[#137868] font-semibold text-base mb-6">
                   Founder and Director of Revenue Cycle Operations
                 </p>
                 <FadeIn delay={0.4}>
-                  <blockquote className="border-l-4 border-[#137868] pl-5 italic text-gray-700 text-base leading-relaxed mb-6">
+                  <blockquote className="bg-white border-l-4 border-[#137868] pl-5 pr-5 py-4 rounded-r-xl shadow-sm italic text-gray-700 text-base leading-relaxed mb-6">
                     &ldquo;I offer more than billing services. I help you understand
                     your revenue cycle. I&rsquo;ll show you where every dollar is
                     going and make sure you&rsquo;re getting the maximum
                     reimbursement for the hard work you put in every day.&rdquo;
                   </blockquote>
                 </FadeIn>
-                <p className="text-gray-600 text-base leading-relaxed mb-6">
+                <p className="text-gray-600 text-base leading-relaxed mb-8">
                   Michelle spent two decades in healthcare operations. Before
                   founding ClearClaim RCM, she served as VP of an insurance
                   company, which means she knows how payers process claims, what
@@ -479,16 +500,19 @@ export default function HomePage() {
       </section>
 
       {/* CTA banner */}
-      <section className="py-16 bg-gradient-to-r from-[#80010A] to-[#6a0108]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 bg-gradient-to-br from-[#80010A] via-[#6a0108] to-[#80010A] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_50%)] pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <FadeIn>
             <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl font-bold text-white mb-2"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Get Paid What You&rsquo;ve Already Earned
             </h2>
-            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-white/40 mx-auto rounded-full mb-6" />
+            <p className="text-white/85 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
               Start with a free audit. No pitch, no pressure. If your current
               team is doing fine, Michelle will tell you so. If there are gaps,
               you will see exactly where the money is slipping out.
