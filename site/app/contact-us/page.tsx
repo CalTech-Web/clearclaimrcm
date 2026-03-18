@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, Linkedin, Clock, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { FadeIn, SlideIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
   title: "Contact Us | ClearClaim RCM",
@@ -47,7 +48,7 @@ const faqs = [
   },
   {
     q: "Do you offer a free billing audit?",
-    a: "Yes, and Michelle does it herself. She reviews your denial rate, AR aging, and how your collections compare to expected reimbursement. If your current team is performing well, she will say so. If there are gaps, you will see exactly where they are, with no pressure to switch.",
+    a: "Yes, and Michelle does it herself. She reviews your denial rate, AR aging, and coding accuracy at no cost. If your current setup is running well, she will tell you that. If there are gaps, you will see exactly where the money is going.",
   },
   {
     q: "What coding standards do you follow?",
@@ -88,7 +89,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Page header */}
-      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] py-24 sm:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/gallery/02.jpg"
@@ -99,20 +100,26 @@ export default function ContactPage() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#F15200] font-bold text-sm uppercase tracking-widest mb-4">
-            Get In Touch
-          </p>
-          <h1
-            className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Contact Us
-          </h1>
-          <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
-            Most providers know something is off with their billing. They just
-            have not had time to look closely. The free audit is where we start.
-            No pitch. Just an honest look at what you are leaving on the table.
-          </p>
+          <FadeIn delay={0.1}>
+            <p className="text-[#F15200] font-bold text-sm uppercase tracking-widest mb-4">
+              Get In Touch
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <h1
+              className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Contact Us
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.5}>
+            <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
+              Most providers know something is off with their billing. They just
+              have not had time to look closely. The free audit is where we start.
+              No pitch. Just an honest look at what you are leaving on the table.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -121,116 +128,124 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Contact info */}
-            <div className="flex flex-col gap-8">
-              {/* Free Billing Audit card - prioritized at top on mobile */}
-              <div className="bg-[#137868] rounded-2xl p-8 text-white order-first lg:order-last">
-                <h3
-                  className="text-xl font-bold mb-2"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  Free Billing Audit
-                </h3>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  Michelle reviews your denial rate, AR aging, and coding
-                  accuracy at no cost. If your current setup is running well,
-                  she will tell you that. If there are gaps, you will see
-                  exactly where the money is going.
-                </p>
-                <a
-                  href="https://calendly.com/michelle-clearclaimrcm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#137868] font-semibold text-sm hover:bg-gray-100 transition-colors"
-                >
-                  Book via Calendly
-                  <ArrowRight size={16} />
-                </a>
-              </div>
+            <SlideIn direction="left">
+              <div className="flex flex-col gap-8">
+                {/* Free Billing Audit card - prioritized at top on mobile */}
+                <div className="bg-gradient-to-br from-[#137868] to-[#0f5f54] rounded-2xl p-8 text-white order-first lg:order-last hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                  <h3
+                    className="text-xl font-bold mb-2"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    Free Billing Audit
+                  </h3>
+                  <p className="text-white/90 text-sm leading-relaxed mb-4">
+                    Michelle reviews your denial rate, AR aging, and coding
+                    accuracy at no cost. If your current setup is running well,
+                    she will tell you that. If there are gaps, you will see
+                    exactly where the money is going.
+                  </p>
+                  <a
+                    href="https://calendly.com/michelle-clearclaimrcm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#137868] font-semibold text-sm hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  >
+                    Book via Calendly
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
 
-              <div>
-                <h2
-                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  Talk to Michelle About Your Revenue Cycle
-                </h2>
-                <p className="text-gray-600 text-base leading-relaxed mb-8">
-                  Call, email, or book through Calendly. If you have questions
-                  about a{" "}
-                  <Link href="/services/" className="text-[#137868] hover:underline font-medium">
-                    specific billing or revenue cycle service
-                  </Link>{" "}
-                  or want to know whether ClearClaim RCM is the right fit, fill
-                  out the form and we will be in touch quickly.
-                </p>
+                <div>
+                  <h2
+                    className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    Talk to Michelle About Your Revenue Cycle
+                  </h2>
+                  <p className="text-gray-600 text-base leading-relaxed mb-8">
+                    Call, email, or book through Calendly. If you have questions
+                    about a{" "}
+                    <Link href="/services/" className="text-[#137868] hover:underline font-medium">
+                      specific billing or revenue cycle service
+                    </Link>{" "}
+                    or want to know whether ClearClaim RCM is the right fit, fill
+                    out the form and we will be in touch quickly.
+                  </p>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                      <Phone size={18} className="text-[#137868]" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">Phone</p>
-                      <a
-                        href="tel:3034341355"
-                        className="text-[#137868] hover:underline text-base font-medium"
-                      >
-                        303-434-1355
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                      <Mail size={18} className="text-[#137868]" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">Email</p>
-                      <a
-                        href="mailto:michelle@clearclaimRCM.com"
-                        className="text-[#137868] hover:underline text-base font-medium"
-                      >
-                        michelle@clearclaimRCM.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                      <Linkedin size={18} className="text-[#137868]" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">LinkedIn</p>
-                      <a
-                        href="https://linkedin.com/company/clearclaim-rcm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#137868] hover:underline text-base font-medium"
-                      >
-                        linkedin.com/company/clearclaim-rcm
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
-                      <Clock size={18} className="text-[#137868]" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">Schedule Online</p>
-                      <a
-                        href="https://calendly.com/michelle-clearclaimrcm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#137868] hover:underline text-base font-medium"
-                      >
-                        calendly.com/michelle-clearclaimrcm
-                      </a>
-                    </div>
+                  <div className="space-y-6">
+                    {[
+                      {
+                        icon: Phone,
+                        label: "Phone",
+                        content: (
+                          <a
+                            href="tel:3034341355"
+                            className="text-[#137868] hover:underline text-base font-medium"
+                          >
+                            303-434-1355
+                          </a>
+                        ),
+                      },
+                      {
+                        icon: Mail,
+                        label: "Email",
+                        content: (
+                          <a
+                            href="mailto:michelle@clearclaimRCM.com"
+                            className="text-[#137868] hover:underline text-base font-medium"
+                          >
+                            michelle@clearclaimRCM.com
+                          </a>
+                        ),
+                      },
+                      {
+                        icon: Linkedin,
+                        label: "LinkedIn",
+                        content: (
+                          <a
+                            href="https://linkedin.com/company/clearclaim-rcm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#137868] hover:underline text-base font-medium"
+                          >
+                            linkedin.com/company/clearclaim-rcm
+                          </a>
+                        ),
+                      },
+                      {
+                        icon: Clock,
+                        label: "Schedule Online",
+                        content: (
+                          <a
+                            href="https://calendly.com/michelle-clearclaimrcm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#137868] hover:underline text-base font-medium"
+                          >
+                            calendly.com/michelle-clearclaimrcm
+                          </a>
+                        ),
+                      },
+                    ].map((item, index) => (
+                      <FadeIn key={item.label} delay={index * 0.08}>
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-[#137868]/10 flex items-center justify-center shrink-0">
+                            <item.icon size={18} className="text-[#137868]" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900 text-sm">{item.label}</p>
+                            {item.content}
+                          </div>
+                        </div>
+                      </FadeIn>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
+            </SlideIn>
 
             {/* Contact form */}
-            <div>
+            <SlideIn direction="right">
               <div className="bg-gray-50 rounded-2xl p-8 sm:p-10">
                 <h3
                   className="text-xl font-bold text-gray-900 mb-6"
@@ -240,7 +255,7 @@ export default function ContactPage() {
                 </h3>
                 <ContactForm />
               </div>
-            </div>
+            </SlideIn>
           </div>
         </div>
       </section>
@@ -249,27 +264,33 @@ export default function ContactPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              FAQ
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-gray-900"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Frequently Asked Questions
-            </h2>
+            <FadeIn delay={0.1}>
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                FAQ
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Frequently Asked Questions
+              </h2>
+            </FadeIn>
           </div>
           <div className="space-y-6">
-            {faqs.map((faq) => (
-              <article key={faq.q} className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3
-                  className="text-base font-semibold text-gray-900 mb-3"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {faq.q}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-              </article>
+            {faqs.map((faq, index) => (
+              <FadeIn key={faq.q} delay={index * 0.08}>
+                <article className="bg-white rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <h3
+                    className="text-base font-semibold text-gray-900 mb-3"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {faq.q}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </article>
+              </FadeIn>
             ))}
           </div>
         </div>

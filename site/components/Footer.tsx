@@ -45,7 +45,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#137868] transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#137868] hover:translate-x-1 transition-all duration-200 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -63,14 +63,14 @@ export default function Footer() {
               Contact
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-sm text-gray-400">
-                <Phone size={16} className="text-[#137868] shrink-0" />
+              <li className="flex items-center gap-3 text-sm text-gray-400 group">
+                <Phone size={16} className="text-[#137868] shrink-0 group-hover:scale-110 transition-transform duration-200" />
                 <a href="tel:3034341355" className="hover:text-[#137868] transition-colors">
                   303-434-1355
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-400">
-                <Mail size={16} className="text-[#137868] shrink-0" />
+              <li className="flex items-center gap-3 text-sm text-gray-400 group">
+                <Mail size={16} className="text-[#137868] shrink-0 group-hover:scale-110 transition-transform duration-200" />
                 <a
                   href="mailto:michelle@clearclaimRCM.com"
                   className="hover:text-[#137868] transition-colors"
@@ -78,8 +78,8 @@ export default function Footer() {
                   michelle@clearclaimRCM.com
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-400">
-                <Linkedin size={16} className="text-[#137868] shrink-0" />
+              <li className="flex items-center gap-3 text-sm text-gray-400 group">
+                <Linkedin size={16} className="text-[#137868] shrink-0 group-hover:scale-110 transition-transform duration-200" />
                 <a
                   href="https://linkedin.com/company/clearclaim-rcm"
                   target="_blank"

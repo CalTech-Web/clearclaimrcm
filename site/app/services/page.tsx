@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, FileText, TrendingUp, BarChart2, ShieldCheck, SearchCheck, type LucideIcon } from "lucide-react";
+import { FadeIn, SlideIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
   title: "Medical Billing Services | ClearClaim RCM",
@@ -173,7 +174,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] py-24 sm:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/gallery/02.jpg"
@@ -184,20 +185,26 @@ export default function ServicesPage() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-            What We Offer
-          </p>
-          <h1
-            className="text-4xl sm:text-5xl font-bold text-white max-w-3xl leading-tight"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Full-Cycle Revenue Cycle Management Services
-          </h1>
-          <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
-            Ten services that cover every point in the revenue cycle, from the
-            first code entered to the last dollar collected. All AAPC-certified.
-            All HIPAA-compliant. No generalists.
-          </p>
+          <FadeIn delay={0.1}>
+            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+              What We Offer
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <h1
+              className="text-4xl sm:text-5xl font-bold text-white max-w-3xl leading-tight"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Full-Cycle Revenue Cycle Management Services
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.5}>
+            <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
+              Ten services that cover every point in the revenue cycle, from the
+              first code entered to the last dollar collected. All AAPC-certified.
+              All HIPAA-compliant. No generalists.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -205,59 +212,60 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {services.map((service, idx) => (
-            <article
-              key={service.number}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            >
-              <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className="text-4xl font-bold text-[#137868]/20"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {service.number}
-                  </span>
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                    <service.icon size={22} className="text-[#137868]" />
+            <FadeIn key={service.number}>
+              <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <SlideIn direction={idx % 2 === 1 ? "right" : "left"} className={idx % 2 === 1 ? "lg:order-2" : ""}>
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span
+                        className="text-4xl font-bold text-[#137868]/20"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        {service.number}
+                      </span>
+                      <div className="w-10 h-10 flex items-center justify-center bg-[#137868]/10 rounded-xl">
+                        <service.icon size={22} className="text-[#137868]" />
+                      </div>
+                    </div>
+                    <h2
+                      className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {service.title}
+                    </h2>
+                    <p className="text-gray-600 text-base leading-relaxed mb-6">
+                      {service.desc}
+                    </p>
+                    <ul className="space-y-2 mb-6">
+                      {service.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-3">
+                          <CheckCircle size={17} className="text-[#137868] shrink-0 mt-0.5" />
+                          <span className="text-gray-700 text-sm">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {service.cta && (
+                      <Link
+                        href="/contact-us/"
+                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#80010A] text-white font-semibold text-base hover:bg-[#600108] transition-colors shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
+                      >
+                        Request Your Free Audit
+                        <ArrowRight size={18} />
+                      </Link>
+                    )}
                   </div>
-                </div>
-                <h2
-                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {service.title}
-                </h2>
-                <p className="text-gray-600 text-base leading-relaxed mb-6">
-                  {service.desc}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {service.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3">
-                      <CheckCircle size={17} className="text-[#137868] shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                {service.cta && (
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#80010A] text-white font-semibold text-base hover:bg-[#600108] transition-colors shadow-md"
-                  >
-                    Request Your Free Audit
-                    <ArrowRight size={18} />
-                  </Link>
-                )}
-              </div>
-              <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <Image
-                  src={service.img}
-                  alt={service.title}
-                  width={540}
-                  height={400}
-                  className="rounded-2xl object-cover w-full h-auto"
-                />
-              </div>
-            </article>
+                </SlideIn>
+                <SlideIn direction={idx % 2 === 1 ? "left" : "right"} className={idx % 2 === 1 ? "lg:order-1" : ""}>
+                  <Image
+                    src={service.img}
+                    alt={service.title}
+                    width={540}
+                    height={400}
+                    className="rounded-2xl object-cover w-full h-auto"
+                  />
+                </SlideIn>
+              </article>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -266,15 +274,19 @@ export default function ServicesPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              How It Works
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-gray-900"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Getting Started is Simple
-            </h2>
+            <FadeIn delay={0.1}>
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                How It Works
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Getting Started is Simple
+              </h2>
+            </FadeIn>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -293,58 +305,62 @@ export default function ServicesPage() {
                 title: "Ongoing Revenue Cycle Management",
                 desc: "Claims go out clean. Denials get challenged. Reports land in your inbox every month. You stay focused on patients.",
               },
-            ].map((s) => (
-              <div key={s.step} className="bg-white rounded-2xl p-8 text-center shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-xl mx-auto mb-5" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {s.step}
+            ].map((s, index) => (
+              <ScaleIn key={s.step} delay={index * 0.15}>
+                <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-xl mx-auto mb-5" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {s.step}
+                  </div>
+                  <h3
+                    className="text-lg font-semibold text-gray-900 mb-3"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                 </div>
-                <h3
-                  className="text-lg font-semibold text-gray-900 mb-3"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {s.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+              </ScaleIn>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#80010A]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Start With a Free Audit
-          </h2>
-          <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            <Link href="/about-us/" className="text-white font-semibold hover:underline">
-              Michelle Recek
-            </Link>{" "}
-            reviews your denial rate, AR aging, and coding accuracy at no cost.
-            Book a consultation or reach out directly.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact-us/"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 transition-colors"
+      <section className="py-16 bg-gradient-to-r from-[#80010A] to-[#6a0108]">
+        <FadeIn>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Request a Free Audit
-              <ArrowRight size={18} />
-            </Link>
-            <a
-              href="https://calendly.com/michelle-clearclaimrcm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors"
-            >
-              Schedule a Free Consultation
-            </a>
+              Start With a Free Audit
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+              <Link href="/about-us/" className="text-white font-semibold hover:underline">
+                Michelle Recek
+              </Link>{" "}
+              reviews your denial rate, AR aging, and coding accuracy at no cost.
+              Book a consultation or reach out directly.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact-us/"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 transition-colors hover:scale-105 hover:shadow-lg transition-all duration-300"
+              >
+                Request a Free Audit
+                <ArrowRight size={18} />
+              </Link>
+              <a
+                href="https://calendly.com/michelle-clearclaimrcm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors hover:scale-105 hover:shadow-lg transition-all duration-300"
+              >
+                Schedule a Free Consultation
+              </a>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </section>
     </>
   );

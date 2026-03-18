@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Target, Eye, Zap, Users, FileCheck, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { FadeIn, SlideIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
   title: "Our Mission | ClearClaim RCM Medical Billing",
@@ -73,7 +74,7 @@ export default function MissionPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative bg-[#137868] py-24 sm:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] py-24 sm:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/gallery/02.jpg"
@@ -84,46 +85,58 @@ export default function MissionPage() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4">
-            Our Purpose
-          </p>
-          <h1
-            className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Mission Statement
-          </h1>
-          <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
-            Providers lose money in ways they rarely see. Denials left
-            unchallenged. Claims that age out. Codes that miss by one digit.
-            This is what we exist to stop.
-          </p>
+          <FadeIn delay={0.1}>
+            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4">
+              Our Purpose
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <h1
+              className="text-4xl sm:text-5xl font-bold text-white max-w-2xl leading-tight"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Mission Statement
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.5}>
+            <p className="mt-5 text-white/80 text-lg max-w-2xl leading-relaxed">
+              Providers lose money in ways they rarely see. Denials left
+              unchallenged. Claims that age out. Codes that miss by one digit.
+              This is what we exist to stop.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Mission statement hero */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-6">
-            Why We Exist
-          </p>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Helping Providers Get Paid, Fully, Ethically, and On Time.
-          </h2>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-            Most independent providers are not losing money because of bad
-            medicine. They are losing it because a denial sat unanswered, a
-            code was slightly off, or a claim aged out before anyone noticed.
-            ClearClaim RCM was built to close those gaps.
-          </p>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
-            When billing is done right, providers stop thinking about billing.
-            That is the goal. Get paid fully, get paid on time, and have the
-            reports to prove it.
-          </p>
+          <FadeIn delay={0.1}>
+            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-6">
+              Why We Exist
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Helping Providers Get Paid, Fully, Ethically, and On Time.
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.5}>
+            <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+              Most independent providers are not losing money because of bad
+              medicine. They are losing it because a denial sat unanswered, a
+              code was slightly off, or a claim aged out before anyone noticed.
+              ClearClaim RCM was built to close those gaps.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
+              When billing is done right, providers stop thinking about billing.
+              That is the goal. Get paid fully, get paid on time, and have the
+              reports to prove it.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -137,15 +150,17 @@ export default function MissionPage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-[#80010A]/75 flex items-center justify-center">
-            <blockquote className="max-w-3xl px-8 text-center text-white text-xl sm:text-2xl font-semibold italic leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              &ldquo;I offer more than billing services. I help you understand
-              your revenue cycle. I&rsquo;ll show you where every dollar is
-              going and make sure you&rsquo;re getting the maximum reimbursement
-              for the hard work you put in every day.&rdquo;
-              <footer className="mt-4 text-base font-normal text-white/80 not-italic">
-                Michelle Recek, Founder
-              </footer>
-            </blockquote>
+            <ScaleIn>
+              <blockquote className="max-w-3xl px-8 text-center text-white text-xl sm:text-2xl font-semibold italic leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                &ldquo;I offer more than billing services. I help you understand
+                your revenue cycle. I&rsquo;ll show you where every dollar is
+                going and make sure you&rsquo;re getting the maximum reimbursement
+                for the hard work you put in every day.&rdquo;
+                <footer className="mt-4 text-base font-normal text-white/80 not-italic">
+                  Michelle Recek, Founder
+                </footer>
+              </blockquote>
+            </ScaleIn>
           </div>
         </div>
       </section>
@@ -154,32 +169,38 @@ export default function MissionPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              The Principles Behind Our Work
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-gray-900"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Six Pillars of Our Mission
-            </h2>
+            <FadeIn delay={0.1}>
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                The Principles Behind Our Work
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Six Pillars of Our Mission
+              </h2>
+            </FadeIn>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {pillars.map((p) => (
-              <article key={p.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div className="w-12 h-12 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                  <p.icon size={22} className="text-[#137868]" />
-                </div>
-                <h3
-                  className="text-lg font-semibold text-gray-900 mb-3"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {p.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{p.desc}</p>
-              </article>
+              <StaggerItem key={p.title}>
+                <article className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                  <div className="w-12 h-12 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
+                    <p.icon size={22} className="text-[#137868]" />
+                  </div>
+                  <h3
+                    className="text-lg font-semibold text-gray-900 mb-3"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{p.desc}</p>
+                </article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
@@ -187,7 +208,7 @@ export default function MissionPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative w-full">
+            <SlideIn direction="left" className="relative w-full">
               <Image
                 src="/products/25.png"
                 alt="Medical claim payment received confirming successful revenue cycle management"
@@ -195,8 +216,8 @@ export default function MissionPage() {
                 height={480}
                 className="rounded-2xl object-cover w-full h-auto"
               />
-            </div>
-            <div>
+            </SlideIn>
+            <SlideIn direction="right">
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
                 Our Commitment to You
               </p>
@@ -229,51 +250,53 @@ export default function MissionPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact-us/"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
                 >
                   Request a Free Audit
                   <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/services/"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#137868] text-[#137868] font-semibold hover:bg-[#137868] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#137868] text-[#137868] font-semibold hover:bg-[#137868] hover:text-white hover:scale-105 hover:shadow-lg transition-all duration-300"
                 >
                   View Our Services
                 </Link>
               </div>
-            </div>
+            </SlideIn>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#137868]">
+      <section className="py-16 bg-gradient-to-br from-[#137868] to-[#0f5f54]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Find Out Where the Money Is Going
-          </h2>
-          <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Let us show you what billing that actually works looks like. Start
-            with a free audit. No obligation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact-us/"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold text-base hover:bg-gray-100 transition-colors"
+          <FadeIn>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Get Started
-              <ArrowRight size={18} />
-            </Link>
-            <Link
-              href="/services/"
-              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#137868] transition-colors text-center"
-            >
-              View Our Services
-            </Link>
-          </div>
+              Find Out Where the Money Is Going
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+              Let us show you what billing that actually works looks like. Start
+              with a free audit. No obligation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact-us/"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              >
+                Get Started
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/services/"
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#137868] hover:scale-105 hover:shadow-lg transition-all duration-300 text-center"
+              >
+                View Our Services
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

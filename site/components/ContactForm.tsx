@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "./MotionWrappers";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -17,7 +18,12 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="text-center py-10">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center py-10"
+      >
         <div className="w-16 h-16 rounded-full bg-[#137868]/10 flex items-center justify-center mx-auto mb-4">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="16" fill="#137868" fillOpacity="0.1" />
@@ -34,7 +40,7 @@ export default function ContactForm() {
           Thank you for reaching out. Michelle will be in touch with you
           shortly.
         </p>
-      </div>
+      </motion.div>
     );
   }
 
@@ -49,7 +55,7 @@ export default function ContactForm() {
           <input
             type="text"
             required
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] focus:shadow-md bg-white transition-all duration-200"
             placeholder="Jane"
           />
         </div>
@@ -60,7 +66,7 @@ export default function ContactForm() {
           <input
             type="text"
             required
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] focus:shadow-md bg-white transition-all duration-200"
             placeholder="Smith"
           />
         </div>
@@ -72,7 +78,7 @@ export default function ContactForm() {
         <input
           type="email"
           required
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] bg-white"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] focus:shadow-md bg-white transition-all duration-200"
           placeholder="jane@yourpractice.com"
         />
       </div>
@@ -82,7 +88,7 @@ export default function ContactForm() {
         </label>
         <input
           type="tel"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] bg-white"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] focus:shadow-md bg-white transition-all duration-200"
           placeholder="303-555-1234"
         />
       </div>
@@ -92,7 +98,7 @@ export default function ContactForm() {
         </label>
         <input
           type="text"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] bg-white"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#137868]/40 focus:border-[#137868] focus:shadow-md bg-white transition-all duration-200"
           placeholder="Your Practice Name"
         />
       </div>
@@ -110,7 +116,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-6 py-3.5 rounded-full bg-[#137868] text-white font-semibold text-sm hover:bg-[#0f5f54] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full px-6 py-3.5 rounded-full bg-[#137868] text-white font-semibold text-sm hover:bg-[#0f5f54] hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>

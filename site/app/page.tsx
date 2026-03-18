@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Star, ChevronDown, Clock, BadgeCheck, Shield, Gift, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, BarChart2, type LucideIcon } from "lucide-react";
+import { FadeIn, SlideIn, StaggerChildren, StaggerItem, ScaleIn, CountUp } from "@/components/MotionWrappers";
 
 const services: { title: string; icon: LucideIcon; desc: string }[] = [
   {
@@ -60,7 +61,7 @@ const testimonials = [
   },
 ];
 
-const process = [
+const processSteps = [
   {
     phase: "Step 1",
     title: "Free Billing Audit",
@@ -91,6 +92,13 @@ const process = [
     desc: "A full financial report lands in your inbox every month. Collections, denials, AR aging, and practice performance in one place.",
     img: "/products/26.png",
   },
+];
+
+const stats = [
+  { icon: Clock, value: "20+", label: "Years Experience" },
+  { icon: BadgeCheck, value: "AAPC", label: "Certified Coding" },
+  { icon: Shield, value: "HIPAA", label: "Compliant" },
+  { icon: Gift, value: "Free", label: "Billing Audit" },
 ];
 
 export default function HomePage() {
@@ -136,6 +144,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
       />
+
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -146,47 +155,55 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[#137868]/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#137868]/90 via-[#137868]/75 to-[#0f5f54]/85" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <div className="max-w-3xl mx-auto">
-            <p
-              className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              Revenue Cycle Specialists Since 2025
-            </p>
-            <h1
-              className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Helping Providers Get Paid, Fully, Ethically, and On Time.
-            </h1>
-            <p
-              className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              Most billing services send your claims and disappear. We track
-              every single one, fight every denial, and show you exactly where
-              the money went. Founded by Michelle Recek, who spent years on the
-              payer side before switching to yours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact-us/"
-                className="px-8 py-4 rounded-full bg-[#137868] text-white font-semibold text-base hover:bg-[#0f5f54] transition-colors text-center"
+            <FadeIn delay={0.1}>
+              <p
+                className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Get Started
-              </Link>
-              <a
-                href="https://calendly.com/michelle-clearclaimrcm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#137868] transition-colors text-center"
+                Revenue Cycle Specialists Since 2025
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <h1
+                className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Schedule a Free Consultation
-              </a>
-            </div>
+                Helping Providers Get Paid, Fully, Ethically, and On Time.
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.5}>
+              <p
+                className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Most billing services send your claims and disappear. We track
+                every single one, fight every denial, and show you exactly where
+                the money went. Founded by Michelle Recek, who spent years on the
+                payer side before switching to yours.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.7}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact-us/"
+                  className="px-8 py-4 rounded-full bg-[#137868] text-white font-semibold text-base hover:bg-[#0f5f54] hover:scale-105 hover:shadow-xl transition-all duration-300 text-center"
+                >
+                  Get Started
+                </Link>
+                <a
+                  href="https://calendly.com/michelle-clearclaimrcm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#137868] hover:scale-105 hover:shadow-xl transition-all duration-300 text-center"
+                >
+                  Schedule a Free Consultation
+                </a>
+              </div>
+            </FadeIn>
           </div>
         </div>
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
@@ -195,29 +212,20 @@ export default function HomePage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#80010A] py-10">
+      <section className="bg-gradient-to-r from-[#80010A] to-[#6a0108] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center text-white">
-            <div className="flex flex-col items-center gap-2 py-2">
-              <Clock size={28} className="text-white" />
-              <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>20+</p>
-              <p className="text-sm text-white font-medium">Years Experience</p>
-            </div>
-            <div className="flex flex-col items-center gap-2 py-2">
-              <BadgeCheck size={28} className="text-white" />
-              <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>AAPC</p>
-              <p className="text-sm text-white font-medium">Certified Coding</p>
-            </div>
-            <div className="flex flex-col items-center gap-2 py-2">
-              <Shield size={28} className="text-white" />
-              <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>HIPAA</p>
-              <p className="text-sm text-white font-medium">Compliant</p>
-            </div>
-            <div className="flex flex-col items-center gap-2 py-2">
-              <Gift size={28} className="text-white" />
-              <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Free</p>
-              <p className="text-sm text-white font-medium">Billing Audit</p>
-            </div>
+            {stats.map((stat, i) => (
+              <ScaleIn key={stat.label} delay={i * 0.15}>
+                <div className="flex flex-col items-center gap-2 py-2">
+                  <stat.icon size={28} className="text-white" />
+                  <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <CountUp end={stat.value} />
+                  </p>
+                  <p className="text-sm text-white font-medium">{stat.label}</p>
+                </div>
+              </ScaleIn>
+            ))}
           </div>
         </div>
       </section>
@@ -225,49 +233,52 @@ export default function HomePage() {
       {/* Services overview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              What We Do
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-gray-900"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Full-Cycle Revenue Cycle Management
-            </h2>
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-              From the first code entered to the last dollar collected, we own
-              the whole cycle. Nothing gets lost. Nothing sits.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s) => (
-              <article
-                key={s.title}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow group"
+          <FadeIn>
+            <div className="text-center mb-14">
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                What We Do
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                  <s.icon size={28} className="text-[#137868]" />
-                </div>
-                <h3
-                  className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {s.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-              </article>
+                Full-Cycle Revenue Cycle Management
+              </h2>
+              <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
+                From the first code entered to the last dollar collected, we own
+                the whole cycle. Nothing gets lost. Nothing sits.
+              </p>
+            </div>
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((s) => (
+              <StaggerItem key={s.title}>
+                <article className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                  <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl group-hover:bg-[#137868]/20 transition-colors duration-300">
+                    <s.icon size={28} className="text-[#137868]" />
+                  </div>
+                  <h3
+                    className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                </article>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/services/"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] transition-colors"
-            >
-              Explore Full Services
-              <ArrowRight size={18} />
-            </Link>
-          </div>
+          </StaggerChildren>
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-12">
+              <Link
+                href="/services/"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
+              >
+                Explore Full Services
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -275,55 +286,63 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                Why ClearClaim RCM
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Your Revenue Cycle Partner, Not Just a Billing Service
-              </h2>
-              <p className="text-gray-600 text-base leading-relaxed mb-8">
-                Michelle spent time as a VP at an insurance company. She knows
-                exactly how payers evaluate claims and what triggers a denial.
-                That is knowledge most billing companies do not have, and it
-                changes how we fight for your reimbursements.
-              </p>
-              <ul className="space-y-4">
-                {differentiators.map((d) => (
-                  <li key={d} className="flex items-start gap-3">
-                    <CheckCircle
-                      size={20}
-                      className="text-[#137868] shrink-0 mt-0.5"
-                    />
-                    <span className="text-gray-700 text-sm leading-relaxed">{d}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 flex gap-4">
-                <Link
-                  href="/about-us/"
-                  className="px-6 py-3 rounded-full border-2 border-[#137868] text-[#137868] font-semibold text-sm hover:bg-[#137868] hover:text-white transition-colors"
+            <SlideIn direction="left">
+              <div>
+                <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                  Why ClearClaim RCM
+                </p>
+                <h2
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  Learn More About Us
-                </Link>
+                  Your Revenue Cycle Partner, Not Just a Billing Service
+                </h2>
+                <p className="text-gray-600 text-base leading-relaxed mb-8">
+                  Michelle spent time as a VP at an insurance company. She knows
+                  exactly how payers evaluate claims and what triggers a denial.
+                  That is knowledge most billing companies do not have, and it
+                  changes how we fight for your reimbursements.
+                </p>
+                <ul className="space-y-4">
+                  {differentiators.map((d, i) => (
+                    <FadeIn key={d} delay={i * 0.08}>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle
+                          size={20}
+                          className="text-[#137868] shrink-0 mt-0.5"
+                        />
+                        <span className="text-gray-700 text-sm leading-relaxed">{d}</span>
+                      </li>
+                    </FadeIn>
+                  ))}
+                </ul>
+                <FadeIn delay={0.6}>
+                  <div className="mt-8 flex gap-4">
+                    <Link
+                      href="/about-us/"
+                      className="px-6 py-3 rounded-full border-2 border-[#137868] text-[#137868] font-semibold text-sm hover:bg-[#137868] hover:text-white hover:scale-105 transition-all duration-300"
+                    >
+                      Learn More About Us
+                    </Link>
+                  </div>
+                </FadeIn>
               </div>
-            </div>
-            <div className="relative pb-10 lg:pb-0">
-              <Image
-                src="/products/21.png"
-                alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
-                width={540}
-                height={600}
-                className="rounded-2xl object-cover w-full"
-              />
-              <div className="mt-6 lg:absolute lg:-bottom-6 lg:left-6 lg:right-6 bg-white rounded-2xl shadow-xl p-6">
-                <p className="text-[#137868] font-bold text-2xl" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Audit</p>
-                <p className="text-gray-600 text-sm mt-1">No obligation review of your current billing performance.</p>
+            </SlideIn>
+            <SlideIn direction="right">
+              <div className="relative pb-10 lg:pb-0">
+                <Image
+                  src="/products/21.png"
+                  alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
+                  width={540}
+                  height={600}
+                  className="rounded-2xl object-cover w-full"
+                />
+                <div className="mt-6 lg:absolute lg:-bottom-6 lg:left-6 lg:right-6 bg-white rounded-2xl shadow-xl p-6 animate-[float_3s_ease-in-out_infinite]">
+                  <p className="text-[#137868] font-bold text-2xl" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Audit</p>
+                  <p className="text-gray-600 text-sm mt-1">No obligation review of your current billing performance.</p>
+                </div>
               </div>
-            </div>
+            </SlideIn>
           </div>
         </div>
       </section>
@@ -331,66 +350,74 @@ export default function HomePage() {
       {/* How it works */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              How It Works
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-gray-900"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Five Steps. No Shortcuts.
-            </h2>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-14">
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                How It Works
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Five Steps. No Shortcuts.
+              </h2>
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {process.map((step, i) => (
-              <div key={step.title} className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mb-5 shrink-0 ring-4 ring-white shadow-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {i + 1}
+            {processSteps.map((step, i) => (
+              <FadeIn key={step.title} delay={i * 0.15}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg mb-5 shrink-0 ring-4 ring-white shadow-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {i + 1}
+                  </div>
+                  <h3
+                    className="font-semibold text-gray-900 text-base mb-2"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
                 </div>
-                <h3
-                  className="font-semibold text-gray-900 text-base mb-2"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-[#137868]">
+      <section className="py-20 bg-gradient-to-br from-[#137868] to-[#0f5f54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              What Providers Say
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-white"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Trusted by Independent Practices
-            </h2>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-14">
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                What Providers Say
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-white"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Trusted by Independent Practices
+              </h2>
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t) => (
-              <article key={t.name} className="bg-white/10 backdrop-blur rounded-2xl p-8">
-                <div className="flex gap-1 mb-4" aria-label="5 out of 5 stars">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={18} className="fill-[#F15200] text-[#F15200]" />
-                  ))}
-                </div>
-                <blockquote className="text-white text-base leading-relaxed mb-6 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <footer>
-                  <p className="text-white font-semibold" style={{ fontFamily: "'Poppins', sans-serif" }}>{t.name}</p>
-                  <p className="text-white/70 text-sm">{t.role}</p>
-                </footer>
-              </article>
+            {testimonials.map((t, i) => (
+              <FadeIn key={t.name} delay={i * 0.2}>
+                <article className="bg-white/10 backdrop-blur rounded-2xl p-8 hover:-translate-y-1 hover:bg-white/15 transition-all duration-300">
+                  <div className="flex gap-1 mb-4" aria-label="5 out of 5 stars">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={18} className="fill-[#F15200] text-[#F15200]" />
+                    ))}
+                  </div>
+                  <blockquote className="text-white text-base leading-relaxed mb-6 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <footer>
+                    <p className="text-white font-semibold" style={{ fontFamily: "'Poppins', sans-serif" }}>{t.name}</p>
+                    <p className="text-white/70 text-sm">{t.role}</p>
+                  </footer>
+                </article>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -400,85 +427,95 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center">
-              <div className="relative">
-                <Image
-                  src="/team/michelle-recek.png"
-                  alt="Michelle Recek, Founder"
-                  width={380}
-                  height={420}
-                  className="rounded-2xl object-cover"
-                />
+            <SlideIn direction="left">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <Image
+                    src="/team/michelle-recek.png"
+                    alt="Michelle Recek, Founder"
+                    width={380}
+                    height={420}
+                    className="rounded-2xl object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            <div>
-              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                Meet Our Founder
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Michelle Recek
-              </h2>
-              <p className="text-[#137868] font-semibold text-base mb-6">
-                Founder and Director of Revenue Cycle Operations
-              </p>
-              <blockquote className="border-l-4 border-[#137868] pl-5 italic text-gray-700 text-base leading-relaxed mb-6">
-                &ldquo;I offer more than billing services. I help you understand
-                your revenue cycle. I&rsquo;ll show you where every dollar is
-                going and make sure you&rsquo;re getting the maximum
-                reimbursement for the hard work you put in every day.&rdquo;
-              </blockquote>
-              <p className="text-gray-600 text-base leading-relaxed mb-6">
-                Michelle spent two decades in healthcare operations. Before
-                founding ClearClaim RCM, she served as VP of an insurance
-                company, which means she knows how payers process claims, what
-                triggers a denial, and how to push back effectively. That
-                background does not come standard with a billing service.
-              </p>
-              <Link
-                href="/about-us/"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] transition-colors"
-              >
-                Learn More About Michelle
-                <ArrowRight size={18} />
-              </Link>
-            </div>
+            </SlideIn>
+            <SlideIn direction="right" delay={0.2}>
+              <div>
+                <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                  Meet Our Founder
+                </p>
+                <h2
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  Michelle Recek
+                </h2>
+                <p className="text-[#137868] font-semibold text-base mb-6">
+                  Founder and Director of Revenue Cycle Operations
+                </p>
+                <FadeIn delay={0.4}>
+                  <blockquote className="border-l-4 border-[#137868] pl-5 italic text-gray-700 text-base leading-relaxed mb-6">
+                    &ldquo;I offer more than billing services. I help you understand
+                    your revenue cycle. I&rsquo;ll show you where every dollar is
+                    going and make sure you&rsquo;re getting the maximum
+                    reimbursement for the hard work you put in every day.&rdquo;
+                  </blockquote>
+                </FadeIn>
+                <p className="text-gray-600 text-base leading-relaxed mb-6">
+                  Michelle spent two decades in healthcare operations. Before
+                  founding ClearClaim RCM, she served as VP of an insurance
+                  company, which means she knows how payers process claims, what
+                  triggers a denial, and how to push back effectively. That
+                  background does not come standard with a billing service.
+                </p>
+                <Link
+                  href="/about-us/"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                >
+                  Learn More About Michelle
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </SlideIn>
           </div>
         </div>
       </section>
 
       {/* CTA banner */}
-      <section className="py-16 bg-[#80010A]">
+      <section className="py-16 bg-gradient-to-r from-[#80010A] to-[#6a0108]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Get Paid What You&rsquo;ve Already Earned
-          </h2>
-          <p className="text-white/80 text-base leading-relaxed mb-8 max-w-2xl mx-auto">
-            Start with a free audit. No pitch, no pressure. If your current
-            team is doing fine, Michelle will tell you so. If there are gaps,
-            you will see exactly where the money is slipping out.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact-us/"
-              className="px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 transition-colors"
+          <FadeIn>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Request a Free Audit
-            </Link>
-            <a
-              href="https://calendly.com/michelle-clearclaimrcm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] transition-colors"
-            >
-              Schedule a Consultation
-            </a>
-          </div>
+              Get Paid What You&rsquo;ve Already Earned
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+              Start with a free audit. No pitch, no pressure. If your current
+              team is doing fine, Michelle will tell you so. If there are gaps,
+              you will see exactly where the money is slipping out.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact-us/"
+                className="px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 animate-[pulse-glow-maroon_3s_ease-in-out_infinite]"
+              >
+                Request a Free Audit
+              </Link>
+              <a
+                href="https://calendly.com/michelle-clearclaimrcm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300"
+              >
+                Schedule a Consultation
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>
