@@ -212,12 +212,12 @@ export default function HomePage() {
       </section>
 
       {/* Stats marquee */}
-      <section className="py-5 bg-gradient-to-r from-[#80010A] to-[#6a0108] overflow-hidden">
+      <section className="py-5 overflow-hidden">
         <div className="flex animate-[marquee_20s_linear_infinite] w-max gap-4">
           {[...stats, ...stats, ...stats].map((stat, i) => (
             <span
               key={i}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-semibold whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold whitespace-nowrap shrink-0"
             >
               <stat.icon size={16} />
               {stat.value} {stat.label}
