@@ -177,7 +177,7 @@ export default function ServicesPage() {
       <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] pt-[219px] sm:pt-[235px] pb-[146px] sm:pb-[162px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/gallery/02.jpg"
+            src="/gallery/services-hero.jpg"
             alt="Medical billing professionals at ClearClaim RCM"
             fill
             className="object-cover opacity-20"
