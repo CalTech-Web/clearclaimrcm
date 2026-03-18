@@ -157,7 +157,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#137868]/90 via-[#137868]/75 to-[#0f5f54]/85" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-36 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[171px] pb-[194px] text-center">
           <div className="max-w-3xl mx-auto">
             <FadeIn delay={0.1}>
               <p
@@ -500,18 +500,30 @@ export default function HomePage() {
       </section>
 
       {/* CTA banner */}
-      <section className="relative py-20 bg-gradient-to-br from-[#80010A] via-[#6a0108] to-[#80010A] overflow-hidden">
+      <section className="relative py-24 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/02.jpg"
+            alt="Healthcare revenue cycle management"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#80010A]/90 via-[#6a0108]/85 to-[#80010A]/90" />
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_50%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_50%)] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <FadeIn>
+            <p className="text-white/60 font-semibold text-sm uppercase tracking-widest mb-4">
+              Your Next Step
+            </p>
             <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-2"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Get Paid What You&rsquo;ve Already Earned
             </h2>
-            <div className="w-16 h-1 bg-white/40 mx-auto rounded-full mb-6" />
+            <div className="w-20 h-1 bg-white/40 mx-auto rounded-full mb-6" />
             <p className="text-white/85 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
               Start with a free audit. No pitch, no pressure. If your current
               team is doing fine, Michelle will tell you so. If there are gaps,
