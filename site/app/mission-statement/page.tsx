@@ -283,7 +283,7 @@ export default function MissionPage() {
       <section className="relative py-24 sm:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/gallery/02.jpg"
+            src="/gallery/cta-bg.jpg"
             alt="Healthcare revenue cycle management"
             fill
             className="object-cover"
