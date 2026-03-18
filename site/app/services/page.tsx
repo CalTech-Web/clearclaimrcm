@@ -337,18 +337,30 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 bg-gradient-to-br from-[#80010A] via-[#6a0108] to-[#80010A] overflow-hidden">
+      <section className="relative py-24 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/02.jpg"
+            alt="Healthcare revenue cycle management"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#80010A]/90 via-[#6a0108]/85 to-[#80010A]/90" />
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_50%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_50%)] pointer-events-none" />
         <FadeIn>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <p className="text-white/60 font-semibold text-sm uppercase tracking-widest mb-4">
+              No Obligation
+            </p>
             <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-2"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Start With a Free Audit
             </h2>
-            <div className="w-16 h-1 bg-white/40 mx-auto rounded-full mb-6" />
+            <div className="w-20 h-1 bg-white/40 mx-auto rounded-full mb-6" />
             <p className="text-white/85 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
               <Link href="/about-us/" className="text-white font-semibold hover:underline">
                 Michelle Recek
@@ -359,7 +371,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 animate-[pulse-glow-maroon_3s_ease-in-out_infinite]"
               >
                 Request a Free Audit
                 <ArrowRight size={18} />
