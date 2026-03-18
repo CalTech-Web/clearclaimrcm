@@ -206,23 +206,23 @@ export default function HomePage() {
             </FadeIn>
           </div>
         </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
-          <ChevronDown size={28} />
+        {/* Stats marquee */}
+        <div className="absolute bottom-14 left-0 right-0 z-10 overflow-hidden">
+          <div className="flex animate-[marquee_20s_linear_infinite] w-max gap-4">
+            {[...stats, ...stats, ...stats].map((stat, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-semibold whitespace-nowrap shrink-0"
+              >
+                <stat.icon size={16} />
+                {stat.value} {stat.label}
+              </span>
+            ))}
+          </div>
         </div>
-      </section>
 
-      {/* Stats marquee */}
-      <section className="py-5 overflow-hidden">
-        <div className="flex animate-[marquee_20s_linear_infinite] w-max gap-4">
-          {[...stats, ...stats, ...stats].map((stat, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold whitespace-nowrap shrink-0"
-            >
-              <stat.icon size={16} />
-              {stat.value} {stat.label}
-            </span>
-          ))}
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 animate-bounce z-10">
+          <ChevronDown size={28} />
         </div>
       </section>
 
