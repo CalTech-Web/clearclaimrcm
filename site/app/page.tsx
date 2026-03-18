@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Star, ChevronDown, Clock, BadgeCheck, Shield, Gift, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, BarChart2, type LucideIcon } from "lucide-react";
-import { FadeIn, SlideIn, StaggerChildren, StaggerItem, ScaleIn, CountUp } from "@/components/MotionWrappers";
+import { FadeIn, SlideIn, StaggerChildren, StaggerItem } from "@/components/MotionWrappers";
 
 const services: { title: string; icon: LucideIcon; desc: string }[] = [
   {
@@ -211,22 +211,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="bg-gradient-to-r from-[#80010A] to-[#6a0108] py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center text-white">
-            {stats.map((stat, i) => (
-              <ScaleIn key={stat.label} delay={i * 0.15}>
-                <div className="flex flex-col items-center gap-2 py-2">
-                  <stat.icon size={28} className="text-white" />
-                  <p className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    <CountUp end={stat.value} />
-                  </p>
-                  <p className="text-sm text-white font-medium">{stat.label}</p>
-                </div>
-              </ScaleIn>
-            ))}
-          </div>
+      {/* Stats marquee */}
+      <section className="py-5 bg-gradient-to-r from-[#80010A] to-[#6a0108] overflow-hidden">
+        <div className="flex animate-[marquee_20s_linear_infinite] w-max gap-4">
+          {[...stats, ...stats, ...stats].map((stat, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-white text-sm font-semibold whitespace-nowrap shrink-0"
+            >
+              <stat.icon size={16} />
+              {stat.value} {stat.label}
+            </span>
+          ))}
         </div>
       </section>
 
