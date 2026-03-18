@@ -157,7 +157,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#137868]/90 via-[#137868]/75 to-[#0f5f54]/85" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-36 text-center">
           <div className="max-w-3xl mx-auto">
             <FadeIn delay={0.1}>
               <p
