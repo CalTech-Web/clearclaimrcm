@@ -209,72 +209,80 @@ export default function ServicesPage() {
       </section>
 
       {/* Services list */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#137868_1px,transparent_1px),linear-gradient(to_bottom,#137868_1px,transparent_1px)] bg-[size:80px_80px] opacity-[0.015] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative">
-          {services.map((service, idx) => (
-            <FadeIn key={service.number}>
-              <article className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                <SlideIn direction={idx % 2 === 1 ? "right" : "left"}>
-                  <div>
-                    <div className="flex items-center gap-4 mb-5">
-                      <span
-                        className="text-5xl font-bold text-[#137868]/15"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
-                      >
-                        {service.number}
-                      </span>
-                      <div className="w-12 h-12 flex items-center justify-center bg-[#137868]/10 rounded-xl">
-                        <service.icon size={22} className="text-[#137868]" />
-                      </div>
-                    </div>
-                    <h2
-                      className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2"
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                Our Services
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Everything Your Revenue Cycle Needs
+              </h2>
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
+            </div>
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <StaggerItem key={service.number}>
+                <article className="relative h-full bg-white rounded-2xl border border-gray-100 hover:border-[#137868]/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#137868] to-[#1a9e88] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative h-44 overflow-hidden">
+                    <Image
+                      src={service.img}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <span
+                      className="absolute bottom-3 left-4 text-white/30 text-4xl font-bold"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
-                      {service.title}
-                    </h2>
-                    <div className="w-12 h-1 bg-[#137868] rounded-full mb-5" />
-                    <p className="text-gray-600 text-base leading-relaxed mb-6">
+                      {service.number}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 flex items-center justify-center bg-[#137868]/10 rounded-lg group-hover:bg-[#137868] transition-all duration-300 shrink-0">
+                        <service.icon size={16} className="text-[#137868] group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <h3
+                        className="text-lg font-semibold text-gray-900 group-hover:text-[#137868] transition-colors leading-tight"
+                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                      >
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                       {service.desc}
                     </p>
-                    <ul className="space-y-3 mb-6">
+                    <ul className="space-y-1.5 mb-4">
                       {service.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-2.5 border border-gray-100">
-                          <CheckCircle size={17} className="text-[#137868] shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-sm">{b}</span>
+                        <li key={b} className="flex items-start gap-2">
+                          <CheckCircle size={14} className="text-[#137868] shrink-0 mt-0.5" />
+                          <span className="text-gray-600 text-xs leading-relaxed">{b}</span>
                         </li>
                       ))}
                     </ul>
                     {service.cta && (
                       <Link
                         href="/contact-us/"
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#80010A] text-white font-semibold text-base hover:bg-[#600108] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#80010A] text-white font-semibold text-sm hover:bg-[#600108] hover:scale-105 hover:shadow-lg transition-all duration-300 w-fit"
                       >
                         Request Your Free Audit
-                        <ArrowRight size={18} />
+                        <ArrowRight size={16} />
                       </Link>
                     )}
                   </div>
-                </SlideIn>
-                <SlideIn direction={idx % 2 === 1 ? "left" : "right"}>
-                  <div className="relative">
-                    <div className="absolute -inset-3 bg-gradient-to-br from-[#137868]/8 to-[#F15200]/8 rounded-3xl blur-xl pointer-events-none" />
-                    <Image
-                      src={service.img}
-                      alt={service.title}
-                      width={540}
-                      height={400}
-                      className="relative rounded-2xl object-cover w-full h-auto shadow-md"
-                    />
-                  </div>
-                </SlideIn>
-              </article>
-              {idx < services.length - 1 && (
-                <div className="mt-20 border-t border-gray-100" />
-              )}
-            </FadeIn>
-          ))}
+                </article>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
         </div>
       </section>
 
