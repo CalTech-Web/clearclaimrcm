@@ -135,12 +135,12 @@ export default function ContactPage() {
                 <div className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] rounded-2xl p-8 text-white order-first lg:order-last hover:-translate-y-2 hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.1),transparent_50%)] pointer-events-none" />
                   <div className="relative">
-                    <h3
+                    <h2
                       className="text-xl font-bold mb-2"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       Free Billing Audit
-                    </h3>
+                    </h2>
                     <div className="w-12 h-1 bg-white/30 rounded-full mb-4" />
                     <p className="text-white/90 text-sm leading-relaxed mb-5">
                       Michelle reviews your denial rate, AR aging, and coding
@@ -253,12 +253,12 @@ export default function ContactPage() {
             {/* Contact form */}
             <SlideIn direction="right">
               <div className="bg-gray-50 rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
-                <h3
+                <h2
                   className="text-xl font-bold text-gray-900 mb-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Send Us a Message
-                </h3>
+                </h2>
                 <div className="w-12 h-1 bg-[#137868] rounded-full mb-6" />
                 <ContactForm />
               </div>
