@@ -307,30 +307,10 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#F15200]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#137868]/30 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <FadeIn>
-            <div className="text-center mb-8">
-              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                Why ClearClaim RCM
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold text-white mb-4"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Your Revenue Cycle Partner, Not Just a Billing Service
-              </h2>
-              <div className="w-16 h-1 bg-[#F15200] mx-auto rounded-full mb-6" />
-              <p className="text-gray-300 text-base leading-relaxed max-w-2xl mx-auto">
-                Michelle spent time as a VP at an insurance company. She knows
-                exactly how payers evaluate claims and what triggers a denial.
-                That is knowledge most billing companies do not have, and it
-                changes how we fight for your reimbursements.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14">
-            <SlideIn direction="left" className="lg:row-span-2 flex">
-              <div className="relative rounded-2xl overflow-hidden flex-1 min-h-[300px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Image — left */}
+            <SlideIn direction="left">
+              <div className="relative rounded-2xl overflow-hidden min-h-[500px] lg:min-h-[600px] sticky top-8">
                 <Image
                   src="/products/21.png"
                   alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
@@ -351,31 +331,56 @@ export default function HomePage() {
                 </div>
               </div>
             </SlideIn>
-            <StaggerChildren className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {differentiators.map((d) => (
-                <StaggerItem key={d.text}>
-                  <div className="flex items-start gap-4 bg-white/[0.07] backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:bg-white/[0.12] hover:border-white/20 transition-all duration-300 group h-full">
-                    <div className="w-10 h-10 rounded-lg bg-[#F15200]/20 flex items-center justify-center shrink-0 group-hover:bg-[#F15200]/30 transition-colors duration-300">
-                      <d.icon size={20} className="text-[#F15200]" />
-                    </div>
-                    <p className="text-gray-200 text-sm leading-relaxed">{d.text}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
-          </div>
 
-          <FadeIn delay={0.4}>
-            <div className="text-center mt-12">
-              <Link
-                href="/about-us/"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More About Us
-                <ArrowRight size={18} />
-              </Link>
+            {/* Content — right */}
+            <div>
+              <FadeIn>
+                <div className="mb-8">
+                  <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                    Why ClearClaim RCM
+                  </p>
+                  <h2
+                    className="text-3xl sm:text-4xl font-bold text-white mb-4"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    Your Revenue Cycle Partner, Not Just a Billing Service
+                  </h2>
+                  <div className="w-16 h-1 bg-[#F15200] rounded-full mb-6" />
+                  <p className="text-gray-300 text-base leading-relaxed">
+                    Michelle spent time as a VP at an insurance company. She knows
+                    exactly how payers evaluate claims and what triggers a denial.
+                    That is knowledge most billing companies do not have, and it
+                    changes how we fight for your reimbursements.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {differentiators.map((d) => (
+                  <StaggerItem key={d.text}>
+                    <div className="flex items-start gap-4 bg-white/[0.07] backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:bg-white/[0.12] hover:border-white/20 transition-all duration-300 group h-full">
+                      <div className="w-10 h-10 rounded-lg bg-[#F15200]/20 flex items-center justify-center shrink-0 group-hover:bg-[#F15200]/30 transition-colors duration-300">
+                        <d.icon size={20} className="text-[#F15200]" />
+                      </div>
+                      <p className="text-gray-200 text-sm leading-relaxed">{d.text}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerChildren>
+
+              <FadeIn delay={0.4}>
+                <div className="mt-10">
+                  <Link
+                    href="/about-us/"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#137868] font-semibold hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  >
+                    Learn More About Us
+                    <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </FadeIn>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
