@@ -587,12 +587,12 @@ export default function HomePage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#80010A]/90 via-[#6a0108]/85 to-[#80010A]/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#80010A]/75 via-[#6a0108]/70 to-[#80010A]/75" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.1),transparent_40%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(241,82,0,0.15),transparent_40%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(241,82,0,0.1),transparent_40%)] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="bg-white/[0.07] backdrop-blur-md rounded-3xl border border-white/10 p-8 sm:p-12 lg:p-16">
+          <div className="bg-white/[0.12] backdrop-blur-lg rounded-3xl border border-white/20 p-8 sm:p-12 lg:p-16">
             <FadeIn>
               <div className="text-center">
                 <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4">
