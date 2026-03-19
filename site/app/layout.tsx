@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "ClearClaim RCM provides medical billing services, credentialing, provider enrollment, payer contracting, denial management, and revenue cycle management for specialty practices, surgery centers, and multi-entity groups.",
   verification: {
-    google: "hmNb26et4UTAb0wD3j76Tff8VUjgG-fkbm4_887YmcY",
+    google: ["hmNb26et4UTAb0wD3j76Tff8VUjgG-fkbm4_887YmcY", "ZlLkPfkM6q_fT3smUCCLQiEYhIVeOYwdqSNNP-KJPz4"],
   },
   alternates: {
     canonical: "/",
