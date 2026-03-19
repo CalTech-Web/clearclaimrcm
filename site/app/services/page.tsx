@@ -363,7 +363,7 @@ export default function ServicesPage() {
             ].map((s, index) => (
               <ScaleIn key={s.step} delay={index * 0.15}>
                 <div
-                  className="relative rounded-2xl p-8 pt-12 text-center border border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  className="relative rounded-2xl p-8 pt-12 text-center border border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
                   style={{ background: `linear-gradient(135deg, ${s.color}12 0%, ${s.color}08 50%, ${s.color}18 100%)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
                 >
                   <div
