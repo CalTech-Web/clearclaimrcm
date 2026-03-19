@@ -310,14 +310,15 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             {/* Image — left */}
             <SlideIn direction="left">
-              <div className="relative rounded-2xl overflow-hidden min-h-[500px] lg:min-h-[600px] sticky top-8">
+              <div className="relative rounded-2xl overflow-hidden sticky top-8">
                 <Image
                   src="/products/21.png"
                   alt="AAPC-certified medical billing specialist reviewing revenue cycle claims"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-contain rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/80 via-transparent to-transparent rounded-2xl" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
                     <div className="w-10 h-10 rounded-full bg-[#F15200] flex items-center justify-center shrink-0">
