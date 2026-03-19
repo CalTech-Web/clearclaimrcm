@@ -563,25 +563,34 @@ export default function HomePage() {
 
                 <FadeIn delay={0.5}>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                    <div className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                      <div className="w-12 h-12 rounded-full bg-[#137868]/10 flex items-center justify-center mb-3">
+                    <div
+                      className="flex flex-col items-center text-center rounded-xl p-5 border border-white/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                      style={{ background: "linear-gradient(135deg, #13786812 0%, #13786808 50%, #13786818 100%)" }}
+                    >
+                      <div className="w-12 h-12 rounded-full bg-[#137868]/15 flex items-center justify-center mb-3">
                         <Clock size={22} className="text-[#137868]" />
                       </div>
-                      <p className="text-gray-900 font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>20+</p>
+                      <p className="text-[#137868] font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>20+</p>
                       <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Years Experience</p>
                     </div>
-                    <div className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                      <div className="w-12 h-12 rounded-full bg-[#137868]/10 flex items-center justify-center mb-3">
-                        <BadgeCheck size={22} className="text-[#137868]" />
+                    <div
+                      className="flex flex-col items-center text-center rounded-xl p-5 border border-white/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                      style={{ background: "linear-gradient(135deg, #2563eb12 0%, #2563eb08 50%, #2563eb18 100%)" }}
+                    >
+                      <div className="w-12 h-12 rounded-full bg-[#2563eb]/15 flex items-center justify-center mb-3">
+                        <BadgeCheck size={22} className="text-[#2563eb]" />
                       </div>
-                      <p className="text-gray-900 font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>AAPC</p>
+                      <p className="text-[#2563eb] font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>AAPC</p>
                       <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Certified Coding</p>
                     </div>
-                    <div className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                      <div className="w-12 h-12 rounded-full bg-[#137868]/10 flex items-center justify-center mb-3">
-                        <Shield size={22} className="text-[#137868]" />
+                    <div
+                      className="flex flex-col items-center text-center rounded-xl p-5 border border-white/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                      style={{ background: "linear-gradient(135deg, #7c3aed12 0%, #7c3aed08 50%, #7c3aed18 100%)" }}
+                    >
+                      <div className="w-12 h-12 rounded-full bg-[#7c3aed]/15 flex items-center justify-center mb-3">
+                        <Shield size={22} className="text-[#7c3aed]" />
                       </div>
-                      <p className="text-gray-900 font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>HIPAA</p>
+                      <p className="text-[#7c3aed] font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>HIPAA</p>
                       <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Compliant</p>
                     </div>
                   </div>
