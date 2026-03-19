@@ -37,36 +37,42 @@ export const metadata: Metadata = {
   },
 };
 
-const pillars: { icon: LucideIcon; title: string; desc: string }[] = [
+const pillars: { icon: LucideIcon; title: string; desc: string; color: string }[] = [
   {
     icon: Target,
     title: "Specialists, Not Generalists",
     desc: "We do not do payroll. We do not do bookkeeping. We do medical billing and revenue cycle management, full stop. Every person on our team, every process we run, every dollar of attention we give goes toward one thing.",
+    color: "#137868",
   },
   {
     icon: Eye,
     title: "Transparency First",
     desc: "You get a monthly report showing exactly what was submitted, what was paid, what was denied, and what is still outstanding. No vague summaries. If there is a problem with your AR, you will see it before it becomes a cash flow problem.",
+    color: "#2563eb",
   },
   {
     icon: Zap,
     title: "Fighter Mentality",
     desc: "A denied claim is not a closed claim. We pull the reason code, fix the issue, and resubmit or appeal. We track every denial through resolution. Nothing gets written off without a fight.",
+    color: "#F15200",
   },
   {
     icon: Users,
     title: "Partnership, Not Vendor",
     desc: "We are not a ticket queue. When something changes with your payer mix or your volumes shift, we adjust. Your financial health is something we monitor ongoing, not something we revisit when you call.",
+    color: "#7c3aed",
   },
   {
     icon: FileCheck,
     title: "Clean Claims as the Foundation",
     desc: "The fastest way to get paid is to submit a clean claim the first time. AAPC-compliant coding and pre-submission scrubbing mean fewer rejections, fewer resubmissions, and faster cash in your account.",
+    color: "#dc2626",
   },
   {
     icon: Heart,
     title: "Provider-Centric Outcomes",
     desc: "Every process we run is designed so you spend less time on billing. That is the measure. Not just claims submitted, but time you get back for patient care.",
+    color: "#0891b2",
   },
 ];
 
@@ -190,18 +196,31 @@ export default function MissionPage() {
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {pillars.map((p) => (
               <StaggerItem key={p.title}>
-                <article className="relative h-full bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#137868]/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#137868] to-[#1a9e88] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl group-hover:bg-[#137868] transition-all duration-300">
-                    <p.icon size={26} className="text-[#137868] group-hover:text-white transition-colors duration-300" />
+                <article
+                  className="relative h-full rounded-2xl p-8 border border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col"
+                  style={{ background: `linear-gradient(135deg, ${p.color}12 0%, ${p.color}08 50%, ${p.color}18 100%)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+                >
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+                    style={{ background: `linear-gradient(135deg, ${p.color}20 0%, ${p.color}10 50%, ${p.color}25 100%)` }}
+                  />
+                  <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(to right, ${p.color}, ${p.color}99)` }} />
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-30 group-hover:opacity-50 transition-opacity duration-300" style={{ background: p.color }} />
+                  <div className="relative flex flex-col flex-1">
+                    <div
+                      className="w-14 h-14 mb-5 flex items-center justify-center rounded-xl transition-all duration-300"
+                      style={{ background: `${p.color}18` }}
+                    >
+                      <p.icon size={26} style={{ color: p.color }} className="group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3
+                      className="text-lg font-semibold text-gray-900 mb-3 transition-colors duration-300"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {p.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed flex-1">{p.desc}</p>
                   </div>
-                  <h3
-                    className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {p.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed flex-1">{p.desc}</p>
                 </article>
               </StaggerItem>
             ))}

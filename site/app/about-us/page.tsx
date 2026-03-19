@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Eye, Shield, Zap, Users } from "lucide-react";
+import { CheckCircle, ArrowRight, Eye, Shield, Zap, Users, type LucideIcon } from "lucide-react";
 import { FadeIn, SlideIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
@@ -45,26 +45,30 @@ const career = [
   "Revenue Cycle, Red Rock Recovery Center",
 ];
 
-const values = [
+const values: { title: string; icon: LucideIcon; desc: string; color: string }[] = [
   {
     title: "Transparency",
     icon: Eye,
     desc: "Most billing reports tell you what happened after it is too late to change anything. Ours show the full picture every month, collections, denials, AR trends, so you can make decisions with real data before problems compound.",
+    color: "#137868",
   },
   {
     title: "Integrity",
     icon: Shield,
     desc: "Every claim we submit follows AAPC-certified standards. HIPAA compliance is not a checkbox here, it is the floor. We do not cut corners because your license is on the line along with ours.",
+    color: "#2563eb",
   },
   {
     title: "Fighter Mentality",
     icon: Zap,
     desc: "When a payer denies a claim, we do not move on. We pull the EOB, find the reason, fix the problem, and send it back. Most practices lose thousands a year to denials that never got challenged.",
+    color: "#F15200",
   },
   {
     title: "Partnership",
     icon: Users,
     desc: "You should not need to chase your billing company for updates. We report proactively, flag problems before they compound, and treat your financial health as an ongoing responsibility.",
+    color: "#7c3aed",
   },
 ];
 
@@ -243,18 +247,31 @@ export default function AboutPage() {
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {values.map((v) => (
               <StaggerItem key={v.title}>
-                <article className="relative h-full bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#137868]/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#137868] to-[#1a9e88] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="w-14 h-14 mb-5 flex items-center justify-center bg-[#137868]/10 rounded-xl group-hover:bg-[#137868] transition-all duration-300">
-                    <v.icon size={26} className="text-[#137868] group-hover:text-white transition-colors duration-300" />
+                <article
+                  className="relative h-full rounded-2xl p-8 border border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col"
+                  style={{ background: `linear-gradient(135deg, ${v.color}12 0%, ${v.color}08 50%, ${v.color}18 100%)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+                >
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+                    style={{ background: `linear-gradient(135deg, ${v.color}20 0%, ${v.color}10 50%, ${v.color}25 100%)` }}
+                  />
+                  <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(to right, ${v.color}, ${v.color}99)` }} />
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-30 group-hover:opacity-50 transition-opacity duration-300" style={{ background: v.color }} />
+                  <div className="relative flex flex-col flex-1">
+                    <div
+                      className="w-14 h-14 mb-5 flex items-center justify-center rounded-xl transition-all duration-300"
+                      style={{ background: `${v.color}18` }}
+                    >
+                      <v.icon size={26} style={{ color: v.color }} className="group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3
+                      className="text-xl font-semibold text-gray-900 mb-3 transition-colors duration-300"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {v.title}
+                    </h3>
+                    <p className="text-gray-600 text-base leading-relaxed flex-1">{v.desc}</p>
                   </div>
-                  <h3
-                    className="text-xl font-semibold text-[#137868] mb-3"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {v.title}
-                  </h3>
-                  <p className="text-gray-600 text-base leading-relaxed flex-1">{v.desc}</p>
                 </article>
               </StaggerItem>
             ))}

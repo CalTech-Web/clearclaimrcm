@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Linkedin, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, Linkedin, Clock, ArrowRight, HelpCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { FadeIn, SlideIn } from "@/components/MotionWrappers";
 
@@ -288,19 +288,41 @@ export default function ContactPage() {
             </FadeIn>
           </div>
           <div className="space-y-5">
-            {faqs.map((faq, index) => (
-              <FadeIn key={faq.q} delay={index * 0.08}>
-                <article className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#137868]/20 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <h3
-                    className="text-base font-semibold text-gray-900 mb-3"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
+            {faqs.map((faq, index) => {
+              const colors = ["#137868", "#2563eb", "#7c3aed", "#F15200", "#dc2626", "#0891b2", "#137868"];
+              const color = colors[index % colors.length];
+              return (
+                <FadeIn key={faq.q} delay={index * 0.08}>
+                  <article
+                    className="relative rounded-2xl p-8 border border-white/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group overflow-hidden"
+                    style={{ background: `linear-gradient(135deg, ${color}12 0%, ${color}08 50%, ${color}18 100%)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
                   >
-                    {faq.q}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-                </article>
-              </FadeIn>
-            ))}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+                      style={{ background: `linear-gradient(135deg, ${color}20 0%, ${color}10 50%, ${color}25 100%)` }}
+                    />
+                    <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-300" style={{ background: color }} />
+                    <div className="relative flex items-start gap-4">
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                        style={{ background: `${color}18` }}
+                      >
+                        <HelpCircle size={20} style={{ color }} />
+                      </div>
+                      <div>
+                        <h3
+                          className="text-base font-semibold text-gray-900 mb-3"
+                          style={{ fontFamily: "'Poppins', sans-serif" }}
+                        >
+                          {faq.q}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                      </div>
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>

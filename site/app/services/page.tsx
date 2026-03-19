@@ -36,12 +36,13 @@ export const metadata: Metadata = {
   },
 };
 
-const services: { number: string; title: string; icon: LucideIcon; img: string; desc: string; bullets: string[]; cta?: boolean }[] = [
+const services: { number: string; title: string; icon: LucideIcon; img: string; desc: string; bullets: string[]; cta?: boolean; color: string }[] = [
   {
     number: "01",
     title: "Medical Claim Coding",
     icon: ClipboardList,
     img: "/products/claim-1.png",
+    color: "#137868",
     desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. Our AAPC-certified coders assign ICD, CPT, and HCPCS codes to the standard, specialty by specialty.",
     bullets: [
       "ICD, CPT, and HCPCS code assignment",
@@ -55,6 +56,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Charge Entry",
     icon: FilePlus,
     img: "/products/22.png",
+    color: "#2563eb",
     desc: "A clean claim starts before the claim is even built. Patient demographics, insurance details, and service data all have to be entered correctly, or the claim goes out with a flaw baked in. We verify before we submit.",
     bullets: [
       "Complete patient and insurance data entry",
@@ -68,6 +70,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Claim Submission",
     icon: Send,
     img: "/products/23.png",
+    color: "#7c3aed",
     desc: "Claims go out electronically to all major payers, with paper submission where required. Before they go, every claim gets scrubbed for errors. Timely filing windows are tracked. Nothing ages out.",
     bullets: [
       "Electronic and paper claim submission",
@@ -81,6 +84,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Payment Posting",
     icon: CreditCard,
     img: "/products/paid-content.png",
+    color: "#F15200",
     desc: "Every payment that comes in gets posted with full detail, allowed amounts, patient responsibility, adjustments, and denials. That level of documentation is how you catch underpayments before they become a pattern.",
     bullets: [
       "Insurance EOB and ERA posting",
@@ -94,6 +98,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Denial and Appeals Management",
     icon: RotateCcw,
     img: "/products/24.png",
+    color: "#dc2626",
     desc: "Every denial gets a root cause review. We find the reason code, fix the problem, and send it back, either as a corrected claim or a formal appeal. We track each one through to resolution. Nothing gets written off because it was inconvenient to fight.",
     bullets: [
       "Root cause analysis for every denial",
@@ -107,6 +112,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Patient Billing",
     icon: FileText,
     img: "/products/statements.png",
+    color: "#0891b2",
     desc: "After insurance pays, patients get a clear statement for whatever is left. We also field billing questions so your front desk does not have to. Clear communication reduces disputes and gets balances paid faster.",
     bullets: [
       "Professional patient statements",
@@ -120,6 +126,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Accounts Receivable (AR) Follow-Up",
     icon: TrendingUp,
     img: "/products/business-report.png",
+    color: "#137868",
     desc: "Aging claims do not fix themselves. We work insurance AR and patient balances systematically, following up before things go stale. Practices that do not track this lose thousands a year to claims that simply expired.",
     bullets: [
       "Insurance AR aging management",
@@ -133,6 +140,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "End-of-Month Reporting and Analytics",
     icon: BarChart2,
     img: "/products/26.png",
+    color: "#2563eb",
     desc: "At the end of every month, you get a report showing what came in, what was denied, how your AR is aging, and how the practice is performing financially. No black box. You see the full picture.",
     bullets: [
       "Monthly collections reports",
@@ -146,6 +154,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Compliance Auditing",
     icon: ShieldCheck,
     img: "/products/28.png",
+    color: "#7c3aed",
     desc: "A payer audit is not something you want to be caught unprepared for. We review your claims, coding, and documentation against HIPAA requirements and AAPC standards on an ongoing basis. Catching compliance gaps early prevents the kind of problems that cost real money.",
     bullets: [
       "HIPAA compliance review",
@@ -159,6 +168,7 @@ const services: { number: string; title: string; icon: LucideIcon; img: string; 
     title: "Free Billing Audit",
     icon: SearchCheck,
     img: "/products/search.png",
+    color: "#F15200",
     desc: "Michelle reviews your current billing setup at no charge. She will look at your denial rate, your AR aging, your collections against expected reimbursement, and your coding accuracy. If your team is solid, she will tell you. If there are gaps, she will show you where the money is going.",
     bullets: [
       "Complimentary, no-obligation review",
@@ -229,8 +239,16 @@ export default function ServicesPage() {
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <StaggerItem key={service.number}>
-                <article className="relative h-full bg-white rounded-2xl border border-gray-100 hover:border-[#137868]/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex flex-col overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#137868] to-[#1a9e88] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <article
+                  className="relative h-full rounded-2xl border border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col overflow-hidden"
+                  style={{ background: `linear-gradient(135deg, ${service.color}12 0%, ${service.color}08 50%, ${service.color}18 100%)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+                >
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+                    style={{ background: `linear-gradient(135deg, ${service.color}20 0%, ${service.color}10 50%, ${service.color}25 100%)` }}
+                  />
+                  <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(to right, ${service.color}, ${service.color}99)` }} />
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-30 group-hover:opacity-50 transition-opacity duration-300" style={{ background: service.color }} />
                   <div className="relative h-44 overflow-hidden">
                     <Image
                       src={service.img}
@@ -238,7 +256,7 @@ export default function ServicesPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <span
                       className="absolute bottom-3 left-4 text-white/30 text-4xl font-bold"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -246,13 +264,16 @@ export default function ServicesPage() {
                       {service.number}
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
+                  <div className="relative p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-9 h-9 flex items-center justify-center bg-[#137868]/10 rounded-lg group-hover:bg-[#137868] transition-all duration-300 shrink-0">
-                        <service.icon size={16} className="text-[#137868] group-hover:text-white transition-colors duration-300" />
+                      <div
+                        className="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-300 shrink-0"
+                        style={{ background: `${service.color}18` }}
+                      >
+                        <service.icon size={16} style={{ color: service.color }} className="group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       <h3
-                        className="text-lg font-semibold text-gray-900 group-hover:text-[#137868] transition-colors leading-tight"
+                        className="text-lg font-semibold text-gray-900 transition-colors leading-tight"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
                         {service.title}
@@ -264,7 +285,7 @@ export default function ServicesPage() {
                     <ul className="space-y-1.5 mb-4">
                       {service.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-2">
-                          <CheckCircle size={14} className="text-[#137868] shrink-0 mt-0.5" />
+                          <CheckCircle size={14} style={{ color: service.color }} className="shrink-0 mt-0.5" />
                           <span className="text-gray-600 text-xs leading-relaxed">{b}</span>
                         </li>
                       ))}
@@ -313,30 +334,43 @@ export default function ServicesPage() {
                 step: "1",
                 title: "Free Billing Audit",
                 desc: "Michelle reviews your denial rate, AR aging, and coding accuracy at no cost. No pitch. Honest feedback, whether or not you decide to work with us.",
+                color: "#137868",
               },
               {
                 step: "2",
                 title: "Practice Onboarding",
                 desc: "We connect to your practice management system, establish the workflows, and get everything running before your first claim goes out.",
+                color: "#2563eb",
               },
               {
                 step: "3",
                 title: "Ongoing Revenue Cycle Management",
                 desc: "Claims go out clean. Denials get challenged. Reports land in your inbox every month. You stay focused on patients.",
+                color: "#7c3aed",
               },
             ].map((s, index) => (
               <ScaleIn key={s.step} delay={index * 0.15}>
-                <div className="relative bg-white rounded-2xl p-8 pt-12 text-center border border-gray-100 hover:border-[#137868]/20 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
-                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-xl ring-4 ring-gray-50 shadow-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <div
+                  className="relative rounded-2xl p-8 pt-12 text-center border border-white/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  style={{ background: `linear-gradient(135deg, ${s.color}12 0%, ${s.color}08 50%, ${s.color}18 100%)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+                >
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+                    style={{ background: `linear-gradient(135deg, ${s.color}20 0%, ${s.color}10 50%, ${s.color}25 100%)` }}
+                  />
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-30 group-hover:opacity-50 transition-opacity duration-300" style={{ background: s.color }} />
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full text-white flex items-center justify-center font-bold text-xl ring-4 ring-gray-50 shadow-lg z-10" style={{ fontFamily: "'Poppins', sans-serif", background: s.color }}>
                     {s.step}
                   </div>
-                  <h3
-                    className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-[#137868] transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                  <div className="relative">
+                    <h3
+                      className="text-lg font-semibold text-gray-900 mb-3 transition-colors"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
                 </div>
               </ScaleIn>
             ))}
