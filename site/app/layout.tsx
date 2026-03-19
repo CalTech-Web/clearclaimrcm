@@ -22,9 +22,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://clearclaimrcm.com"),
   other: { "theme-color": "#137868" },
-  title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
+  title: "ClearClaim RCM | Medical Billing, Credentialing & Revenue Cycle Management",
   description:
-    "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+    "ClearClaim RCM provides medical billing services, credentialing, provider enrollment, payer contracting, denial management, and revenue cycle management for specialty practices, surgery centers, and multi-entity groups.",
   verification: {
     google: "hmNb26et4UTAb0wD3j76Tff8VUjgG-fkbm4_887YmcY",
   },
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "ClearClaim RCM",
-    title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
+    title: "ClearClaim RCM | Medical Billing, Credentialing & Revenue Cycle Management",
     description:
-      "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+      "ClearClaim RCM provides medical billing services, credentialing, provider enrollment, payer contracting, denial management, and revenue cycle management for specialty practices, surgery centers, and multi-entity groups.",
     url: "https://clearclaimrcm.com",
     images: [
       {
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
+    title: "ClearClaim RCM | Medical Billing, Credentialing & Revenue Cycle Management",
     description:
-      "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+      "ClearClaim RCM provides medical billing services, credentialing, provider enrollment, payer contracting, denial management, and revenue cycle management for specialty practices, surgery centers, and multi-entity groups.",
     images: ["/gallery/02.jpg"],
   },
 };
@@ -63,16 +63,16 @@ const organizationSchema = {
   url: "https://clearclaimrcm.com",
   logo: "https://clearclaimrcm.com/logos/Logo.png",
   description:
-    "ClearClaim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran.",
-  telephone: "+1-303-434-1355",
-  email: "michelle@clearclaimRCM.com",
+    "ClearClaim RCM provides medical billing, credentialing, provider enrollment, payer contracting, and revenue cycle management for specialty practices, surgery centers, and multi-entity healthcare groups.",
+  telephone: "+1-424-600-5948",
+  email: "info@clearclaimrcm.com",
   foundingDate: "2025",
   sameAs: ["https://www.linkedin.com/company/clearclaim-rcm"],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-303-434-1355",
+    telephone: "+1-424-600-5948",
     contactType: "customer service",
-    email: "michelle@clearclaimRCM.com",
+    email: "info@clearclaimrcm.com",
   },
 };
 

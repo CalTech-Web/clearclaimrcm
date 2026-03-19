@@ -5,57 +5,57 @@ import { FadeIn, SlideIn, StaggerChildren, StaggerItem } from "@/components/Moti
 
 const services: { title: string; icon: LucideIcon; desc: string; color: string; slug: string }[] = [
   {
-    title: "Medical Claim Coding",
-    icon: ClipboardList,
-    desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. We assign ICD, CPT, and HCPCS codes to AAPC-certified standards, specialty by specialty.",
+    title: "Credentialing and Enrollment",
+    icon: UserCheck,
+    desc: "We manage the full credentialing process, from CAQH and NPI registration to PECOS enrollment and payer-specific applications. We follow up proactively until your providers are fully billable.",
     color: "#137868",
-    slug: "medical-claim-coding",
+    slug: "credentialing-enrollment",
   },
   {
-    title: "Charge Entry",
-    icon: FilePlus,
-    desc: "A clean claim starts before the claim is even built. Patient demographics, insurance details, and service data all have to be entered correctly, or the claim goes out with a flaw baked in. We verify before we submit.",
+    title: "Payer Contracting and Network Activation",
+    icon: HeartHandshake,
+    desc: "We help your practice secure contracts with insurance payers, review fee schedules, and activate network participation so you can begin seeing patients and billing for services from day one.",
     color: "#2563eb",
-    slug: "charge-entry",
+    slug: "payer-contracting",
   },
   {
-    title: "Claim Submission",
-    icon: Send,
-    desc: "Claims go out electronically to all major payers, with paper submission where required. Before they go, every claim gets scrubbed for errors. Timely filing windows are tracked. Nothing ages out.",
+    title: "New Practice and Provider Setup",
+    icon: ClipboardList,
+    desc: "From credentialing and payer contracting to billing system configuration and workflow design, we build the full revenue infrastructure for new practices, multi-entity groups, and specialty offices.",
     color: "#7c3aed",
-    slug: "claim-submission",
+    slug: "new-practice-setup",
   },
   {
-    title: "Payment Posting",
-    icon: CreditCard,
-    desc: "Every payment that comes in gets posted with full detail, allowed amounts, patient responsibility, adjustments, and denials. That level of documentation is how you catch underpayments before they become a pattern.",
+    title: "Medical Billing Services",
+    icon: Send,
+    desc: "Full-cycle medical billing including claim coding, charge entry, claim submission, payment posting, patient billing, and accounts receivable follow-up. AAPC-certified and HIPAA-compliant.",
     color: "#F15200",
-    slug: "payment-posting",
+    slug: "medical-claim-coding",
   },
   {
     title: "Denial and Appeals Management",
     icon: RotateCcw,
-    desc: "A denied claim is not a closed claim. We find the reason code, fix the issue, and resubmit or appeal. Every denial is tracked through resolution. Nothing gets written off because it was inconvenient to fight.",
+    desc: "Every denied claim gets a root cause review, a correction, and a resubmission or formal appeal. We track each denial through to resolution. Nothing gets written off.",
     color: "#dc2626",
     slug: "denial-appeals-management",
   },
   {
-    title: "End-of-Month Reporting",
+    title: "Revenue Cycle Consulting",
     icon: BarChart2,
-    desc: "At the end of every month, you get a report showing what came in, what was denied, how your AR is aging, and how the practice is performing financially. No black box. You see the full picture.",
+    desc: "We review existing billing agreements, consult on new practice contracts, and structure revenue cycle consulting engagements customized to your practice goals and needs.",
     color: "#0891b2",
-    slug: "reporting-analytics",
+    slug: "contracts-agreements",
   },
 ];
 
 const differentiators: { text: string; icon: LucideIcon }[] = [
-  { text: "Founded by a 20-year healthcare veteran with payer-side experience", icon: Award },
-  { text: "AAPC-certified coding, specialty by specialty, no generic templates", icon: BadgeCheck },
-  { text: "Every claim tracked individually from submission to reimbursement", icon: Search },
-  { text: "Transparent reporting so you see exactly where every dollar goes", icon: FileText },
-  { text: "Free billing audit with no obligation to switch", icon: Gift },
-  { text: "U.S.-based team serving practices of all sizes nationwide", icon: HeartHandshake },
-  { text: "HIPAA-compliant and secure throughout every process", icon: Lock },
+  { text: "We manage the full process, not just billing", icon: Award },
+  { text: "We proactively follow up with payers until you are fully billable", icon: Search },
+  { text: "We specialize in complex, multi-entity and specialty practices", icon: BadgeCheck },
+  { text: "We build billing systems that work for real offices", icon: FileText },
+  { text: "HIPAA-aware processes and secure communication throughout", icon: Lock },
+  { text: "Experienced with CAQH, NPI, PECOS, and payer contracting", icon: Shield },
+  { text: "Free revenue cycle review with no obligation to switch", icon: Gift },
 ];
 
 const testimonials = [
@@ -122,9 +122,9 @@ export default function HomePage() {
     logo: "https://clearclaimrcm.com/logos/Logo.png",
     image: "https://clearclaimrcm.com/gallery/02.jpg",
     description:
-      "ClearClaim RCM is a U.S.-based full-cycle medical billing and revenue cycle management company founded by a 20-year healthcare veteran, helping independent providers and small to mid-sized clinics get paid faster.",
-    telephone: "+1-303-434-1355",
-    email: "michelle@clearclaimRCM.com",
+      "ClearClaim RCM provides medical billing, credentialing, provider enrollment, payer contracting, and revenue cycle management for specialty practices, surgery centers, and multi-entity healthcare groups.",
+    telephone: "+1-424-600-5948",
+    email: "info@clearclaimrcm.com",
     foundingDate: "2025",
     priceRange: "$$",
     sameAs: ["https://www.linkedin.com/company/clearclaim-rcm"],
@@ -176,7 +176,7 @@ export default function HomePage() {
                 className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-4"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Revenue Cycle Specialists Since 2025
+                More Than Billing
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -184,36 +184,45 @@ export default function HomePage() {
                 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Helping Providers Get Paid, Fully, Ethically, and On Time.
+                We Build Revenue Infrastructure
               </h1>
             </FadeIn>
             <FadeIn delay={0.5}>
               <p
-                className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto"
+                className="text-white/90 text-lg sm:text-xl leading-relaxed mb-4 max-w-2xl mx-auto"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Most billing services send your claims and disappear. We track
-                every single one, fight every denial, and show you exactly where
-                the money went. Founded by Michelle Recek, who spent years on the
-                payer side before switching to yours.
+                ClearClaim RCM helps healthcare practices eliminate revenue delays
+                by managing credentialing, contracting, and billing correctly from
+                day one. We fix billing problems, reduce denials, and improve cash
+                flow for specialty practices, surgery centers, and multi-entity groups.
               </p>
+            </FadeIn>
+            <FadeIn delay={0.6}>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {["Get Credentialed", "Get Contracted", "Get Paid"].map((step, i) => (
+                  <span key={step} className="inline-flex items-center gap-2 text-white font-semibold text-sm sm:text-base">
+                    <span className="w-7 h-7 rounded-full bg-[#F15200] flex items-center justify-center text-xs font-bold">{i + 1}</span>
+                    {step}
+                    {i < 2 && <ArrowRight size={16} className="text-white/50 ml-1" />}
+                  </span>
+                ))}
+              </div>
             </FadeIn>
             <FadeIn delay={0.7}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact-us/"
-                  className="px-8 py-4 rounded-full bg-[#137868] text-white font-semibold text-base hover:bg-[#0f5f54] hover:scale-105 hover:shadow-xl transition-all duration-300 text-center"
+                  className="px-8 py-4 rounded-full bg-[#F15200] text-white font-semibold text-base hover:bg-[#d94800] hover:scale-105 hover:shadow-xl transition-all duration-300 text-center"
                 >
-                  Get Started
+                  Schedule a Consultation
                 </Link>
-                <a
-                  href="https://calendly.com/michelle-clearclaimrcm"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact-us/"
                   className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#137868] hover:scale-105 hover:shadow-xl transition-all duration-300 text-center"
                 >
-                  Schedule a Free Consultation
-                </a>
+                  Free Revenue Cycle Review
+                </Link>
               </div>
             </FadeIn>
           </div>
@@ -245,18 +254,19 @@ export default function HomePage() {
           <FadeIn>
             <div className="text-center mb-16">
               <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                What We Do
+                Core Services
               </p>
               <h2
                 className="text-3xl sm:text-4xl font-bold text-gray-900"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
-                Full-Cycle Revenue Cycle Management
+                Medical Billing and Revenue Cycle Management
               </h2>
               <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
               <p className="mt-5 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-                From the first code entered to the last dollar collected, we own
-                the whole cycle. Nothing gets lost. Nothing sits.
+                From credentialing and provider enrollment through claim submission,
+                denial management, and accounts receivable recovery, we manage the
+                full revenue cycle so your practice gets paid what it has earned.
               </p>
             </div>
           </FadeIn>
@@ -347,7 +357,7 @@ export default function HomePage() {
               <FadeIn>
                 <div className="mb-8">
                   <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                    Why ClearClaim RCM
+                    Why Choose ClearClaim RCM
                   </p>
                   <h2
                     className="text-3xl sm:text-4xl font-bold text-white mb-4"
@@ -357,10 +367,10 @@ export default function HomePage() {
                   </h2>
                   <div className="w-16 h-1 bg-[#F15200] rounded-full mb-6" />
                   <p className="text-gray-300 text-base leading-relaxed">
-                    Michelle spent time as a VP at an insurance company. She knows
-                    exactly how payers evaluate claims and what triggers a denial.
-                    That is knowledge most billing companies do not have, and it
-                    changes how we fight for your reimbursements.
+                    Many practices lose revenue because credentialing is incomplete,
+                    payer enrollment is mishandled, or billing systems are built without
+                    real-world workflows. The result is delayed payments, denials, and
+                    ongoing payer confusion that drains time and cash flow. We fix that.
                   </p>
                 </div>
               </FadeIn>
@@ -390,6 +400,74 @@ export default function HomePage() {
                 </div>
               </FadeIn>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Our Clients Gain + Ideal For */}
+      <section className="relative py-24 bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden">
+        <div className="absolute -left-32 top-1/3 w-[500px] h-[500px] bg-[#137868]/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* What Our Clients Gain */}
+            <FadeIn>
+              <div>
+                <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                  Results That Matter
+                </p>
+                <h2
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  What Our Clients Gain
+                </h2>
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-8" />
+                <ul className="space-y-4">
+                  {[
+                    "Faster time to first payment",
+                    "Fewer denials and less rework",
+                    "Clean, compliant payer setup",
+                    "Predictable and sustainable cash flow",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle size={20} className="text-[#137868] shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-base leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+
+            {/* Ideal For Practices That Are */}
+            <FadeIn delay={0.2}>
+              <div>
+                <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                  Who We Serve
+                </p>
+                <h2
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  Ideal for Practices That Are
+                </h2>
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-8" />
+                <ul className="space-y-4">
+                  {[
+                    "Opening or expanding a new practice",
+                    "Onboarding new providers and need credentialing support",
+                    "Fixing credentialing or billing issues",
+                    "Tired of revenue delays and payer confusion",
+                    "Managing specialty practices or surgery centers",
+                    "Running multi-entity or multi-location groups",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle size={20} className="text-[#F15200] shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-base leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -487,6 +565,51 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Compliance & Security */}
+      <section className="relative py-20 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                Compliance and Security
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Built on Secure, Compliant Workflows
+              </h2>
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
+            </div>
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Shield, title: "HIPAA-Aware Processes", desc: "All workflows follow HIPAA guidelines to protect patient information and maintain confidentiality across every step of the revenue cycle.", color: "#137868" },
+              { icon: Lock, title: "Secure Communication", desc: "We use secure channels for all data exchange and maintain strict access controls to safeguard your practice and patient data.", color: "#2563eb" },
+              { icon: UserCheck, title: "CAQH, NPI, and PECOS", desc: "Our team is experienced with CAQH credentialing, NPI management, PECOS enrollment, and payer contracting requirements.", color: "#7c3aed" },
+            ].map((item) => (
+              <StaggerItem key={item.title}>
+                <div
+                  className="rounded-2xl p-8 border border-white/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 h-full"
+                  style={{ background: `linear-gradient(135deg, ${item.color}12 0%, ${item.color}08 50%, ${item.color}18 100%)` }}
+                >
+                  <div className="w-14 h-14 mb-5 flex items-center justify-center rounded-xl" style={{ background: `${item.color}18` }}>
+                    <item.icon size={28} style={{ color: item.color }} />
+                  </div>
+                  <h3
+                    className="text-lg font-semibold text-gray-900 mb-3"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
         </div>
       </section>
 
@@ -644,13 +767,13 @@ export default function HomePage() {
                   className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  Get Paid What You&rsquo;ve Already Earned
+                  Let&rsquo;s Fix Your Revenue Before It Leaks
                 </h2>
                 <div className="w-20 h-1 bg-[#F15200] mx-auto rounded-full mb-6" />
                 <p className="text-white/85 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-                  Start with a free audit. No pitch, no pressure. If your current
-                  team is doing fine, Michelle will tell you so. If there are gaps,
-                  you will see exactly where the money is slipping out.
+                  Whether you are opening a new practice, onboarding providers, fixing
+                  credentialing or billing issues, or tired of revenue delays and payer
+                  confusion, we can help. Start with a free review, no pitch, no pressure.
                 </p>
               </div>
             </FadeIn>
@@ -681,16 +804,14 @@ export default function HomePage() {
                   href="/contact-us/"
                   className="px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 text-center animate-[pulse-glow-maroon_3s_ease-in-out_infinite]"
                 >
-                  Request a Free Audit
+                  Schedule a Consultation
                 </Link>
-                <a
-                  href="https://calendly.com/michelle-clearclaimrcm"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact-us/"
                   className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300 text-center"
                 >
-                  Schedule a Consultation
-                </a>
+                  Request a Free Review
+                </Link>
               </div>
             </FadeIn>
           </div>

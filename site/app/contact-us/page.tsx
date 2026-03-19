@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Linkedin, Clock, ArrowRight, HelpCircle } from "lucide-react";
+import { Phone, Mail, Linkedin, Clock, ArrowRight, HelpCircle, Printer } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { FadeIn, SlideIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
   title: "Contact Us | ClearClaim RCM",
   description:
-    "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+    "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 424-600-5948 or email info@clearclaimrcm.com.",
   alternates: {
     canonical: "/contact-us/",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "ClearClaim RCM",
     title: "Contact Us | ClearClaim RCM",
     description:
-      "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+      "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 424-600-5948 or email info@clearclaimrcm.com.",
     url: "https://clearclaimrcm.com/contact-us/",
     images: [
       {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Us | ClearClaim RCM",
     description:
-      "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 303-434-1355 or email michelle@clearclaimRCM.com.",
+      "Contact ClearClaim RCM for a free billing audit or to schedule a consultation with Michelle Recek. Call 424-600-5948 or email info@clearclaimrcm.com.",
     images: ["/gallery/02.jpg"],
   },
 };
@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: "How do I get started?",
-    a: "Book through Calendly, fill out the form on this page, or call 303-434-1355. You can also email michelle@clearclaimRCM.com directly. Either way, the first step is a free audit with no obligation attached.",
+    a: "Book through Calendly, fill out the form on this page, or call 424-600-5948. You can also email info@clearclaimrcm.com directly. Either way, the first step is a free audit with no obligation attached.",
   },
   {
     q: "Do you offer a free billing audit?",
@@ -185,11 +185,20 @@ export default function ContactPage() {
                         label: "Phone",
                         content: (
                           <a
-                            href="tel:3034341355"
+                            href="tel:4246005948"
                             className="text-[#137868] hover:underline text-base font-medium"
                           >
-                            303-434-1355
+                            424-600-5948
                           </a>
+                        ),
+                      },
+                      {
+                        icon: Printer,
+                        label: "Fax",
+                        content: (
+                          <span className="text-[#137868] text-base font-medium">
+                            424-666-3798
+                          </span>
                         ),
                       },
                       {
@@ -197,10 +206,10 @@ export default function ContactPage() {
                         label: "Email",
                         content: (
                           <a
-                            href="mailto:michelle@clearclaimRCM.com"
+                            href="mailto:info@clearclaimrcm.com"
                             className="text-[#137868] hover:underline text-base font-medium"
                           >
-                            michelle@clearclaimRCM.com
+                            info@clearclaimrcm.com
                           </a>
                         ),
                       },

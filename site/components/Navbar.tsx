@@ -7,10 +7,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "./MotionWrappers";
 
 const serviceLinks = [
+  { label: "Credentialing & Enrollment", href: "/services/credentialing-enrollment/" },
+  { label: "Payer Contracting", href: "/services/payer-contracting/" },
+  { label: "New Practice Setup", href: "/services/new-practice-setup/" },
+  { label: "Contracts & Agreements", href: "/services/contracts-agreements/" },
   { label: "Medical Claim Coding", href: "/services/medical-claim-coding/" },
-  { label: "Charge Entry", href: "/services/charge-entry/" },
-  { label: "Claim Submission", href: "/services/claim-submission/" },
-  { label: "Payment Posting", href: "/services/payment-posting/" },
   { label: "Denial & Appeals", href: "/services/denial-appeals-management/" },
   { label: "Patient Billing", href: "/services/patient-billing/" },
   { label: "AR Follow-Up", href: "/services/accounts-receivable-followup/" },

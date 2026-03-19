@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Linkedin } from "lucide-react";
+import { Phone, Mail, Linkedin, Printer } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -8,6 +8,7 @@ const quickLinks = [
   { label: "Mission Statement", href: "/mission-statement/" },
   { label: "Services", href: "/services/" },
   { label: "Contact Us", href: "/contact-us/" },
+  { label: "Legal Disclaimer", href: "/disclaimer/" },
 ];
 
 export default function Footer() {
@@ -65,17 +66,21 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-sm text-gray-400 group">
                 <Phone size={16} className="text-[#137868] shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                <a href="tel:3034341355" className="hover:text-[#137868] transition-colors">
-                  303-434-1355
+                <a href="tel:4246005948" className="hover:text-[#137868] transition-colors">
+                  424-600-5948
                 </a>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-gray-400 group">
+                <Printer size={16} className="text-[#137868] shrink-0 group-hover:scale-110 transition-transform duration-200" />
+                <span>Fax: 424-666-3798</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400 group">
                 <Mail size={16} className="text-[#137868] shrink-0 group-hover:scale-110 transition-transform duration-200" />
                 <a
-                  href="mailto:michelle@clearclaimRCM.com"
+                  href="mailto:info@clearclaimrcm.com"
                   className="hover:text-[#137868] transition-colors"
                 >
-                  michelle@clearclaimRCM.com
+                  info@clearclaimrcm.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400 group">

@@ -131,7 +131,7 @@ export default function ContactForm() {
       <p className="text-xs text-gray-500 mb-1">Fields marked with <span className="text-[#80010A] font-semibold">*</span> are required.</p>
       {error && (
         <p className="text-sm text-[#80010A] bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-          Something went wrong. Please try again or email michelle@clearclaimRCM.com directly.
+          Something went wrong. Please try again or email info@clearclaimrcm.com directly.
         </p>
       )}
       <div className="grid grid-cols-1 min-[480px]:grid-cols-2 gap-5">

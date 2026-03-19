@@ -1,4 +1,4 @@
-import { ClipboardList, FilePlus, Send, CreditCard, RotateCcw, FileText, TrendingUp, BarChart2, ShieldCheck, SearchCheck, type LucideIcon } from "lucide-react";
+import { ClipboardList, FilePlus, Send, CreditCard, RotateCcw, FileText, TrendingUp, BarChart2, ShieldCheck, SearchCheck, UserCheck, Handshake, Building2, FileSignature, type LucideIcon } from "lucide-react";
 
 export type Service = {
   number: string;
@@ -17,11 +17,79 @@ export type Service = {
 export const services: Service[] = [
   {
     number: "01",
+    slug: "credentialing-enrollment",
+    title: "Credentialing and Enrollment",
+    icon: UserCheck,
+    img: "/products/28.png",
+    color: "#137868",
+    desc: "We manage the full credentialing and enrollment process for new and existing providers. From initial applications through CAQH, NPI registration, PECOS enrollment, and payer-specific requirements, we handle the paperwork and follow up with payers until your providers are fully credentialed and billable. Delays in credentialing mean delays in revenue, and we work proactively to prevent that.",
+    bullets: [
+      "CAQH profile setup and maintenance",
+      "NPI registration and PECOS enrollment",
+      "Payer-specific credentialing applications",
+      "Proactive follow-up until fully billable",
+    ],
+    seoTitle: "Credentialing & Enrollment Services | ClearClaim RCM",
+    seoDesc: "Full-service provider credentialing and enrollment. CAQH, NPI, PECOS, and payer applications managed from start to finish for specialty practices and new providers.",
+  },
+  {
+    number: "02",
+    slug: "payer-contracting",
+    title: "Payer Contracting and Network Activation",
+    icon: Handshake,
+    img: "/products/25.png",
+    color: "#2563eb",
+    desc: "Getting credentialed is only the first step. We help your practice secure contracts with insurance payers and activate network participation so you can begin seeing patients and billing for services. We review fee schedules, negotiate where possible, and ensure your contracts support sustainable revenue from day one.",
+    bullets: [
+      "Insurance payer contract negotiations",
+      "Fee schedule review and analysis",
+      "Network participation activation",
+      "Contract renewal and renegotiation support",
+    ],
+    seoTitle: "Payer Contracting & Network Activation | ClearClaim RCM",
+    seoDesc: "Payer contracting and network activation services for medical practices. Fee schedule review, contract negotiations, and network participation setup.",
+  },
+  {
+    number: "03",
+    slug: "new-practice-setup",
+    title: "New Practice and Provider Setup",
+    icon: Building2,
+    img: "/products/22.png",
+    color: "#7c3aed",
+    desc: "Starting a new practice involves more than clinical decisions. We help with the full administrative build-out, including credentialing for new providers, contracting with insurance payers, billing system setup and workflow design, and multi-entity or specialty practice configuration. Whether you are opening a single location or expanding into multiple entities, we build the revenue infrastructure your practice needs to get paid from day one.",
+    bullets: [
+      "New practice administrative build-out",
+      "Billing system setup and workflow design",
+      "Multi-entity and specialty practice configuration",
+      "Credentialing and contracting for new providers",
+    ],
+    seoTitle: "New Practice Setup Services | ClearClaim RCM",
+    seoDesc: "Complete new practice setup services including credentialing, payer contracting, billing system configuration, and multi-entity practice build-out.",
+  },
+  {
+    number: "04",
+    slug: "contracts-agreements",
+    title: "Contracts and Agreements Consulting",
+    icon: FileSignature,
+    img: "/products/26.png",
+    color: "#F15200",
+    desc: "We review existing billing agreements, consult on new practice contracts, and help structure revenue cycle consulting agreements that align with your practice goals. Every engagement is customized based on client needs, and we work with you to define the right scope of services for your situation. Whether you need a full-service partnership or targeted support in a specific area, we tailor the agreement to fit.",
+    bullets: [
+      "Review of existing billing agreements",
+      "Consulting for new practice contracts",
+      "Revenue cycle consulting agreements",
+      "Customized services based on client needs",
+    ],
+    seoTitle: "Contracts & Agreements Consulting | ClearClaim RCM",
+    seoDesc: "Billing agreement review, new practice contract consulting, and revenue cycle consulting agreements tailored to your practice needs.",
+  },
+  {
+    number: "05",
     slug: "medical-claim-coding",
     title: "Medical Claim Coding",
     icon: ClipboardList,
     img: "/products/claim-1.png",
-    color: "#137868",
+    color: "#0891b2",
     desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. Our AAPC-certified coders assign ICD, CPT, and HCPCS codes to the standard, specialty by specialty.",
     bullets: [
       "ICD, CPT, and HCPCS code assignment",
@@ -33,7 +101,7 @@ export const services: Service[] = [
     seoDesc: "AAPC-certified medical claim coding services. Accurate ICD, CPT, and HCPCS code assignment, specialty by specialty. Reduce denials and maximize reimbursements.",
   },
   {
-    number: "02",
+    number: "06",
     slug: "charge-entry",
     title: "Charge Entry",
     icon: FilePlus,
@@ -50,7 +118,7 @@ export const services: Service[] = [
     seoDesc: "Accurate charge entry services for healthcare practices. We verify patient demographics, insurance details, and service data before every claim submission.",
   },
   {
-    number: "03",
+    number: "07",
     slug: "claim-submission",
     title: "Claim Submission",
     icon: Send,
@@ -67,7 +135,7 @@ export const services: Service[] = [
     seoDesc: "Electronic and paper claim submission to all major payers. Pre-submission scrubbing, timely filing compliance, and error prevention for faster reimbursements.",
   },
   {
-    number: "04",
+    number: "08",
     slug: "payment-posting",
     title: "Payment Posting",
     icon: CreditCard,
@@ -84,7 +152,7 @@ export const services: Service[] = [
     seoDesc: "Detailed payment posting services including EOB/ERA processing, patient payment recording, and underpayment identification for healthcare practices.",
   },
   {
-    number: "05",
+    number: "09",
     slug: "denial-appeals-management",
     title: "Denial and Appeals Management",
     icon: RotateCcw,
@@ -101,7 +169,7 @@ export const services: Service[] = [
     seoDesc: "Aggressive denial and appeals management for healthcare practices. Root cause analysis, claim correction, formal appeals, and full tracking through resolution.",
   },
   {
-    number: "06",
+    number: "10",
     slug: "patient-billing",
     title: "Patient Billing",
     icon: FileText,
@@ -118,7 +186,7 @@ export const services: Service[] = [
     seoDesc: "Professional patient billing services with clear statements, balance after insurance billing, and inquiry support. Reduce disputes and collect balances faster.",
   },
   {
-    number: "07",
+    number: "11",
     slug: "accounts-receivable-followup",
     title: "Accounts Receivable (AR) Follow-Up",
     icon: TrendingUp,
@@ -135,7 +203,7 @@ export const services: Service[] = [
     seoDesc: "Systematic accounts receivable follow-up for healthcare practices. Insurance AR aging management, patient balance tracking, and improved cash flow outcomes.",
   },
   {
-    number: "08",
+    number: "12",
     slug: "reporting-analytics",
     title: "End-of-Month Reporting and Analytics",
     icon: BarChart2,
@@ -152,7 +220,7 @@ export const services: Service[] = [
     seoDesc: "Transparent monthly reporting and analytics for healthcare practices. Collections, denial trends, AR aging, and practice financial performance in one report.",
   },
   {
-    number: "09",
+    number: "13",
     slug: "compliance-auditing",
     title: "Compliance Auditing",
     icon: ShieldCheck,
@@ -169,7 +237,7 @@ export const services: Service[] = [
     seoDesc: "Ongoing compliance auditing against HIPAA requirements and AAPC standards. Catch compliance gaps early before they become costly problems for your practice.",
   },
   {
-    number: "10",
+    number: "14",
     slug: "free-billing-audit",
     title: "Free Billing Audit",
     icon: SearchCheck,

@@ -6,9 +6,9 @@ import { services } from "./_data";
 import { FadeIn, SlideIn, StaggerChildren, StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
-  title: "Medical Billing Services | ClearClaim RCM",
+  title: "Medical Billing, Credentialing & Revenue Cycle Services | ClearClaim RCM",
   description:
-    "AAPC-certified medical billing and revenue cycle management services: claim coding, submission, denial management, payment posting, AR follow-up, and compliance auditing.",
+    "Credentialing, payer contracting, new practice setup, medical billing, denial management, and revenue cycle consulting for specialty practices, surgery centers, and multi-entity groups.",
   alternates: {
     canonical: "/services/",
   },
@@ -54,7 +54,7 @@ export default function ServicesPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.1}>
             <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-              What We Offer
+              More Than Billing
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -62,14 +62,15 @@ export default function ServicesPage() {
               className="text-4xl sm:text-5xl font-bold text-white max-w-3xl mx-auto leading-tight"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Full-Cycle Revenue Cycle Management Services
+              Billing, Credentialing, and Revenue Cycle Services
             </h1>
           </FadeIn>
           <FadeIn delay={0.5}>
             <p className="mt-5 text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
-              Ten services that cover every point in the revenue cycle, from the
-              first code entered to the last dollar collected. All AAPC-certified.
-              All HIPAA-compliant. No generalists.
+              From credentialing and payer contracting through claim submission,
+              denial management, and revenue cycle consulting, we provide the
+              full infrastructure specialty practices, surgery centers, and
+              multi-entity groups need to get paid.
             </p>
           </FadeIn>
         </div>
@@ -182,6 +183,21 @@ export default function ServicesPage() {
                 </div>
               </FadeIn>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services disclaimer */}
+      <section className="py-8 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5">
+            <p className="text-gray-500 text-sm leading-relaxed text-center">
+              Services provided by ClearClaim RCM vary based on the scope of the
+              written agreement. Not all services listed on this website are
+              included in every contract. The exact scope of services,
+              deliverables, and fees are defined in the executed agreement
+              between ClearClaim RCM and the client.
+            </p>
           </div>
         </div>
       </section>
