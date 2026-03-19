@@ -419,13 +419,13 @@ export default function HomePage() {
                     </div>
 
                     {/* Image */}
-                    <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                      <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
+                    <div className={`${i % 2 === 1 ? "lg:order-2" : ""} max-w-md mx-auto lg:max-w-none`}>
+                      <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/3]">
                         <Image
                           src={step.img}
                           alt={step.title}
-                          width={540}
-                          height={540}
+                          width={480}
+                          height={360}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/60 to-transparent" />
@@ -495,80 +495,86 @@ export default function HomePage() {
 
       {/* Founder snippet */}
       <section className="relative py-24 bg-gray-50 overflow-hidden">
+        <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#137868]/[0.04] rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <FadeIn>
-            <div className="relative rounded-3xl overflow-hidden">
-              {/* Background image */}
-              <div className="absolute inset-0">
-                <Image
-                  src="/team/michelle-recek.png"
-                  alt="Michelle Recek, Founder"
-                  fill
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-l from-[#0c2e28]/95 via-[#0c2e28]/80 to-transparent lg:to-[#0c2e28]/30" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Image — left */}
+            <SlideIn direction="left">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-[#137868]/10 to-[#F15200]/10 rounded-3xl blur-xl pointer-events-none" />
+                  <Image
+                    src="/team/michelle-recek.png"
+                    alt="Michelle Recek, Founder"
+                    width={480}
+                    height={560}
+                    className="relative rounded-2xl object-cover shadow-lg w-full"
+                  />
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#137868]/10 rounded-2xl -z-10" />
+                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#F15200]/10 rounded-2xl -z-10" />
+                </div>
               </div>
+            </SlideIn>
 
-              <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-[500px]">
-                {/* Left side is the visible photo through the gradient on mobile, hidden on lg */}
-                <div className="hidden lg:block" />
+            {/* Content — right */}
+            <SlideIn direction="right" delay={0.2}>
+              <div>
+                <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                  Meet Our Founder
+                </p>
+                <h2
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  Michelle Recek
+                </h2>
+                <div className="w-16 h-1 bg-[#137868] rounded-full mb-4" />
+                <p className="text-[#137868] font-semibold text-base mb-6">
+                  Founder and Director of Revenue Cycle Operations
+                </p>
 
-                {/* Content side — right on desktop */}
-                <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
-                  <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                    Meet Our Founder
-                  </p>
-                  <h2
-                    className="text-3xl sm:text-4xl font-bold text-white mb-2"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Michelle Recek
-                  </h2>
-                  <p className="text-[#F15200] font-semibold text-sm mb-6">
-                    Founder and Director of Revenue Cycle Operations
-                  </p>
-
-                  <blockquote className="bg-white/10 backdrop-blur-md border-l-4 border-[#F15200] pl-5 pr-5 py-4 rounded-r-xl italic text-white/90 text-base leading-relaxed mb-6">
+                <FadeIn delay={0.4}>
+                  <blockquote className="bg-white border-l-4 border-[#137868] pl-5 pr-5 py-4 rounded-r-xl shadow-sm italic text-gray-700 text-base leading-relaxed mb-6">
                     &ldquo;I offer more than billing services. I help you understand
                     your revenue cycle. I&rsquo;ll show you where every dollar is
                     going and make sure you&rsquo;re getting the maximum
                     reimbursement for the hard work you put in every day.&rdquo;
                   </blockquote>
+                </FadeIn>
 
-                  <p className="text-gray-300 text-sm leading-relaxed mb-8">
-                    Michelle spent two decades in healthcare operations. Before
-                    founding ClearClaim RCM, she served as VP of an insurance
-                    company, which means she knows how payers process claims, what
-                    triggers a denial, and how to push back effectively. That
-                    background does not come standard with a billing service.
-                  </p>
+                <p className="text-gray-600 text-base leading-relaxed mb-8">
+                  Michelle spent two decades in healthcare operations. Before
+                  founding ClearClaim RCM, she served as VP of an insurance
+                  company, which means she knows how payers process claims, what
+                  triggers a denial, and how to push back effectively. That
+                  background does not come standard with a billing service.
+                </p>
 
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10">
-                      <Clock size={16} className="text-[#F15200]" />
-                      <span className="text-white text-sm font-medium">20+ Years</span>
-                    </div>
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10">
-                      <BadgeCheck size={16} className="text-[#F15200]" />
-                      <span className="text-white text-sm font-medium">AAPC Certified</span>
-                    </div>
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10">
-                      <Shield size={16} className="text-[#F15200]" />
-                      <span className="text-white text-sm font-medium">HIPAA Compliant</span>
-                    </div>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <div className="flex items-center gap-2 bg-[#137868]/10 rounded-full px-4 py-2">
+                    <Clock size={16} className="text-[#137868]" />
+                    <span className="text-gray-800 text-sm font-medium">20+ Years</span>
                   </div>
-
-                  <Link
-                    href="/about-us/"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F15200] text-white font-semibold hover:bg-[#d94800] hover:scale-105 hover:shadow-lg transition-all duration-300 w-fit"
-                  >
-                    Learn More About Michelle
-                    <ArrowRight size={18} />
-                  </Link>
+                  <div className="flex items-center gap-2 bg-[#137868]/10 rounded-full px-4 py-2">
+                    <BadgeCheck size={16} className="text-[#137868]" />
+                    <span className="text-gray-800 text-sm font-medium">AAPC Certified</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-[#137868]/10 rounded-full px-4 py-2">
+                    <Shield size={16} className="text-[#137868]" />
+                    <span className="text-gray-800 text-sm font-medium">HIPAA Compliant</span>
+                  </div>
                 </div>
+
+                <Link
+                  href="/about-us/"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                >
+                  Learn More About Michelle
+                  <ArrowRight size={18} />
+                </Link>
               </div>
-            </div>
-          </FadeIn>
+            </SlideIn>
+          </div>
         </div>
       </section>
 
