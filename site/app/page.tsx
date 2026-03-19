@@ -505,11 +505,14 @@ export default function HomePage() {
                   fill
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0c2e28]/95 via-[#0c2e28]/80 to-transparent lg:to-[#0c2e28]/30" />
+                <div className="absolute inset-0 bg-gradient-to-l from-[#0c2e28]/95 via-[#0c2e28]/80 to-transparent lg:to-[#0c2e28]/30" />
               </div>
 
               <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-[500px]">
-                {/* Content side */}
+                {/* Left side is the visible photo through the gradient on mobile, hidden on lg */}
+                <div className="hidden lg:block" />
+
+                {/* Content side — right on desktop */}
                 <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
                   <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
                     Meet Our Founder
@@ -562,9 +565,6 @@ export default function HomePage() {
                     <ArrowRight size={18} />
                   </Link>
                 </div>
-
-                {/* Right side is the visible photo through the gradient */}
-                <div className="hidden lg:block" />
               </div>
             </div>
           </FadeIn>
