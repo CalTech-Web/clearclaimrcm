@@ -1,15 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "./MotionWrappers";
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      render: (container: HTMLElement, params: { sitekey: string; callback: (token: string) => void; "expired-callback": () => void }) => number;
+      reset: (widgetId: number) => void;
+      getResponse: (widgetId: number) => string;
+    };
+    onRecaptchaLoad: () => void;
+  }
+}
+
+const RECAPTCHA_SITE_KEY = "6Le3OJAsAAAAAIJiv2hYoajCpqXhEAJZ8qgdGbZe";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const recaptchaRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<number | null>(null);
+
+  const renderRecaptcha = useCallback(() => {
+    if (recaptchaRef.current && window.grecaptcha && widgetIdRef.current === null) {
+      widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
+        sitekey: RECAPTCHA_SITE_KEY,
+        callback: (token: string) => setRecaptchaToken(token),
+        "expired-callback": () => setRecaptchaToken(""),
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window.grecaptcha) {
+      renderRecaptcha();
+      return;
+    }
+    window.onRecaptchaLoad = renderRecaptcha;
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }, [renderRecaptcha]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!recaptchaToken) {
+      setError(true);
+      return;
+    }
+
     setLoading(true);
     setError(false);
 
@@ -36,6 +81,7 @@ export default function ContactForm() {
           phone: data.phone,
           practiceName: data.practiceName,
           message: data.message,
+          recaptchaToken,
         }),
       });
 
@@ -43,6 +89,10 @@ export default function ContactForm() {
       setSubmitted(true);
     } catch {
       setError(true);
+      if (widgetIdRef.current !== null && window.grecaptcha) {
+        window.grecaptcha.reset(widgetIdRef.current);
+        setRecaptchaToken("");
+      }
     } finally {
       setLoading(false);
     }
@@ -166,9 +216,10 @@ export default function ContactForm() {
           placeholder="Tell us about your practice and what you are looking for..."
         />
       </div>
+      <div ref={recaptchaRef} className="flex justify-center" />
       <button
         type="submit"
-        disabled={loading}
+        disabled={loading || !recaptchaToken}
         className="w-full px-6 py-3.5 rounded-full bg-[#137868] text-white font-semibold text-sm hover:bg-[#0f5f54] hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? "Sending..." : "Send Message"}
