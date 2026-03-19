@@ -404,48 +404,36 @@ export default function HomePage() {
             </div>
           </FadeIn>
 
-          {/* Vertical timeline */}
+          {/* Horizontal steps */}
           <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#137868]/0 via-[#137868]/30 to-[#137868]/0 pointer-events-none" />
+            {/* Connector line */}
+            <div className="hidden xl:block absolute top-6 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#137868]/10 via-[#137868]/30 to-[#137868]/10 pointer-events-none" />
 
-            <div className="space-y-12 lg:space-y-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {processSteps.map((step, i) => (
-                <FadeIn key={step.title} delay={i * 0.12}>
-                  <div className={`relative lg:grid lg:grid-cols-2 lg:gap-12 items-center ${i > 0 ? "lg:mt-16" : ""}`}>
-                    {/* Timeline dot */}
-                    <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#137868] text-white items-center justify-center font-bold text-lg z-10 ring-4 ring-white shadow-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <FadeIn key={step.title} delay={i * 0.1}>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-lg shrink-0 ring-4 ring-white shadow-lg mb-5 relative z-10" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       {i + 1}
                     </div>
-
-                    {/* Image */}
-                    <div className={`${i % 2 === 1 ? "lg:order-2" : ""} max-w-md mx-auto lg:max-w-none`}>
-                      <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/3]">
-                        <Image
-                          src={step.img}
-                          alt={step.title}
-                          width={480}
-                          height={360}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/60 to-transparent" />
-                        <div className="absolute top-4 left-4 lg:hidden w-10 h-10 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-sm shadow-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                          {i + 1}
-                        </div>
-                      </div>
+                    <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/3] w-full mb-5">
+                      <Image
+                        src={step.img}
+                        alt={step.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/60 to-transparent" />
                     </div>
-
-                    {/* Content */}
-                    <div className={`mt-6 lg:mt-0 ${i % 2 === 1 ? "lg:order-1 lg:text-right" : ""}`}>
-                      <p className="text-[#F15200] font-semibold text-xs uppercase tracking-widest mb-2">{step.phase}</p>
-                      <h3
-                        className="text-xl font-bold text-gray-900 mb-3"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
-                      >
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed max-w-md">{step.desc}</p>
-                    </div>
+                    <p className="text-[#F15200] font-semibold text-xs uppercase tracking-widest mb-2">{step.phase}</p>
+                    <h3
+                      className="text-base font-bold text-gray-900 mb-2"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </FadeIn>
               ))}
