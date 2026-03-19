@@ -11,8 +11,40 @@ export default function ServicePageTemplate({
   service: Service;
   relatedServices: Service[];
 }) {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.desc,
+    provider: {
+      "@type": "Organization",
+      name: "ClearClaim RCM",
+      url: "https://clearclaimrcm.com",
+    },
+    areaServed: { "@type": "Country", name: "United States" },
+    url: `https://clearclaimrcm.com/services/${service.slug}/`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://clearclaimrcm.com/" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://clearclaimrcm.com/services/" },
+      { "@type": "ListItem", position: 3, name: service.title, item: `https://clearclaimrcm.com/services/${service.slug}/` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative pt-[219px] sm:pt-[235px] pb-[100px] sm:pb-[120px] overflow-hidden">
         <div className="absolute inset-0">

@@ -20,6 +20,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://clearclaimrcm.com"),
+  other: { "theme-color": "#137868" },
   title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
   description:
     "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
