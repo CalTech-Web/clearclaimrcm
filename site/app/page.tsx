@@ -3,42 +3,48 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Star, ChevronDown, Clock, BadgeCheck, Shield, Gift, ClipboardList, FilePlus, Send, CreditCard, RotateCcw, BarChart2, Award, UserCheck, Search, FileText, HeartHandshake, Lock, type LucideIcon } from "lucide-react";
 import { FadeIn, SlideIn, StaggerChildren, StaggerItem } from "@/components/MotionWrappers";
 
-const services: { title: string; icon: LucideIcon; desc: string; color: string }[] = [
+const services: { title: string; icon: LucideIcon; desc: string; color: string; slug: string }[] = [
   {
     title: "Medical Claim Coding",
     icon: ClipboardList,
     desc: "Every dollar starts with a code. If it is wrong or imprecise, the claim gets denied or underpaid and most practices never know why. We assign ICD, CPT, and HCPCS codes to AAPC-certified standards, specialty by specialty.",
     color: "#137868",
+    slug: "medical-claim-coding",
   },
   {
     title: "Charge Entry",
     icon: FilePlus,
     desc: "A clean claim starts before the claim is even built. Patient demographics, insurance details, and service data all have to be entered correctly, or the claim goes out with a flaw baked in. We verify before we submit.",
     color: "#2563eb",
+    slug: "charge-entry",
   },
   {
     title: "Claim Submission",
     icon: Send,
     desc: "Claims go out electronically to all major payers, with paper submission where required. Before they go, every claim gets scrubbed for errors. Timely filing windows are tracked. Nothing ages out.",
     color: "#7c3aed",
+    slug: "claim-submission",
   },
   {
     title: "Payment Posting",
     icon: CreditCard,
     desc: "Every payment that comes in gets posted with full detail, allowed amounts, patient responsibility, adjustments, and denials. That level of documentation is how you catch underpayments before they become a pattern.",
     color: "#F15200",
+    slug: "payment-posting",
   },
   {
     title: "Denial and Appeals Management",
     icon: RotateCcw,
     desc: "A denied claim is not a closed claim. We find the reason code, fix the issue, and resubmit or appeal. Every denial is tracked through resolution. Nothing gets written off because it was inconvenient to fight.",
     color: "#dc2626",
+    slug: "denial-appeals-management",
   },
   {
     title: "End-of-Month Reporting",
     icon: BarChart2,
     desc: "At the end of every month, you get a report showing what came in, what was denied, how your AR is aging, and how the practice is performing financially. No black box. You see the full picture.",
     color: "#0891b2",
+    slug: "reporting-analytics",
   },
 ];
 
@@ -280,7 +286,10 @@ export default function HomePage() {
                     >
                       {s.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
+                    <Link href={`/services/${s.slug}/`} className="inline-flex items-center gap-1 text-sm font-semibold transition-colors" style={{ color: s.color }}>
+                      Learn More <ArrowRight size={14} />
+                    </Link>
                   </div>
                 </article>
               </StaggerItem>
