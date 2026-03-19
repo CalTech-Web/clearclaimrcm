@@ -134,14 +134,25 @@ export default function ServicePageTemplate({
                   ))}
                 </div>
 
-                <Link
-                  href="/contact-us/"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300"
-                  style={{ background: service.color }}
-                >
-                  {service.cta ? "Request Your Free Audit" : "Get Started"}
-                  <ArrowRight size={18} />
-                </Link>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/contact-us/"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    style={{ background: service.color }}
+                  >
+                    {service.cta ? "Request a Free Review" : "Schedule a Consultation"}
+                    <ArrowRight size={18} />
+                  </Link>
+                  {!service.cta && (
+                    <Link
+                      href="/contact-us/"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 hover:scale-105 hover:shadow-lg transition-all duration-300"
+                      style={{ borderColor: service.color, color: service.color }}
+                    >
+                      Free Revenue Cycle Review
+                    </Link>
+                  )}
+                </div>
               </div>
             </SlideIn>
           </div>
@@ -215,20 +226,20 @@ export default function ServicePageTemplate({
               Ready to Optimize Your Revenue Cycle?
             </h2>
             <p className="text-white/85 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-              Start with a free audit. Michelle will review your billing setup at no cost, no obligation.
+              Start with a free review. Michelle will assess your billing setup at no cost, no obligation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact-us/"
                 className="px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 text-center"
               >
-                Request a Free Audit
+                Schedule a Consultation
               </Link>
               <Link
-                href="/services/"
+                href="/contact-us/"
                 className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300 text-center"
               >
-                View All Services
+                Request a Free Review
               </Link>
             </div>
           </div>

@@ -310,17 +310,15 @@ export default function ServicesPage() {
                 href="/contact-us/"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#80010A] font-semibold text-base hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 animate-[pulse-glow-maroon_3s_ease-in-out_infinite]"
               >
-                Request a Free Audit
+                Schedule a Consultation
                 <ArrowRight size={18} />
               </Link>
-              <a
-                href="https://calendly.com/michelle-clearclaimrcm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300"
+              <Link
+                href="/contact-us/"
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#80010A] hover:scale-105 transition-all duration-300 text-center"
               >
-                Schedule a Free Consultation
-              </a>
+                Free Revenue Cycle Review
+              </Link>
             </div>
           </div>
         </FadeIn>

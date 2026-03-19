@@ -319,6 +319,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SEO content block */}
+      <section className="relative py-20 bg-white overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <h2
+                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                A Full-Service Medical Billing Company Built for Complex Practices
+              </h2>
+              <div className="w-16 h-1 bg-[#137868] mx-auto rounded-full" />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-5">
+              <p>
+                ClearClaim RCM is a medical billing company that provides credentialing
+                services, revenue cycle management, denial management, and provider
+                enrollment for healthcare practices across the United States. We work
+                with specialty practices, surgery centers, multi-entity groups, and new
+                practices that need a reliable partner to build and manage their revenue
+                infrastructure.
+              </p>
+              <p>
+                Our medical billing services go beyond claim submission. We handle
+                insurance credentialing, payer contracting, billing system setup, and
+                ongoing revenue cycle consulting so your practice can focus on patient
+                care. Whether you need help with CAQH enrollment, network activation,
+                or cleaning up years of billing problems, our team manages the full
+                process from start to finish.
+              </p>
+              <p>
+                Many practices lose revenue because credentialing is incomplete, payer
+                enrollment is delayed, or their billing workflows were never built
+                correctly. ClearClaim RCM solves these problems by providing hands-on
+                revenue cycle management that includes denial management, accounts
+                receivable recovery, compliance auditing, and transparent monthly
+                reporting. We specialize in complex, multi-entity, and specialty
+                practice environments where generic billing solutions fall short.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c2e28] via-[#137868] to-[#0c2e28]" />
