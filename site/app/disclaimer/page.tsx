@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FadeIn } from "@/components/MotionWrappers";
 
 export const metadata: Metadata = {
@@ -66,6 +67,15 @@ export default function DisclaimerPage() {
     <>
       {/* Page header */}
       <section className="relative bg-gradient-to-br from-[#137868] to-[#0f5f54] pt-[219px] sm:pt-[235px] pb-[100px] sm:pb-[120px] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/gallery/disclaimer-hero.jpg"
+            alt="Legal disclaimer"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0.1}>
             <p className="text-[#F15200] font-bold text-sm uppercase tracking-widest mb-4">
