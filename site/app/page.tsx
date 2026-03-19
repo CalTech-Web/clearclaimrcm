@@ -506,9 +506,9 @@ export default function HomePage() {
                   <Image
                     src="/team/michelle-recek.png"
                     alt="Michelle Recek, Founder"
-                    width={480}
-                    height={560}
-                    className="relative rounded-2xl object-contain shadow-lg w-full h-auto"
+                    width={700}
+                    height={820}
+                    className="relative rounded-2xl object-contain shadow-lg w-full h-auto max-w-none"
                   />
                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#137868]/10 rounded-2xl -z-10" />
                   <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#F15200]/10 rounded-2xl -z-10" />
