@@ -494,84 +494,120 @@ export default function HomePage() {
       </section>
 
       {/* Founder snippet */}
-      <section className="relative py-24 bg-gray-50 overflow-hidden">
-        <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#137868]/[0.04] rounded-full blur-3xl pointer-events-none" />
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#137868]/[0.04] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#F15200]/[0.03] rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Image — left */}
-            <SlideIn direction="left">
-              <div className="flex justify-center">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-br from-[#137868]/10 to-[#F15200]/10 rounded-3xl blur-xl pointer-events-none" />
+          <FadeIn>
+            <div className="text-center mb-14">
+              <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
+                Meet Our Founder
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Michelle Recek
+              </h2>
+              <p className="text-[#137868] font-semibold text-base mt-2">
+                Founder and Director of Revenue Cycle Operations
+              </p>
+              <div className="w-16 h-1 bg-[#137868] mx-auto mt-4 rounded-full" />
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+            {/* Image — left, larger column */}
+            <SlideIn direction="left" className="lg:col-span-2">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-br from-[#137868]/15 to-[#F15200]/10 rounded-3xl blur-2xl pointer-events-none" />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/team/michelle-recek.png"
                     alt="Michelle Recek, Founder"
                     width={700}
                     height={820}
-                    className="relative rounded-2xl object-contain shadow-lg w-full h-auto max-w-none"
+                    className="w-full h-auto"
                   />
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#137868]/10 rounded-2xl -z-10" />
-                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#F15200]/10 rounded-2xl -z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-center gap-3">
+                      <a
+                        href="https://linkedin.com/company/clearclaim-rcm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-white/15 backdrop-blur-md rounded-full px-4 py-2 border border-white/20 hover:bg-white/25 transition-all duration-300"
+                      >
+                        <span className="text-white text-sm font-medium">Connect on LinkedIn</span>
+                        <ArrowRight size={14} className="text-white" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </SlideIn>
 
             {/* Content — right */}
-            <SlideIn direction="right" delay={0.2}>
+            <SlideIn direction="right" delay={0.2} className="lg:col-span-3">
               <div>
-                <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
-                  Meet Our Founder
-                </p>
-                <h2
-                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  Michelle Recek
-                </h2>
-                <div className="w-16 h-1 bg-[#137868] rounded-full mb-4" />
-                <p className="text-[#137868] font-semibold text-base mb-6">
-                  Founder and Director of Revenue Cycle Operations
-                </p>
-
-                <FadeIn delay={0.4}>
-                  <blockquote className="bg-white border-l-4 border-[#137868] pl-5 pr-5 py-4 rounded-r-xl shadow-sm italic text-gray-700 text-base leading-relaxed mb-6">
-                    &ldquo;I offer more than billing services. I help you understand
-                    your revenue cycle. I&rsquo;ll show you where every dollar is
-                    going and make sure you&rsquo;re getting the maximum
-                    reimbursement for the hard work you put in every day.&rdquo;
+                <FadeIn delay={0.3}>
+                  <blockquote className="relative bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-8 border border-gray-100">
+                    <div className="absolute -top-3 left-8 text-[#137868] text-6xl leading-none font-serif">&ldquo;</div>
+                    <p className="italic text-gray-700 text-base sm:text-lg leading-relaxed pt-4">
+                      I offer more than billing services. I help you understand
+                      your revenue cycle. I&rsquo;ll show you where every dollar is
+                      going and make sure you&rsquo;re getting the maximum
+                      reimbursement for the hard work you put in every day.
+                    </p>
                   </blockquote>
                 </FadeIn>
 
-                <p className="text-gray-600 text-base leading-relaxed mb-8">
-                  Michelle spent two decades in healthcare operations. Before
-                  founding ClearClaim RCM, she served as VP of an insurance
-                  company, which means she knows how payers process claims, what
-                  triggers a denial, and how to push back effectively. That
-                  background does not come standard with a billing service.
-                </p>
+                <FadeIn delay={0.4}>
+                  <p className="text-gray-600 text-base leading-relaxed mb-8">
+                    Michelle spent two decades in healthcare operations. Before
+                    founding ClearClaim RCM, she served as VP of an insurance
+                    company, which means she knows how payers process claims, what
+                    triggers a denial, and how to push back effectively. That
+                    background does not come standard with a billing service.
+                  </p>
+                </FadeIn>
 
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="flex items-center gap-2 bg-[#137868]/10 rounded-full px-4 py-2">
-                    <Clock size={16} className="text-[#137868]" />
-                    <span className="text-gray-800 text-sm font-medium">20+ Years</span>
+                <FadeIn delay={0.5}>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                      <div className="w-12 h-12 rounded-full bg-[#137868]/10 flex items-center justify-center mb-3">
+                        <Clock size={22} className="text-[#137868]" />
+                      </div>
+                      <p className="text-gray-900 font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>20+</p>
+                      <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Years Experience</p>
+                    </div>
+                    <div className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                      <div className="w-12 h-12 rounded-full bg-[#137868]/10 flex items-center justify-center mb-3">
+                        <BadgeCheck size={22} className="text-[#137868]" />
+                      </div>
+                      <p className="text-gray-900 font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>AAPC</p>
+                      <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Certified Coding</p>
+                    </div>
+                    <div className="flex flex-col items-center text-center bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                      <div className="w-12 h-12 rounded-full bg-[#137868]/10 flex items-center justify-center mb-3">
+                        <Shield size={22} className="text-[#137868]" />
+                      </div>
+                      <p className="text-gray-900 font-bold text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>HIPAA</p>
+                      <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">Compliant</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 bg-[#137868]/10 rounded-full px-4 py-2">
-                    <BadgeCheck size={16} className="text-[#137868]" />
-                    <span className="text-gray-800 text-sm font-medium">AAPC Certified</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-[#137868]/10 rounded-full px-4 py-2">
-                    <Shield size={16} className="text-[#137868]" />
-                    <span className="text-gray-800 text-sm font-medium">HIPAA Compliant</span>
-                  </div>
-                </div>
+                </FadeIn>
 
-                <Link
-                  href="/about-us/"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
-                >
-                  Learn More About Michelle
-                  <ArrowRight size={18} />
-                </Link>
+                <FadeIn delay={0.6}>
+                  <Link
+                    href="/about-us/"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#137868] text-white font-semibold hover:bg-[#0f5f54] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  >
+                    Learn More About Michelle
+                    <ArrowRight size={18} />
+                  </Link>
+                </FadeIn>
               </div>
             </SlideIn>
           </div>
