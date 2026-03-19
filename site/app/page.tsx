@@ -419,13 +419,13 @@ export default function HomePage() {
 
                     {/* Image */}
                     <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                      <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+                      <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
                         <Image
                           src={step.img}
                           alt={step.title}
                           width={540}
-                          height={360}
-                          className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                          height={540}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0c2e28]/60 to-transparent" />
                         <div className="absolute top-4 left-4 lg:hidden w-10 h-10 rounded-full bg-[#137868] text-white flex items-center justify-center font-bold text-sm shadow-md" style={{ fontFamily: "'Poppins', sans-serif" }}>
