@@ -17,7 +17,7 @@ export default function ServicePageTemplate({
       <section className="relative pt-[219px] sm:pt-[235px] pb-[100px] sm:pb-[120px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={service.img}
+            src="/gallery/services-hero-bg.jpg"
             alt={service.title}
             fill
             className="object-cover"
