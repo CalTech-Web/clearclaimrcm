@@ -9,7 +9,9 @@
 |---|---|
 | **Brand Name** | Clear Claim RCM |
 | **Website** | clearclaimrcm.com |
-| **Phone** | 303-434-1355 |
+| **Phone** | 424-600-5948 |
+| **Fax** | 424-666-3798 |
+| **Email** | info@clearclaimrcm.com |
 | **Address** | Unknown |
 | **City / State** | Unknown (Colorado area based on phone prefix and founder work history) |
 | **Founded** | 2025 |
@@ -198,7 +200,7 @@ With over 20 years of experience in healthcare operations, credentialing, and re
 ClearClaim RCM serves independent healthcare providers, small to mid-sized clinics, group practices, and office managers or practice administrators. The company works across specialties and focuses on practices that want a dedicated billing partner rather than an in-house team.
 
 **Q: How do I get started?**
-You can schedule a free consultation via Calendly at calendly.com/michelle-clearclaimrcm, fill out the contact form at clearclaimrcm.com/contact-us, or call 303-434-1355 or email michelle@clearclaimRCM.com directly.
+You can schedule a free consultation via Calendly at calendly.com/michelle-clearclaimrcm, fill out the contact form at clearclaimrcm.com/contact-us, or call 424-600-5948 or email info@clearclaimrcm.com directly.
 
 **Q: Do you offer a free billing audit?**
 Yes. Michelle Recek personally offers a complimentary audit of your current billing services. If your existing team is performing well, she will tell you. If there are gaps or signs of underperformance, she will identify where improvement is possible, with no obligation to switch.
@@ -240,8 +242,9 @@ Yes. End-of-month financial reports show collections, denials, AR trends, and ov
 - Contact Us (`/contact-us/`)
 
 ### Footer Links - Contact Info
-- Phone: 303-434-1355
-- Email: michelle@clearclaimRCM.com
+- Phone: 424-600-5948
+- Fax: 424-666-3798
+- Email: info@clearclaimrcm.com
 - LinkedIn: linkedin.com/company/clearclaim-rcm
 
 ### Legal Pages
