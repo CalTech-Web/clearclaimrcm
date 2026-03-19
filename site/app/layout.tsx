@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
   title: "ClearClaim RCM | Medical Billing & Revenue Cycle Management",
   description:
     "ClearClaim RCM provides full-cycle medical billing and revenue cycle management. AAPC-certified, HIPAA-compliant, and serving independent practices nationwide.",
+  verification: {
+    google: "hmNb26et4UTAb0wD3j76Tff8VUjgG-fkbm4_887YmcY",
+  },
   alternates: {
     canonical: "/",
   },
@@ -79,6 +83,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DQ4VZFT7TR"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DQ4VZFT7TR');
+          `}
+        </Script>
+      </head>
       <body className="antialiased">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[#137868] focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
           Skip to main content
