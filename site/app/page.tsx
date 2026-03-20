@@ -484,7 +484,7 @@ export default function HomePage() {
               </div>
             </FadeIn>
 
-            {/* Ideal For Practices That Are */}
+            {/* Who We Serve */}
             <FadeIn delay={0.2}>
               <div>
                 <p className="text-[#F15200] font-semibold text-sm uppercase tracking-widest mb-3">
@@ -494,17 +494,26 @@ export default function HomePage() {
                   className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  Ideal for Practices That Are
+                  Practices and Specialties We Support
                 </h2>
                 <div className="w-16 h-1 bg-[#137868] rounded-full mb-8" />
-                <ul className="space-y-4">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                   {[
-                    "Opening or expanding a new practice",
-                    "Onboarding new providers and need credentialing support",
-                    "Fixing credentialing or billing issues",
-                    "Tired of revenue delays and payer confusion",
-                    "Managing specialty practices or surgery centers",
-                    "Running multi-entity or multi-location groups",
+                    "Independent Healthcare Providers",
+                    "Small to Mid-Sized Clinics",
+                    "Group Practices",
+                    "Office Managers and Practice Administrators",
+                    "Surgery Centers",
+                    "Imaging Centers",
+                    "Pain Management",
+                    "Orthopedic and Spine",
+                    "Endoscopy and Gastroenterology",
+                    "Behavioral Health and Recovery Centers",
+                    "Private Practices",
+                    "Specialty Clinics",
+                    "Labs",
+                    "Concierge Medicine",
+                    "Multi-Entity Medical Groups",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle size={20} className="text-[#F15200] shrink-0 mt-0.5" />
